@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from "react";
 import HomePage from './Components/HomePage/HomePage';
 function App() {
@@ -12,7 +12,7 @@ function App() {
     </React.Fragment>
   );
   return (
-    <div className="App text-gray-500 ml-40">
+    <div>
       <Router>
         <Routes>
           {routes}
