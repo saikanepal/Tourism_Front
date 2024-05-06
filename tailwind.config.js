@@ -7,6 +7,8 @@ module.exports = {
     extend: {
       fontFamily: {
         'jomolhari' : ['Jomolhari','serif']
+      }, colors: {
+        'custom-yellow': '#ca8f30',
       },
     },
   },

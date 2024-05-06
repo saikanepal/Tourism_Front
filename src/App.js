@@ -12,7 +12,7 @@ function App() {
     </React.Fragment>
   );
   return (
-    <div className="App text-gray-500 ml-40">
+    <div className="App text-gray-500">
       <Router>
         <Routes>
           {routes}
