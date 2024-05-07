@@ -1,0 +1,8 @@
+@media only screen and (max-width: 480px) {
+  .resNav {
+    margin-top: 1rem;
+    background-color: white;
+    color: red;
+    height: "100vh";
+  }
+}

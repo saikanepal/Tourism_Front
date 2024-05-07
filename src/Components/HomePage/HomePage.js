@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+
+import HeroSection from "./Nav/HeroSection";
+import Header from "./Nav/Header";
 
 export default function HomePage() {
     return (
-        <div className=' font-jomolhari font-semibold text-5xl text-gray-800'>
-                Hello World Part 2
+        <div className=" text-red-400">
+            <HeroSection />
+            <Header />
+            <p>hello world</p>
         </div>
-    )
+    );
 }
