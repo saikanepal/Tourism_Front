@@ -1,10 +1,14 @@
 import React from "react";
-import Navbar from "./Navbar/Navbar";
+
+import HeroSection from "./Nav/HeroSection";
+import Header from "./Nav/Header";
 
 export default function HomePage() {
   return (
     <div className=" text-red-400">
-      <Navbar />
+      <HeroSection />
+      <Header />
+      <p>hello world</p>
     </div>
   );
 }
