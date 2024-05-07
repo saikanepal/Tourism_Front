@@ -9,19 +9,30 @@ const Caroussel = ({imageCarousel}) => {
     <div className=''>
         {/* <div className='h-80 w-full overflow-hidden'><img src={imageCarousel[0]} alt='image1' /></div> */}
 
-        <Carousel>
-                <div className='relative'>
-                    <div className='h-80 w-full overflow-hidden'><img src={imageCarousel[0]} /></div>
-                    <p className="legend absolute top-0 left-0 w-full h-full m-0">Legend 1</p>
-                </div>
-                <div>
-                <div className='h-80 w-full overflow-hidden'><img src={imageCarousel[0]} /></div>
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                <div className='h-80 w-full overflow-hidden'><img src={imageCarousel[0]} /></div>
-                    <p className="legend">Legend 3</p>
-                </div>
+        <Carousel autoPlay={true}>
+              <div className='relative'>
+              <div className='h-96 w-full overflow-hidden rounded-2xl relative'><img src={imageCarousel[0]} className='absolute -top-10 left-0' /></div>
+              <p className="absolute top-0 left-0 w-full h-full m-0">
+                <p className='text-right mr-10 mt-5 text-bold text-white'>Annapurna Base Camp</p>
+              </p>
+              </div>
+          
+              <div className='relative'>
+              <div className='h-96 w-full overflow-hidden rounded-2xl relative'><img src={imageCarousel[1]} className='absolute -top-20 left-0'/></div>
+              <p className="absolute top-0 left-0 w-full h-full m-0">
+                <p className='text-right mr-10 mt-5 text-bold text-white'>Annapurna Base Camp</p>
+              </p>
+              </div>
+
+              <div className='relative'>
+              <div className='h-96 w-full overflow-hidden rounded-2xl relative'><img src={imageCarousel[1]} className='absolute -top-10 left-0'/></div>
+              <p className="absolute top-0 left-0 w-full h-full m-0">
+                <p className='text-right mr-10 mt-5 text-bold text-white'>Annapurna Base Camp</p>
+              </p>
+              </div>
+        
+                
+                
             </Carousel>
     </div>
   )
