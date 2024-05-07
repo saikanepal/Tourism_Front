@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'jomolhari' : ['Jomolhari','serif']
+        'jomolhari' : ['Jomolhari','serif'],
+        'Poppins' : ['Poppins','sans-serif']
+      
       },
     },
   },
