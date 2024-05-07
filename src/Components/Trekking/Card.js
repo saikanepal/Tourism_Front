@@ -13,7 +13,7 @@ const Card = ({cardData}) => {
                 <button className='text-base border border-solid border-custom-yellow rounded-3xl px-4 py-2 text-custom-yellow hover:bg-custom-yellow hover:text-white transition duration-300 ease-in-out'>Learn More</button>
             </div>
         </div>
-        <div className='flex-1'><Caroussel/></div>
+        <div className='flex-1'><Caroussel imageCarousel={cardData.image}/></div>
         
     </div>
     <div className='w-full h-1 bg-black'></div>
