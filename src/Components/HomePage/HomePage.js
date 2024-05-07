@@ -1,9 +1,10 @@
 import React from 'react'
+import Footer from '../Footer/Footer'
 
 export default function HomePage() {
     return (
-        <div className=' font-jomolhari font-semibold text-5xl text-gray-800'>
-                Hello World Part 2
+        <div className=''>
+            <Footer />
         </div>
     )
 }
