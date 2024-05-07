@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
-
+import "./Header.css";
 const Header = () => {
   let Links = [
     { name: "Home", link: "/" },
@@ -29,7 +29,19 @@ const Header = () => {
         </div>
         {/* links items */}
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all  :bg-white duration-500 ease-in ${
+          //   style={{
+          //     padding: "1rem",
+          //     borderRadius: "0.5rem",
+          //     maxWidth: "100%",
+          //     margin: "0 auto",
+          //     color: "#362800",
+          //     "@media (maxWidth: 420px)": {
+          //       backgroundColor: "white",
+          //       color: "red",
+          //       height: "screen",
+          //     },
+          //   }}
+          className={` resNav md:flex md:items-center md:pb-0 pb-12 absolute md:static  md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all  :bg-white duration-500 ease-in ${
             open ? "top-12" : "top-[-490px]"
           }`}
         >
