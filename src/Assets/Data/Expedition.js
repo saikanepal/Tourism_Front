@@ -36,6 +36,8 @@ const expeditions = {
             "Tukuche Peak Climbing": {}
         }
     }
+
+
 };
 
 export default expeditions;

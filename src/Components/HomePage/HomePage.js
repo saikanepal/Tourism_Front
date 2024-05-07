@@ -1,12 +1,12 @@
 import React from 'react'
-import Expcard from './Expeditions/expeditions-cards'
+import Expedition from './Expeditions/expeditions-cards.js'
 
 export default function HomePage() {
     return (
         
         <div className=' text-red-400'>
                 Hello World
-                <Expcard />
+                <Expedition />
         </div>
     )
 }
