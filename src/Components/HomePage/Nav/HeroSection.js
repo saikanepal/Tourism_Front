@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-
+import { PiMouseLeftClickDuotone } from "react-icons/pi";
+import './CarouselArrow.css'
 function CarouselItem(props) {
   return (
     <div
@@ -44,25 +45,8 @@ function HeroSection() {
         interval={1000}
         infiniteLoop={true}
         autoPlay={true}
+
       >
-        {/* <div className={`bg-banner-1 bg-cover h-screen w-screen bg-no-repeat`}>
-          <p>hello world</p>
-          <p>hello world</p>
-          <p>hello world</p>
-          <p>hello world</p>
-        </div>
-        <div className={`bg-banner-2 bg-cover h-screen w-screen bg-no-repeat`}>
-          <p>hello world</p>
-          <p>hello world</p>
-          <p>hello world</p>
-          <p>hello world</p>
-        </div>
-        <div className={`bg-banner-3 bg-cover h-screen w-screen bg-no-repeat`}>
-          <p>hello world</p>
-          <p>hello world</p>
-          <p>hello world</p>
-          <p>hello world</p>
-        </div> */}
         <CarouselItem banner=" bg-banner-1" />
         <CarouselItem banner="bg-banner-2" />
         <CarouselItem banner="bg-banner-3" />
