@@ -14,8 +14,9 @@ export default function HomePage() {
             <Header />
             <DiscoverSection />
             <Expedition />
-            <Footer />
             <Trekking/>
+            <Footer />
+
         </div>
     );
 }
