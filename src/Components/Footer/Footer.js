@@ -48,16 +48,13 @@ const Footer = () => {
                                 <Link to="/" className="transition-colors duration-300 hover:underline hover:text-white">Contact Us</Link>
                             </div>
                             <div className="flex gap-5 mt-auto font-bold text-[#4F3100]">
-                                <a href="https://www.facebook.com" target='_blank'><FaFacebook size={25} /></a>
-                                <a href="https://www.instagram.com" target='_blank'><FaInstagram size={25} /></a>
-                                <a href="https://www.linkedin.com" target='_blank'><FaLinkedinIn size={25} /></a>
+                                <a href="https://www.facebook.com" target='_blank'><FaFacebook className='transition-colors duration-300 hover:text-blue-900' size={25} /></a>
+                                <a href="https://www.instagram.com" target='_blank' className='transition-colors duration-300 hover:text-orange-900'><FaInstagram size={25} /></a>
+                                <a href="https://www.linkedin.com" target='_blank' className='transition-colors duration-300 hover:text-blue-900'><FaLinkedinIn size={25} /></a>
                             </div>
                         </div>
                     </div>
-
                     <hr className="my-6 border-[#4F3100] md:my-12" />
-
-
                 </div>
             </footer >
         </div >
