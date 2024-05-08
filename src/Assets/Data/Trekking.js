@@ -11,6 +11,7 @@ const trekking = {
                 "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
                 "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
                 "photos": [annapurna1],
+                "photos": [annapurna1],
                 "videos": ["URL to video"],
                 "reviews": ["Customer reviews and testimonials"],
                 "description": "Detailed description of the trek"
