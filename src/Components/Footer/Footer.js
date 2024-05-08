@@ -29,7 +29,7 @@ const Footer = () => {
 
                         {/* SERVICES  */}
                         <div className='text-sm sm:text-base'>
-                            <p className="font-bold text-[#383838] dark:text-white">Services</p>
+                            <p className="font-bold text-[#383838] ">Services</p>
                             <div className="flex flex-col items-start mt-2 space-y-2 font-bold text-[#4F3100]">
                                 <Link to="/" className=" transition-colors duration-300 hover:text-white">Trekking</Link>
                                 <Link to="/" className=" transition-colors duration-300 hover:text-white">Adventure Sports</Link>
@@ -42,7 +42,7 @@ const Footer = () => {
                         {/* HELP AND SUPPORT  */}
 
                         <div className='text-sm sm:text-base'>
-                            <p className="font-bold text-[#383838] dark:text-white">Support</p>
+                            <p className="font-bold text-[#383838] ">Support</p>
                             <div className="flex flex-col items-start my-3 space-y-2 font-bold text-[#4F3100]">
                                 <Link to="/" className="transition-colors duration-300 hover:text-white">FAQs</Link>
                                 <Link to="/" className="transition-colors duration-300 hover:text-white">Contact Us</Link>
