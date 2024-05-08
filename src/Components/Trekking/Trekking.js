@@ -3,6 +3,7 @@ import Card from './Card'
 import cardData from './CardData/data'
 import trekking from '../../Assets/Data/Trekking';
 import {motion} from 'framer-motion'
+import Link from  'react-router-dom';
 import { FaAngleRight } from "react-icons/fa";
 const Trekking = () => {
   return (
@@ -14,7 +15,7 @@ const Trekking = () => {
 ))}
         
 
-        <div className='flex justify-center'><button className='flex gap-2 text-2xl items-center bg-custom-gold px-5 py-3 my-10 text-center rounded-3xl text-white text-normal'><div>View More</div><FaAngleRight /></button></div>
+        <div className='flex justify-center'><button className='flex gap-2 text-2xl items-center bg-custom-gold px-5 py-3 my-10 text-center rounded-3xl text-white text-normal'><div onClick={() => { window.location.href = '/trekking'}}>View More</div><FaAngleRight /></button></div>
     </div>
     </div>
   )
