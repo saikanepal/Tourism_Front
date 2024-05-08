@@ -1,8 +1,12 @@
+import InfoByRegion from "./InfoByRegion/InfoByRegion";
+import TrekkingAll from "./TrekkingAll/TrekkingAll";
+
 export default function SubComponent() {
     return (
 
         <div>
-            SubComponent
+            <InfoByRegion/>
+            <TrekkingAll/>
         </div>
     );
 }

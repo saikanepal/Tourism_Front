@@ -7,6 +7,8 @@ import DiscoverSection from './Discover/DiscoverSection'
 import Trekking from '../Trekking/Trekking'
 import HeroSectionSub from "../SubComponent/HeroSection.js";
 
+
+
 export default function HomePage() {
     return (
 
@@ -17,6 +19,7 @@ export default function HomePage() {
             <DiscoverSection />
             <Trekking/>
             <HeroSectionSub/>
+            
         </div>
     );
 }
