@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 
 import HeroSection from "./Nav/HeroSection";
