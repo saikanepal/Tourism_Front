@@ -5,7 +5,6 @@ import Expedition from './Expeditions/expeditions-cards.js'
 import DiscoverSection from './Discover/DiscoverSection'
 import Footer from "../Footer/Footer.js";
 import Trekking from '../Trekking/Trekking'
-import HeroSectionSub from "../SubComponent/HeroSection.js";
 
 export default function HomePage() {
     return (
@@ -17,7 +16,6 @@ export default function HomePage() {
             <Expedition />
             <Footer />
             <Trekking/>
-            <HeroSectionSub/>
         </div>
     );
 }
