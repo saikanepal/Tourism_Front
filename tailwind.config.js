@@ -9,6 +9,7 @@ module.exports = {
         'jomolhari' : ['Jomolhari','serif']
       }, colors: {
         'custom-yellow': '#ca8f30',
+        'custom-gold':'#F29C0F'
       },
     },
   },
