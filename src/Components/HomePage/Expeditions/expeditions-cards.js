@@ -15,12 +15,12 @@ const ExpeditionCard = () => {
                         <div className="absolute w-full h-full rounded overflow-hidden opacity-0 group-hover:opacity-100 transition duration-300" style={{ zIndex: '2' }}>
                             {/* Add two rectangular corners */}
                             <div className="absolute w-full h-full bg-white opacity-1 transition duration-300 opacity-0 hover:opacity-20" style={{ zIndex: '1' }}></div>
-                            <button className="absolute font-jomolhari bottom-20 left-5 px-10 py-5 bg-white bg-opacity-10 text-white text-xl font-bold rounded-full transition duration-300" onClick={null} style={{ zIndex: '3' }}>Explore ></button>
+                            <button className="absolute font-jomolhari bottom-20 left-5 px-10 py-5 bg-white bg-opacity-10 text-white text-xl font-bold rounded-full transition duration-300" onClick={null} style={{ zIndex: '3' }}>Explore</button>
                         </div>
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
 
 
 
