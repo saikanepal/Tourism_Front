@@ -1,8 +1,18 @@
 @media only screen and (max-width: 480px) {
+  .logo {
+    padding-left: 1rem;
+    font-size: 2rem;
+  }
   .resNav {
     margin-top: 1rem;
     background-color: white;
-    color: red;
-    height: "100vh";
+  }
+  .learnButton {
+    font-size: medium;
+    width: 10rem;
+    padding: auto;
+  }
+  .heroText {
+    font-size: xx-large;
   }
 }
