@@ -5,7 +5,6 @@ import Header from "./Nav/Header";
 import Expedition from './Expeditions/expeditions-cards.js'
 import DiscoverSection from './Discover/DiscoverSection'
 import Trekking from '../Trekking/Trekking'
-import HeroSectionSub from "../SubComponent/HeroSection.js";
 
 export default function HomePage() {
     return (
@@ -16,7 +15,6 @@ export default function HomePage() {
             <Expedition />
             <DiscoverSection />
             <Trekking/>
-            <HeroSectionSub/>
         </div>
     );
 }
