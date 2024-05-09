@@ -19,8 +19,8 @@ const TrekkingAll = () => {
         
             {
                 Object.entries(location.pathname==='/trekking'?trekking.trekking:expeditions.expeditions).map((data,i)=>{
-                    return <div className={`w-full flex items-center justify-between ${(i%2)?'flex-row-reverse':''}`}>
-                                <div className='w-1/2 flex gap-3 justify-center'>
+                    return <div className={`justify-center text-center w-full flex items-center lg:justify-between ${(i%2)?'flex-row-reverse':''}`}>
+                                <div className='w-1/2 flex gap-3 justify-center pb-20 lg:pb-0'>
                                     {/* <h3>{regionImage[i]}</h3> */}
                                     {/* <img src={exp} className='w-32 h-32'/> */}
                                     <div className='flex justify-center flex-col items-center gap-10 '>
@@ -34,8 +34,8 @@ const TrekkingAll = () => {
             {/* change size here */}
 
 
-                                <div className='w-1/2 flex justify-center items-center'>        
-                                <Caroussel imageCarousel={data}/>
+                                <div className='hidden lg:block w-1/2'>        
+                                <div className='flex justify-center itemse-center pt-5'><Caroussel imageCarousel={data}/></div>
                                 </div>
                     </div>
                 })
