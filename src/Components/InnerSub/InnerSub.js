@@ -35,15 +35,7 @@ const InnerSub = () => {
     }
 
     return (
-        <div className='w-4/5 mx-auto grid grid-cols-2 gap-x-5 gap-y-5'>
-            {Object.entries(everestRegionTrekking).map(trek => (
-                <div className="rounded overflow-hidden shadow-lg">
-                    <img className="w-full" src={Image} alt="Sunset in the mountains" />
-                </div>
-
-            ))}
-
-        </div>
+        <div>Inner Sub</div>
     )
 }
 
