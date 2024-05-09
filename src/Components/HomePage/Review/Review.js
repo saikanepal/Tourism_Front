@@ -1,5 +1,11 @@
 import React from "react";
 import ReviewCard from "./ReviewCard";
+import { FaStar } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
+import "../Nav/Header.css";
+import trekkingData from "../../../Assets/Data/Trekking";
+
+import TrekkingDropdown from "./TrekkingDropdown";
 
 export default function Review() {
   return (
@@ -12,8 +18,8 @@ Skie font-semibold text-[#CA8F30] mt-12"
         Leave a Review
       </h1>
       <div className=" flex justify-center my-8 ">
-        <div className="w-4/5  bg-white-600 py-8 bg-red-500 flex gap-10">
-          <div className="sm:1/2 lg:w-1/3 my-auto max-w-sm p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8 ">
+        <div className="w-4/5   bg-white-600 py-8  flex gap-10">
+          <div className="sm:1/2 lg:w-1/3 my-auto max-w-sm p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
             <form className="space-y-6" action="#">
               <div>
                 <label
@@ -89,16 +95,22 @@ Skie font-semibold text-[#CA8F30] mt-12"
 
               <button
                 type="submit"
-                className=" text-white font-jomolhari bg-[#F29C0F] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                className=" flex text-white font-jomolhari bg-[#F29C0F] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Submit <span className="pl-2 text-lg  font-bold"> &gt;</span>
+                Submit{" "}
+                <IoIosArrowForward className=" ml-2 text-lg  font-bold" />
               </button>
+              <TrekkingDropdown data={trekkingData} />
             </form>
           </div>
-          <ReviewCard />
-          <ReviewCard />
+          <div className="flex justify-between overflow-y-scroll w-full no-scroll scrollable-container  ">
+            {" "}
+            <ReviewCard />
+          </div>
         </div>
       </div>
+
+      <div></div>
     </>
   );
 }

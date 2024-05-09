@@ -16,3 +16,37 @@
     font-size: xx-large;
   }
 }
+
+/* .scrollable-container {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+} */
+
+.scrollable-container::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-container {
+  /* overflow: auto; */
+  scrollbar-width: thin;
+  scrollbar-color: #f29c0f transparent;
+  -ms-overflow-style: none;
+
+  border-radius: 10px;
+}
+
+.scrollable-container::webkit-scrollbar {
+  width: 10rem; /* Decrease the width of the scrollbar */
+  height: 110px; /* Decrease the height of the scrollbar */
+  border-radius: 5px;
+  scrollbar-width: 1px;
+}
+.scrollable-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.scrollable-container.scrollable-container::-webkit-scrollbar-arrow {
+  display: none;
+  height: 0;
+  width: 0;
+}
