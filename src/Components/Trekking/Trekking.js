@@ -3,7 +3,6 @@ import Card from './Card'
 import cardData from './CardData/data'
 import trekking from '../../Assets/Data/Trekking';
 import {motion} from 'framer-motion'
-import Link from  'react-router-dom';
 import { FaAngleRight } from "react-icons/fa";
 const Trekking = () => {
   return (
