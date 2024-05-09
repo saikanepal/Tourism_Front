@@ -11,7 +11,7 @@ const trekking = {
                 "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
                 "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
                 "photos": [annapurna1],
-                "photos": [annapurna1],
+                
                 "videos": ["URL to video"],
                 "reviews": ["Customer reviews and testimonials"],
                 "description": "Detailed description of the trek"
@@ -33,11 +33,32 @@ const trekking = {
             }
         },
         "Annapurna Region Trekking": {
-            "Annapurna Base Camp Trek": {},
-            "Ghorepani Poon Hill Trek": {},
-            "Annapurna Tilicho Circuit Trek": {},
-            "Upper Mustang Trek": {},
-            "Mardi Himal Trek": {},
+            "Annapurna Base Camp Trek": {
+                "overview": "The Everest Base Camp Trek is a classic trekking route that takes you to the base camp of the world's highest peak, Mount Everest.",
+                "map": "URL to trek map",
+                "highlights": ["Stunning views of Everest and surrounding peaks", "Exploring Sherpa villages and monasteries"],
+                "costIncludes": ["Accommodation", "Meals during trek", "Permits and entry fees"],
+                "costExcludes": ["Flights to and from Lukla", "Personal trekking gear", "Tips for guides and porters"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
+                "photos": [annapurna1],
+                
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "Detailed description of the trek"
+            },
+            "Ghorepani Poon Hill Trek": {
+                "photos": [annapurna1],
+            },
+            "Annapurna Tilicho Circuit Trek": {
+                "photos": [annapurna1],
+            },
+            "Upper Mustang Trek": {
+                "photos": [annapurna1],
+            },
+            "Mardi Himal Trek": {
+                "photos": [annapurna1],
+            },
             "Nar Phu Valley Trek": {},
             "Panchase Hill Trek": {},
             "Khorpa Danda Trek": {},
