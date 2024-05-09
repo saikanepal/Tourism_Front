@@ -15,6 +15,7 @@ export default function HomePage() {
             <DiscoverSection />
             <Expedition />
             <Trekking/>
+
             <Footer />
 
         </div>
