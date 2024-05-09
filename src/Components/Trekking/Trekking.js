@@ -6,7 +6,7 @@ import {motion} from 'framer-motion'
 import { FaAngleRight } from "react-icons/fa";
 const Trekking = () => {
   return (
-    <div className='flex justify-center'>
+    <div className='flex justify-center text-center'>
     <div className='w-4/5 mx-0 items-center'>
         <motion.h1 initial={{opacity:0,x:-100}} animate={{opacity:1,x:0}}  transition={{duration:2}} className='text-center w-full mb-10 text-custom-yellow text-5xl font-light mt-10'>Trekking</motion.h1>
         {Object.entries(trekking.trekking).slice(0,3).map((data,index)=>(
