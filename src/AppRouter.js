@@ -8,7 +8,7 @@ const AppRouter = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/innersub" element={<InnerSub />} /> {/* Replace the component with the appropriate one */}
+                <Route path="/trekking/:region" element={<InnerSub />} /> {/* Replace the component with the appropriate one */}
             </Routes>
         </Router>
     );
