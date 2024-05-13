@@ -28,14 +28,10 @@ const Trekking = () => {
             </motion.div>
           ))}
 
-        <div className="flex justify-center">
-          <button className="flex gap-2 text-2xl items-center bg-custom-gold px-5 py-3 my-10 text-center rounded-3xl text-white text-normal">
-            <div>View More</div>
-            <FaAngleRight />
-          </button>
-        </div>
-      </div>
+<div className='flex justify-center'><button className='flex gap-2 text-2xl items-center bg-custom-gold px-5 py-3 my-10 text-center rounded-3xl text-white text-normal'><div onClick={() => { window.location.href = '/trekking'}}>View More</div><FaAngleRight /></button></div>
     </div>
+      </div>
+ 
   );
 };
 
