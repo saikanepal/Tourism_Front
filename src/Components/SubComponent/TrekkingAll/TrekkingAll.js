@@ -21,11 +21,11 @@ const TrekkingAll = () => {
         
             {
                 Object.entries(location.pathname==='/trekking'?trekking.trekking:expeditions.expeditions).map((data,i)=>{
-                    return <div className={` w-full flex justify-start lg:justify-between gap-5`} >
+                    return <div className={` w-full flex justify-center lg:justify-between gap-5`} >
                                 <div className='w-1/2 flex gap-3 justify-center pb-20 lg:pb-0 h-full'>
                                     {/* <h3>{regionImage[i]}</h3> */}
                                     {/* <img src={exp} className='w-32 h-32'/> */}
-                                    <div className='flex justify-center flex-col  gap-10 '>
+                                    <div className='flex justify-center items-center lg:items-start flex-col  gap-10 text-center lg:text-left'>
                                         <h1 className='text-4xl text-bold text-custom-gold'>{data[0]}</h1>
                                         <p>{Object.values(data[1])[0].overview}</p>
                                    
