@@ -1,0 +1,119 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  font-family: sans-serif;
+} */
+.Section_top {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDz-C8szFGAgmk896Tz9eWF7joLaSwfICtDxNOKYlsoA&s);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  /* animation: change 20s infinite linear; */
+  animation: fadeChange 20s infinite linear;
+}
+.Section_top2 {
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFjKWP0giFC5sXli9n2BHfq_3wKeOEUh9Sb6Nfpd5yUw&s);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  animation: change 10s infinite ease-in-out;
+}
+.Section_top3 {
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSadILpiEn4hm7fALTlHef0mDYeahI73yqUftvohaptKQ&s); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  animation: change 10s infinite ease-in-out;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+.content h1 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 15px;
+}
+.content h1 span {
+  color: #111;
+}
+.content a {
+  background: #85c1ee;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.content a:hover {
+  background: #034e88;
+  color: #fff;
+}
+/* @keyframes change {
+  0% {
+    background-image: url(https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D);
+  }
+  20% {
+    background-image: url(https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1715385600&semt=ais_user);
+  }
+  40% {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqsGom-7g1Ld326yEL2acQke7IXan1RsAWx0oURJdi5A&s);
+  }
+  60% {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDz-C8szFGAgmk896Tz9eWF7joLaSwfICtDxNOKYlsoA&s);
+  }
+  80% {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDz-C8szFGAgmk896Tz9eWF7joLaSwfICtDxNOKYlsoA&s);
+  }
+  100% {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDz-C8szFGAgmk896Tz9eWF7joLaSwfICtDxNOKYlsoA&s);
+  }
+} */
+@keyframes fadeChange {
+  0% {
+    background-image: url(https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1715385600&semt=ais_user);
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+    background-image: url(https://cdn.wallpapersafari.com/94/21/IEljyw.jpg);
+  }
+  50% {
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20230518/pngtree-forest-landscape-wallpaper-for-phone-image_2576152.jpg);
+    opacity: 1;
+  }
+  75% {
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/039/861/412/small/ai-generated-a-green-tree-in-a-field-with-the-sun-shining-on-it-free-photo.jpg);
+    opacity: 1;
+  }
+  100% {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDz-C8szFGAgmk896Tz9eWF7joLaSwfICtDxNOKYlsoA&s);
+    opacity: 1;
+  }
+}
