@@ -11,18 +11,15 @@ function CarouselItem(props) {
     <div
       className={` ${props.banner}  bg-banner-1  h-screen xl:h-screen bg-cover bg-center text-left flex  justify-start `}
     >
-      <div className="  sm:w-full lg:w-3/5 xl:1/3 flex justify-center ">
-        <div className="w-2/3  mt-auto mb-auto xl:ml-20">
-          <p
-            className=" heroText text-5xl mb-3 font-
-Skie font-bold text-white"
-          >
+      <div className="  sm:w-full lg:w-3/5 xl:1/3 flex  justify-center lg:justify-start ">
+        <div className="w-2/3  mt-auto mb-auto ">
+          <p className=" heroText text-5xl mb-3 font-poppins font-bold text-white">
             Explore, Elevate, Engage
           </p>
 
           <Link
             to="#"
-            className=" flex w-1/3   md:px-0 justify-around learnButton   mt-7 bg-secondary font-normal font-jomolhari  sm:text-base md:text-xl text-[#CA8F30]   border-[#CA8F30] border-2 rounded-3xl  px-4 py-3 hover:bg-[#CA8F30] hover:text-white"
+            className=" flex w-1/3    justify-around learnButton   mt-7 bg-secondary font-normal font-poppins  sm:text-base md:text-xl text-[#CA8F30]   border-[#CA8F30] border-2 rounded-3xl  px-4 py-3 hover:bg-[#CA8F30] hover:text-white pl-1"
           >
             Learn More{" "}
             <span className="  font-bold md:text-[18px] lg:text-[28px]  ">
@@ -50,9 +47,9 @@ function HeroSection() {
         // infiniteLoop={true}
         // autoPlay={true}
       >
-        <CarouselItem banner=" bg-banner-1 Section_top h-screen" />
-        <CarouselItem banner="bg-banner-2 Section_top h-screen " />
-        <CarouselItem banner="bg-banner-3 Section_top h-screen " />
+        <CarouselItem banner=" bg-banner-1 Section_top1 h-screen" />
+        <CarouselItem banner="bg-banner-2 Section_top2 h-screen " />
+        <CarouselItem banner="bg-banner-3 Section_top3 h-screen " />
       </Carousel>
 
       {/* <div class="Section_top">
