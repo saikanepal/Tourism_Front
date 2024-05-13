@@ -57,7 +57,7 @@ const InnerSub = () => {
                     <>
                         <div className="flex flex-col relative justify-center items-center">
                             <img className="opacity-95 " src={Image || trek.photos} alt="Sunset in the mountains" />
-                            <h1 className="text-xl sm:text-3xl text-white absolute">{Object.values(trek)}</h1>
+                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.values(trek)}</h1>
                         </div>
                     </>
                 ))}

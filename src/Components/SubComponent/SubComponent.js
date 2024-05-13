@@ -7,10 +7,9 @@ import TrekkingAll from "./TrekkingAll/TrekkingAll";
 export default function SubComponent() {
     return (
         <div>
-                SubComponent
-        <Header/>
-        <InfoByRegion/>
-            <TrekkingAll/>
+            <Header />
+            <InfoByRegion />
+            <TrekkingAll />
             <HeroSectionSub />
         </div>
     )
