@@ -9,10 +9,12 @@ export default function SubComponent() {
   return (
     <div>
      <Header />
+     {/* <ContactForm /> */}
+     <HeroSectionSub />
             <InfoByRegion />
             <TrekkingAll />
-            <HeroSectionSub />
-      <ContactForm />
+            
+      
     </div>
   );
 }
