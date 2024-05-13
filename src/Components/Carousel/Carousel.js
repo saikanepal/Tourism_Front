@@ -10,11 +10,11 @@ const Caroussel = ({imageCarousel}) => {
  const thirdCaro=Object.values(imageCarousel[1])[2]
  console.log(firstCaro.photos)
   return (
-    <div className='w-full'>
+    <div className='w-full max-w-lg'>
         {/* <div className='h-80 w-full overflow-hidden'><img src={imageCarousel[0]} alt='image1' /></div> */}
     
         <Carousel autoPlay={true}>
-              <div className='relative'>
+              <div className='relative '>
               <div className='h-96 w-full overflow-hidden rounded-2xl relative'><img src={firstCaro?.photos} className='absolute -top-10 left-0' /></div>
               <p className="absolute top-0 left-0 w-full h-full m-0 flex grid justify-items-end flex-col text-right">
                 <p className=' text-bold text-white pr-10 pt-5 '>{Object.keys(imageCarousel[1])[0]}</p>
@@ -28,7 +28,7 @@ const Caroussel = ({imageCarousel}) => {
               </div>
               </div>
           
-              <div className='relative'>
+              <div className='relative '>
               <div className='h-96 w-full overflow-hidden rounded-2xl relative'><img src={secondCaro?.photos} className='absolute -top-20 left-0'/></div>
               <p className="absolute top-0 left-0 w-full h-full m-0 flex grid justify-items-end flex-col text-right">
                 <p className=' text-bold text-white pr-10 pt-5 '>{Object.keys(imageCarousel[1])[1]}</p>

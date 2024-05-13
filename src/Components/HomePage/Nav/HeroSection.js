@@ -4,13 +4,14 @@ import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import { PiMouseLeftClickDuotone } from "react-icons/pi";
 import "./CarouselArrow.css";
+import "./style.css";
 import { IoIosArrowForward } from "react-icons/io";
 function CarouselItem(props) {
   return (
     <div
-      className={` ${props.banner}  bg-banner-1 h-screen xl:h-screen bg-cover bg-center text-left flex  justify-start `}
+      className={` ${props.banner}  bg-banner-1  h-screen xl:h-screen bg-cover bg-center text-left flex  justify-start `}
     >
-      <div className="sm:w-full lg:w-3/5 xl:1/3 flex justify-center ">
+      <div className="  sm:w-full lg:w-3/5 xl:1/3 flex justify-center ">
         <div className="w-2/3  mt-auto mb-auto xl:ml-20">
           <p
             className=" heroText text-5xl mb-3 font-
@@ -21,10 +22,10 @@ Skie font-bold text-white"
 
           <Link
             to="#"
-            className=" flex w-1/3  px-auto justify-between learnButton inline-block  mt-7 bg-secondary font-normal font-jomolhari  sm:text-base md:text-xl text-[#CA8F30]   border-[#CA8F30] border-2 rounded-3xl  px-4 py-3 hover:bg-[#CA8F30] hover:text-white"
+            className=" flex w-1/3   md:px-0 justify-around learnButton   mt-7 bg-secondary font-normal font-jomolhari  sm:text-base md:text-xl text-[#CA8F30]   border-[#CA8F30] border-2 rounded-3xl  px-4 py-3 hover:bg-[#CA8F30] hover:text-white"
           >
             Learn More{" "}
-            <span className=" learnButton   font-bold text-[28px]  ">
+            <span className="  font-bold md:text-[18px] lg:text-[28px]  ">
               <IoIosArrowForward />
             </span>
           </Link>
@@ -46,13 +47,22 @@ function HeroSection() {
         showStatus={false}
         showThumbs={false}
         interval={4000}
-        infiniteLoop={true}
-        autoPlay={true}
+        // infiniteLoop={true}
+        // autoPlay={true}
       >
-        <CarouselItem banner=" bg-banner-1" />
-        <CarouselItem banner="bg-banner-2" />
-        <CarouselItem banner="bg-banner-3" />
+        <CarouselItem banner=" bg-banner-1 Section_top h-screen" />
+        <CarouselItem banner="bg-banner-2 " />
+        <CarouselItem banner="bg-banner-3 " />
       </Carousel>
+
+      {/* <div class="Section_top">
+        <div class="content">
+          <h1>
+            <span>Developer</span>
+          </h1>
+          <a href="#">Welcome</a>
+        </div>
+      </div> */}
     </div>
   );
 }

@@ -1,9 +1,28 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import "./Header.css";
 const Header = () => {
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   let Links = [
     { name: "Home", link: "/" },
     { name: "Expenditure", link: "/" },
@@ -14,8 +33,16 @@ const Header = () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="shadow-md z-10 w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-[#D9D9D9] text-[#362800] font-jomolhari py-4 md:px-10 px-15 ">
+    <div className="shadow-md z-10 w-full fixed top-0 left-0 bg-opacity-25">
+      <div
+        className={`md:flex items-center justify-between py-4 md:px-10 px-15 ${
+          scrolling
+            ? "bg-[#CA8F30] text-white"
+            : "bg-opacity-0 text-[#362800] font-jomolhari"
+        }`}
+        //   className="
+        // md:flex items-center justify-between  bg-[#D9D9D9] bg-opacity-25 text-[#362800] font-jomolhari py-4 md:px-10 px-15 "
+      >
         {/* logo section */}
         <div className=" logo font-normal text-5xl  cursor-pointer flex items-center gap-1">
           <span>Logo</span>

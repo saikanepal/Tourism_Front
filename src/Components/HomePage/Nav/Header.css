@@ -42,9 +42,9 @@
   border-radius: 5px;
   scrollbar-width: 1px;
 }
-.scrollable-container::-webkit-scrollbar-track {
+/* .scrollable-container::-webkit-scrollbar-track {
   background-color: transparent;
-}
+} */
 .scrollable-container.scrollable-container::-webkit-scrollbar-arrow {
   display: none;
   height: 0;
