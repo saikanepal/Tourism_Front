@@ -1,42 +1,70 @@
-
-import React from 'react'
 import Image from "../../Assets/banner.png"
+import React, { useRef } from 'react'
+import trekking from "../../Assets/Data/Trekking"
+import expeditions from "../../Assets/Data/Expedition"
+import { useLocation } from "react-router-dom"
+import InnerSubImage from "../../Assets/InnerSubImage.jpg"
+import { TbTrekking } from "react-icons/tb";
 
 const InnerSub = () => {
-    const everestRegionTrekking = {
-        "Everest Base Camp Trek": {
-            "overview": "The Everest Base Camp Trek is a classNameic trekking route that takes you to the base camp of the world's highest peak, Mount Everest.",
-            "map": "URL to trek map",
-            "highlights": ["Stunning views of Everest and surrounding peaks", "Exploring Sherpa villages and monasteries"],
-            "costIncludes": ["Accommodation", "Meals during trek", "Permits and entry fees"],
-            "costExcludes": ["Flights to and from Lukla", "Personal trekking gear", "Tips for guides and porters"],
-            "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
-            "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
-            "photos": [Image],
-            "videos": ["URL to video"],
-            "reviews": ["Customer reviews and testimonials"],
-            "description": "Detailed description of the trek"
-        },
-        "Gokyo Valley Trek": {
-            "photos": [Image],
-        },
-        "Kongma La and Cho La Pass Trek": {
-            "photos": [Image],
-        },
-        "Everest Panorama Trek": {
-            "photos": [Image],
-        },
-        "Arun Valley Trek": {
-            "photos": [Image],
-        },
-        "Dudh Kunda Trek": {
-            "photos": [Image],
+    const myRef = useRef(null)
+    const scrollToRef = (ref) => {
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: "smooth" })
         }
     }
 
+    const location = useLocation();
+    const splitValue = location.pathname.split("/")
+
+    const trekOrExpedition = decodeURIComponent(splitValue[1]) === "trekking" ? trekking : expeditions
+    const trekOrExpenditureLocation = Object.values(trekOrExpedition)
+    const trekOrExpenditureCamp = trekOrExpenditureLocation[0][decodeURIComponent(splitValue[2])]
+    const regionOrHeight = decodeURIComponent(splitValue[2])
+
     return (
-        <div>Inner Sub</div>
+        <>
+            {/*DYNAMIC HERO SECTION  */}
+            <div className="relative h-screen flex justify-center items-center">
+                <img
+                    src={InnerSubImage}
+                    alt="Background"
+                    className="absolute w-full h-screen inset-0 object-cover"
+                />
+                <div className="absolute top-0 left-0 w-full h-screen bg-black opacity-60"></div>
+                <div className="relative z-10 text-white text-center">
+                    <div className="flex gap-2 sm:gap-5 justify-center items-center">
+                        <h1 className="text-lg sm:text-2xl">{splitValue[1] === "trekking" ? "Trekking" : "Expedition"}</h1>
+                        <TbTrekking size={20} />
+                    </div>
+                    <p className="text-[#FFB133] font-bold text-3xl sm:text-5xl mt-4">{regionOrHeight}</p>
+                    <h1 className="mt-8 opacity-70">Embark on an unforgettable journey through Nepal, where every experience is a treasure.</h1>
+                    <button onClick={() => scrollToRef(myRef)} className="border-[#CA8F30] mt-8 font-semibold flex justify-center items-center border-2 border-solid text-[#CA8F30] hover:bg-[#CA8F30] hover:text-white rounded-md mx-auto py-1 px-10">
+                        Explore Now
+                    </button>
+                </div>
+            </div>
+
+            {/* REGION OVERVIEW  */}
+            <div className="w-4/5 h-96">
+                <h1 className="text-3xl">Region Overview</h1>
+            </div>
+
+            {/* IMAGES  */}
+
+            <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
+                {Object.keys(trekOrExpenditureCamp).map(trek => (
+                    <>
+                        <div className="flex flex-col relative justify-center items-center">
+                            <img className="opacity-95 " src={Image || trek.photos} alt="Sunset in the mountains" />
+                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.values(trek)}</h1>
+                        </div>
+                    </>
+                ))}
+            </div >
+        </>
     )
 }
 
 export default InnerSub
+

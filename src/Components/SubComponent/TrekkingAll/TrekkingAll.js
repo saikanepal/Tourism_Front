@@ -1,19 +1,19 @@
 import React from 'react'
 import trekking from '../../../Assets/Data/Trekking'
-import {regionImage} from '../../../Assets/Data/Region'
+import { regionImage } from '../../../Assets/Data/Region'
 import Caroussel from '../../Carousel/Carousel'
-import {useNavigate,useLocation} from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import expeditions from '../../../Assets/Data/Expedition'
 import { FaAngleRight } from "react-icons/fa";
 import InnerCarosel from './InnerCarosel/InnerCarosel'
 
 const TrekkingAll = () => {
-    const navigate=useNavigate()
-  const location=useLocation();
+    const navigate = useNavigate()
+    const location = useLocation();
 
-    const handleClick=(data)=>{
-       console.log(data)
-       navigate(`${location.pathname}/${data[0]}`)
+    const handleClick = (data) => {
+        console.log(data)
+        navigate(`${location.pathname}/${data[0]}`)
     }
   return (
     <div className='flex justify-center '>
