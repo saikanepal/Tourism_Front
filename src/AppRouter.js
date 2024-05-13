@@ -4,6 +4,7 @@ import HomePage from './Components/HomePage/HomePage';
 
 import InnerSub from './Components/InnerSub/InnerSub';
 import SubComponent from './Components//SubComponent/SubComponent.js';
+import FinalLandingPage from './Components/Final Landing Page/FinalLandingPage.js';
 
 
 const AppRouter = () => {
@@ -18,6 +19,7 @@ const AppRouter = () => {
                 <Route path="/trekking" element={<SubComponent />} /> {/* Replace the component with the appropriate one */}
                 <Route path="/trekking/:region" element={<InnerSub />} />
                 <Route path="/expedition/:region" element={<InnerSub />} />
+                <Route path="/trekking/:region/:place" element={<FinalLandingPage/>}/>
                 {/* // Replace the component with the appropriate one */}
                 {/*  */}
             </Routes>
