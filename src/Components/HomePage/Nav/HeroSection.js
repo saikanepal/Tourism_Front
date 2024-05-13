@@ -51,8 +51,8 @@ function HeroSection() {
         // autoPlay={true}
       >
         <CarouselItem banner=" bg-banner-1 Section_top h-screen" />
-        <CarouselItem banner="bg-banner-2 " />
-        <CarouselItem banner="bg-banner-3 " />
+        <CarouselItem banner="bg-banner-2 Section_top h-screen " />
+        <CarouselItem banner="bg-banner-3 Section_top h-screen " />
       </Carousel>
 
       {/* <div class="Section_top">
