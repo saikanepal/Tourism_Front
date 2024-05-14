@@ -4,13 +4,17 @@ import React from "react";
 import InfoByRegion from "./InfoByRegion/InfoByRegion";
 import TrekkingAll from "./TrekkingAll/TrekkingAll";
 import ContactForm from "../InnerSub/ContactForm/ContactForm.js";
+import { useLocation } from "react-router-dom";
 
 export default function SubComponent() {
+  const location=useLocation()
+  const trekkingOrExpedition=location.pathname.split('/')[1]
+  const ViewData=trekkingOrExpedition==='trekking'?'Trekking':'Expedition'
   return (
     <div>
      <Header />
      {/* <ContactForm /> */}
-     <HeroSectionSub />
+     <HeroSectionSub data={ViewData}/>
             <InfoByRegion />
             <TrekkingAll />
             

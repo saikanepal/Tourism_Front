@@ -2,7 +2,7 @@ import Image from "../../Assets/banner.png"
 import React, { useRef } from 'react'
 import trekking from "../../Assets/Data/Trekking"
 import expeditions from "../../Assets/Data/Expedition"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import InnerSubImage from "../../Assets/InnerSubImage.jpg"
 import { TbTrekking } from "react-icons/tb";
 
@@ -13,7 +13,7 @@ const InnerSub = () => {
             ref.current.scrollIntoView({ behavior: "smooth" })
         }
     }
-
+    const navigate=useNavigate()
     const location = useLocation();
     const splitValue = location.pathname.split("/")
 
@@ -22,6 +22,10 @@ const InnerSub = () => {
     const trekOrExpenditureCamp = trekOrExpenditureLocation[0][decodeURIComponent(splitValue[2])]
     const regionOrHeight = decodeURIComponent(splitValue[2])
 
+    const handleNextPage=(trek)=>{
+        // navigate('/')
+        console.log(Object.values(trek))
+    }
     return (
         <>
             {/*DYNAMIC HERO SECTION  */}
@@ -54,8 +58,10 @@ const InnerSub = () => {
 
             <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
                 {Object.keys(trekOrExpenditureCamp).map(trek => (
-                    <>
-                        <div className="flex flex-col relative justify-center items-center">
+                    <>{
+                        console.log(trek,"trek")
+                    }
+                        <div className="flex flex-col relative justify-center items-center" onClick={(e)=>{e.preventDefault();handleNextPage(trek)}}>
                             <img className="opacity-95 " src={Image || trek.photos} alt="Sunset in the mountains" />
                             <h1 className="text-xl lg:text-3xl text-white absolute">{Object.values(trek)}</h1>
                         </div>
