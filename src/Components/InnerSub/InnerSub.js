@@ -2,7 +2,7 @@ import Image from "../../Assets/banner.png"
 import React, { useRef } from 'react'
 import trekking from "../../Assets/Data/Trekking"
 import expeditions from "../../Assets/Data/Expedition"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import InnerSubImage from "../../Assets/InnerSubImage.jpg"
 import { TbTrekking } from "react-icons/tb";
 
@@ -13,7 +13,7 @@ const InnerSub = () => {
             ref.current.scrollIntoView({ behavior: "smooth" })
         }
     }
-
+    const navigate=useNavigate()
     const location = useLocation();
     const splitValue = location.pathname.split("/")
 
@@ -22,6 +22,10 @@ const InnerSub = () => {
     const trekOrExpenditureCamp = trekOrExpenditureLocation[0][decodeURIComponent(splitValue[2])]
     const regionOrHeight = decodeURIComponent(splitValue[2])
 
+    const handleNextPage=(trek)=>{
+        // navigate('/')
+        console.log(Object.values(trek))
+    }
     return (
         <>
             {/*DYNAMIC HERO SECTION  */}

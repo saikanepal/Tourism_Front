@@ -1,0 +1,143 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+  font-family: sans-serif;
+} */
+
+.Section_top1 {
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  background-position: center;
+  background-image: url(https://images.unsplash.com/photo-1610552050890-fe99536c2615?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* text-align: center; */
+  justify-content: center;
+  animation: change 10s infinite ease-in-out;
+}
+.Section_top2 {
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  background-position: center;
+  background-image: url(https://images.unsplash.com/photo-1610552050890-fe99536c2615?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* text-align: center; */
+  justify-content: center;
+  animation: change1 10s infinite ease-in-out;
+}
+.Section_top3 {
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  background-position: center;
+  background-image: url(https://images.unsplash.com/photo-1610552050890-fe99536c2615?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* text-align: center; */
+  justify-content: center;
+  animation: change2 10s infinite ease-in-out;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+}
+.content h1 {
+  color: #fff;
+  font-size: 60px;
+  letter-spacing: 15px;
+}
+.content h1 span {
+  color: #111;
+}
+.content a {
+  background: #85c1ee;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 20px;
+}
+.content a:hover {
+  background: #034e88;
+  color: #fff;
+}
+@keyframes change {
+  0% {
+    background-image: url(https://images.unsplash.com/photo-1604223190546-a43e4c7f29d7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D);
+  }
+  20% {
+    background-image: url(https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg);
+  }
+  40% {
+    background-image: url(https://media.istockphoto.com/id/613111906/photo/misty-blue-mountains-on-sunrise.jpg?s=612x612&w=0&k=20&c=watO6cuBVIO-6BkoN4ng8o9Ib-umQtI2P7rviKyYgyQ=);
+  }
+  60% {
+    background-image: url(https://images.pexels.com/photos/671658/pexels-photo-671658.jpeg?cs=srgb&dl=pexels-suketdedhia-671658.jpg&fm=jpg);
+  }
+  80% {
+    background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg);
+  }
+  100% {
+    background-image: url(https://images.unsplash.com/photo-1477948879622-5f16e220fa42?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D);
+  }
+}
+
+@keyframes change1 {
+  0% {
+    background-image: url(https://images.unsplash.com/photo-1477948879622-5f16e220fa42?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D);
+  }
+  20% {
+    background-image: url(https://images.unsplash.com/photo-1604223190546-a43e4c7f29d7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D);
+  }
+  40% {
+    background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg);
+  }
+  60% {
+    background-image: url(https://images.pexels.com/photos/671658/pexels-photo-671658.jpeg?cs=srgb&dl=pexels-suketdedhia-671658.jpg&fm=jpg);
+  }
+  80% {
+    background-image: url(https://media.istockphoto.com/id/613111906/photo/misty-blue-mountains-on-sunrise.jpg?s=612x612&w=0&k=20&c=watO6cuBVIO-6BkoN4ng8o9Ib-umQtI2P7rviKyYgyQ=);
+  }
+  100% {
+    background-image: url(https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg);
+  }
+}
+
+@keyframes change2 {
+  0% {
+    background-image: url(https://media.istockphoto.com/id/613111906/photo/misty-blue-mountains-on-sunrise.jpg?s=612x612&w=0&k=20&c=watO6cuBVIO-6BkoN4ng8o9Ib-umQtI2P7rviKyYgyQ=);
+  }
+  20% {
+    background-image: url(https://images.unsplash.com/photo-1477948879622-5f16e220fa42?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D);
+  }
+  40% {
+    background-image: url(https://images.unsplash.com/photo-1604223190546-a43e4c7f29d7?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW91bnRhaW4lMjBsYW5kc2NhcGV8ZW58MHx8MHx8fDA%3D);
+  }
+
+  60% {
+    background-image: url(https://images.pexels.com/photos/671658/pexels-photo-671658.jpeg?cs=srgb&dl=pexels-suketdedhia-671658.jpg&fm=jpg);
+  }
+  80% {
+    background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg);
+  }
+  100% {
+    background-image: url(https://images.pexels.com/photos/1054218/pexels-photo-1054218.jpeg);
+  }
+}
