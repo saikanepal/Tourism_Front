@@ -53,11 +53,11 @@ const InnerSub = () => {
             {/* IMAGES  */}
 
             <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
-                {Object.keys(trekOrExpenditureCamp).map(trek => (
+                {Object.values(trekOrExpenditureCamp).map((trek,i) => (
                     <>
                         <div className="flex flex-col relative justify-center items-center">
                             <img className="opacity-95 " src={Image || trek.photos} alt="Sunset in the mountains" />
-                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.values(trek)}</h1>
+                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.keys(trekOrExpenditureCamp)[i]}</h1>
                         </div>
                     </>
                 ))}
