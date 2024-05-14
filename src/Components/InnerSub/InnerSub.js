@@ -22,9 +22,9 @@ const InnerSub = () => {
     const trekOrExpenditureCamp = trekOrExpenditureLocation[0][decodeURIComponent(splitValue[2])]
     const regionOrHeight = decodeURIComponent(splitValue[2])
 
-    const handleNextPage=(trek)=>{
-        // navigate('/')
-        console.log(Object.values(trek))
+    const handleNextPage=(trek,data)=>{
+        navigate(`${location.pathname}/${data.data}`)
+        console.log(data.data)
     }
     return (
         <>
@@ -57,13 +57,11 @@ const InnerSub = () => {
             {/* IMAGES  */}
 
             <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
-                {Object.keys(trekOrExpenditureCamp).map(trek => (
-                    <>{
-                        console.log(trek,"trek")
-                    }
-                        <div className="flex flex-col relative justify-center items-center" onClick={(e)=>{e.preventDefault();handleNextPage(trek)}}>
-                            <img className="opacity-95 " src={Image || trek.photos} alt="Sunset in the mountains" />
-                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.values(trek)}</h1>
+                {Object.values(trekOrExpenditureCamp).map((trek,i) => (
+                    <>
+                        <div className="flex flex-col relative justify-center items-center" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
+                            <img className="opacity-95 " src={ trek.photos} alt="Sunset in the mountains" />
+                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.keys(trekOrExpenditureCamp)[i]}</h1>
                         </div>
                     </>
                 ))}
