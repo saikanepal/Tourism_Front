@@ -27,7 +27,7 @@ const Trekking = () => {
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2, duration: 1 }}
+              transition={{ duration: 1 }}
               onClick={e=>{e.preventDefault();handleClick(data)}}
             >
              

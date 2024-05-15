@@ -1,13 +1,17 @@
 import Image from "../../Assets/banner.png"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import trekking from "../../Assets/Data/Trekking"
 import expeditions from "../../Assets/Data/Expedition"
 import { useLocation, useNavigate } from "react-router-dom"
 import InnerSubImage from "../../Assets/InnerSubImage.jpg"
 import { TbTrekking } from "react-icons/tb";
+import Header from "../HomePage/Nav/Header"
 
 const InnerSub = () => {
     const myRef = useRef(null)
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     const scrollToRef = (ref) => {
         if (ref && ref.current) {
             ref.current.scrollIntoView({ behavior: "smooth" })
@@ -28,6 +32,7 @@ const InnerSub = () => {
     }
     return (
         <>
+            <Header/>
             {/*DYNAMIC HERO SECTION  */}
             <div className="relative h-screen flex justify-center items-center">
                 <img
