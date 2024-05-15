@@ -6,7 +6,9 @@ import { RxCross2 } from "react-icons/rx";
 import "./Header.css";
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
-
+  // const handleNavigation=({link})=>{
+  //   console.log(link)
+  // }
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -25,8 +27,8 @@ const Header = () => {
 
   let Links = [
     { name: "Home", link: "/" },
-    { name: "Expenditure", link: "/" },
-    { name: "Trekking", link: "/" },
+    { name: "Expenditure", link: "/expedition" },
+    { name: "Trekking", link: "/trekking" },
     { name: "About us", link: "/" },
     { name: "Contact Us", link: "/" },
   ];
@@ -81,6 +83,7 @@ const Header = () => {
                 <Link
                   to={link.link}
                   className=" md:text-sm lg:text-xl hover:text-blue-400 duration-500"
+                 
                 >
                   {link.name}
                 </Link>

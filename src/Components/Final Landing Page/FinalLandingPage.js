@@ -22,19 +22,16 @@ export default function FinalLandingPage() {
     const location = useLocation();
     const splitValue = location.pathname.split("/")
     const trekOrExpedition=decodeURIComponent(splitValue[1]);
-    // const campLocation=decodeURIComponent(splitValue[2]);
-    const campLocation="8000m";
+    const campLocation=decodeURIComponent(splitValue[2]);
 
     const finalLocation=decodeURIComponent(splitValue[3])
-    // const trekOrExpedition = decodeURIComponent(splitValue[1]) === "trekking" ? trekking : expeditions
-    // const trekOrExpenditureLocation = Object.values(trekOrExpedition)
-    // const trekOrExpenditureCamp = trekOrExpenditureLocation[0][decodeURIComponent(splitValue[2])]
-    // const regionOrHeight = decodeURIComponent(splitValue[2])
 
-    console.log(finalLocation,"trek")
-    const campObject=Object.entries(expeditions.expeditions).find(n=>n[0]===campLocation)
-    
-    console.log(Object.entries(campObject[1]).find(n=>n[0]===finalLocation))
+
+
+    const campObject=Object.entries(trekOrExpedition==='trekking'?trekking.trekking:expeditions.expeditions).find(n=>n[0]===campLocation)
+  
+    const feedData=Object.entries(campObject[1]).find(n=>n[0]===finalLocation)
+
 
 
 
@@ -43,7 +40,9 @@ export default function FinalLandingPage() {
       sectionsRef.current[i].scrollIntoView({ behavior: 'smooth' });
     };
 
-
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
     useEffect(() => {
       
         const handleScroll = () => {
@@ -80,7 +79,7 @@ export default function FinalLandingPage() {
        
         <div className='w-full mt-16'>
         
-       <Overview sectionsRef={sectionsRef}/>
+       <Overview sectionsRef={sectionsRef} feedData={feedData || 'Data Not Found'}/>
        <Itinerary sectionsRef={sectionsRef}/>
        <RouteMap sectionsRef={sectionsRef}/>
        <CostIncludes sectionsRef={sectionsRef}/>

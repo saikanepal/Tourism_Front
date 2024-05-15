@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Overview = ({sectionsRef}) => {
+const Overview = ({sectionsRef,feedData}) => {
     const data=`What is Lorem Ipsum?
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     
@@ -16,7 +16,7 @@ const Overview = ({sectionsRef}) => {
        <div className='w-4/5 flex'>
             <div className=''>
             <h2 className='flex items-center mb-5'><div className='w-5 h-5 bg-custom-gold rounded-3xl mr-2'></div><p className='text-2xl font-bold text-black'>Trek Overview</p></h2>
-            <p className=''>{viewMore?data:data.slice(0,400)+'...'}{viewMore?<button onClick={()=>{setViewMore(false)}} className='font-bold ml-3'>View Less</button>:<button onClick={()=>{setViewMore(true)}} className='font-bold ml-3'>View More</button>}</p>
+            <p className=''>{viewMore?feedData[1].overview:feedData[1].overview.slice(0,400)+'...'}{viewMore?<button onClick={()=>{setViewMore(false)}} className='font-bold ml-3'>View Less</button>:<button onClick={()=>{setViewMore(true)}} className='font-bold ml-3'>View More</button>}</p>
             </div>
             
        </div>
