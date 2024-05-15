@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
 import "./Header.css";
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
-  // const handleNavigation=({link})=>{
-  //   console.log(link)
-  // }
+  const location=useLocation()
+  console.log(location,"loca")
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -27,7 +26,7 @@ const Header = () => {
 
   let Links = [
     { name: "Home", link: "/" },
-    { name: "Expenditure", link: "/expedition" },
+    { name: "Expedition", link: "/expedition" },
     { name: "Trekking", link: "/trekking" },
     { name: "About us", link: "/" },
     { name: "Contact Us", link: "/" },
@@ -79,7 +78,7 @@ const Header = () => {
             // }`}
           >
             {Links.map((link, index) => (
-              <li key={index} className="md:ml-6 md:my-0 my-7 font-normal">
+              <li key={index} className={`${location.pathname==link.link?'text-blue-400':''} md:ml-6 md:my-0 my-7 font-normal`}>
                 <Link
                   to={link.link}
                   className=" md:text-sm lg:text-xl hover:text-blue-400 duration-500"

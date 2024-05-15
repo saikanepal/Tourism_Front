@@ -13,12 +13,15 @@ import GearsList from './SubFinalPage/GearsList.js';
 import Images from './SubFinalPage/Images.js';
 import Reviews from './SubFinalPage/Reviews.js';
 import Header from '../HomePage/Nav/Header.js';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import trekking from '../../Assets/Data/Trekking.js';
 import expeditions from '../../Assets/Data/Expedition.js';
+import HeroSectionSub from '../SubComponent/HeroSection.js';
+import Footer from '../Footer/Footer.js';
 
 export default function FinalLandingPage() {
     const [activeSection, setActiveSection] = useState(null);
+    const navigate=useNavigate();
     const location = useLocation();
     const splitValue = location.pathname.split("/")
     const trekOrExpedition=decodeURIComponent(splitValue[1]);
@@ -29,7 +32,8 @@ export default function FinalLandingPage() {
 
 
     const campObject=Object.entries(trekOrExpedition==='trekking'?trekking.trekking:expeditions.expeditions).find(n=>n[0]===campLocation)
-  
+
+   
     const feedData=Object.entries(campObject[1]).find(n=>n[0]===finalLocation)
 
 
@@ -72,7 +76,7 @@ export default function FinalLandingPage() {
     return (
         <div className='relative'>
           <Header/>
-         
+          <HeroSectionSub data={finalLocation}/>
             <NavBar activeSection={activeSection} scrollToSection={scrollToSection}/>
             
        <div className='flex justify-between'>
@@ -88,13 +92,13 @@ export default function FinalLandingPage() {
        <GearsList sectionsRef={sectionsRef}/>
        <Images sectionsRef={sectionsRef}/>
        <Reviews sectionsRef={sectionsRef}/>
-       <div className='sticky bottom-10 flex justify-end mr-10'>
+       <div className='sticky bottom-10 flex justify-end mr-10 mb-10'>
                 <button className='bg-custom-yellow rounded hover:bg-custom-gold px-4 py-2 text-white'>Book Now</button>
             </div>
         </div>
         
        </div>
-       <div className='h-screen'></div>
+       <Footer/>
         </div>
     )
 
