@@ -4,12 +4,10 @@ import cardData from "./CardData/data";
 import trekking from "../../Assets/Data/Trekking";
 import { motion } from "framer-motion";
 import { FaAngleRight } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+
 const Trekking = () => {
-  const navigate=useNavigate()
-  const handleClick=(data)=>{
-    navigate(`/trekking/${data[0]}`)
-  }
+
+  
   return (
     <div className="flex justify-center">
       <div className="w-4/5 mx-0 items-center">
@@ -28,7 +26,6 @@ const Trekking = () => {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
-              onClick={e=>{e.preventDefault();handleClick(data)}}
             >
              
               <Card cardData={data} key={index} />
