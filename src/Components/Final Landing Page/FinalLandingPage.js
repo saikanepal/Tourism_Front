@@ -40,7 +40,9 @@ export default function FinalLandingPage() {
       sectionsRef.current[i].scrollIntoView({ behavior: 'smooth' });
     };
 
-
+    useEffect(()=>{
+      window.scrollTo(0,0)
+    },[])
     useEffect(() => {
       
         const handleScroll = () => {
