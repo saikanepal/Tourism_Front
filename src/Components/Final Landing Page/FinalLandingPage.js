@@ -18,7 +18,8 @@ import trekking from '../../Assets/Data/Trekking.js';
 import expeditions from '../../Assets/Data/Expedition.js';
 import HeroSectionSub from '../SubComponent/HeroSection.js';
 import Footer from '../Footer/Footer.js';
-
+import ContactForm from '../InnerSub/ContactForm/ContactForm.js';
+import {AnimatePresence, motion} from 'framer-motion'
 export default function FinalLandingPage() {
     const [activeSection, setActiveSection] = useState(null);
     const navigate=useNavigate();
@@ -26,7 +27,7 @@ export default function FinalLandingPage() {
     const splitValue = location.pathname.split("/")
     const trekOrExpedition=decodeURIComponent(splitValue[1]);
     const campLocation=decodeURIComponent(splitValue[2]);
-
+    const [overlayActive,setOverlayActive]=useState(false)
     const finalLocation=decodeURIComponent(splitValue[3])
 
 
@@ -43,6 +44,10 @@ export default function FinalLandingPage() {
     const scrollToSection = (i) => {
       sectionsRef.current[i].scrollIntoView({ behavior: 'smooth' });
     };
+
+    const handleOverlay=()=>{
+      setOverlayActive(!overlayActive)
+    }
 
     useEffect(()=>{
       window.scrollTo(0,0)
@@ -93,11 +98,12 @@ export default function FinalLandingPage() {
        <Images sectionsRef={sectionsRef}/>
        <Reviews sectionsRef={sectionsRef}/>
        <div className='sticky bottom-10 flex justify-end mr-10 mb-10'>
-                <button className='bg-custom-yellow rounded hover:bg-custom-gold px-4 py-2 text-white'>Book Now</button>
+                <button className='bg-custom-yellow rounded hover:bg-custom-gold px-4 py-2 text-white' onClick={e=>{e.preventDefault();handleOverlay()}}>Book Now</button>
             </div>
         </div>
         
        </div>
+       <AnimatePresence>{overlayActive && <ContactForm setOverlayActive={setOverlayActive} overlayActive={overlayActive}/>}</AnimatePresence>
        <Footer/>
         </div>
     )
