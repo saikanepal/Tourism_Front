@@ -1,4 +1,3 @@
-import Image from "../../Assets/banner.png"
 import React, { useEffect, useRef } from 'react'
 import trekking from "../../Assets/Data/Trekking"
 import expeditions from "../../Assets/Data/Expedition"

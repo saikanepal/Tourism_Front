@@ -7,6 +7,7 @@ import SubComponent from "./Components//SubComponent/SubComponent.js";
 import FinalLandingPage from "./Components/Final Landing Page/FinalLandingPage.js";
 import Dashboard from "./Components/AdminPanel/Dashboard.js";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.js";
+import Gallery from "./Components/Gallery/Gallery.js";
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,9 @@ const AppRouter = () => {
         <Route path="/admintest" element={<Dashboard />} />
         <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
         <Route path="/expedition/:region/:place" element={<FinalLandingPage />} />
+
+        {/* Gallery Route  */}
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/*" element={<ErrorPage/>}/>
         {/* // Replace the component with the appropriate one */}
         {/*  */}
