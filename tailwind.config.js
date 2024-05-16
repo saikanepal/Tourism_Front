@@ -5,9 +5,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'jomolhari' : ['Jomolhari','serif'],
-        'Poppins' : ['Poppins','sans-serif']
-      
+        'jomolhari': ['Jomolhari', 'serif'],
+        'Poppins': ['Poppins', 'sans-serif']
+
       },
       backgroundImage: {
         "banner-1": "url('../src/Assets/banner.png')",
@@ -16,7 +16,7 @@ module.exports = {
       },
       colors: {
         'custom-yellow': '#ca8f30',
-        'custom-gold':'#F29C0F'
+        'custom-gold': '#F29C0F'
       }
     },
   },
