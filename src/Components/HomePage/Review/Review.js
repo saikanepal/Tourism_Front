@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReviewCard from "./ReviewCard";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
@@ -6,8 +6,35 @@ import "../Nav/Header.css";
 import trekkingData from "../../../Assets/Data/Trekking";
 
 import TrekkingDropdown from "./TrekkingDropdown";
+import useFetch from "../../../Hooks/useFetch";
 
 export default function Review() {
+  const { isLoading, error, sendRequest, onCloseError }=useFetch();
+  const [reviewData,setReviewData]=useState({
+    name:'',
+    personalRating:5,
+    description:'',
+    region:''
+  })
+
+  const handleSubmitReview=async(e)=>{
+    e.preventDefault();
+    try {
+      const responseData = await sendRequest(
+        '/review/posting',
+        'POST',
+        JSON.stringify(reviewData),
+        {
+          'Content-Type': 'application/json',
+        }
+
+      );
+      console.log(responseData);
+     
+    } catch (error) {
+      console.log(error.message || 'An error occurred during login');
+    }
+  }
   return (
     <>
       <h1
@@ -28,13 +55,14 @@ Skie font-semibold text-[#CA8F30] mt-12"
                 >
                   Write Reviews
                 </label>
-                <TrekkingDropdown data={trekkingData} className="" />
+                <TrekkingDropdown data={trekkingData} reviewData={reviewData} setReviewData={setReviewData} />
                 <input
                   type=""
                   name="name"
                   id="name"
                   className="bg-[#EDEDED] border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 border-none outline-none "
                   placeholder="Name"
+                  onChange={e=>{setReviewData(data=>{return {...data,name:e.target.value}});console.log(reviewData)}}
                   required
                 />
               </div>
@@ -44,6 +72,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
                 rows="2"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-[#EDEDED] rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 border-none outline-none"
                 placeholder="|"
+                onChange={e=>{setReviewData(data=>{return {...data,description:e.target.value}});console.log(reviewData)}}
               ></textarea>
 
               <div className="flex items-center mb-4 text-yellow-300">
@@ -97,6 +126,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
               <button
                 type="submit"
                 className=" flex  text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                onClick={handleSubmitReview}
               >
                 Submit{" "}
                 <IoIosArrowForward className="  ml-2 text-lg  font-bold" />
