@@ -20,6 +20,7 @@ export default function Review() {
   const handleSubmitReview=async(e)=>{
     e.preventDefault();
     try {
+      if(reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region){
       const responseData = await sendRequest(
         '/review/posting',
         'POST',
@@ -29,7 +30,12 @@ export default function Review() {
         }
 
       );
-      console.log(responseData);
+      if(responseData.name)
+        alert("Success")
+    }
+      else{
+        alert("Missing Params")
+      }
      
     } catch (error) {
       console.log(error.message || 'An error occurred during login');
@@ -133,7 +139,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
               </button>
             </form>
           </div>
-          <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full ">
+          <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full min-h-60">
             {" "}
             <ReviewCard />
           </div>

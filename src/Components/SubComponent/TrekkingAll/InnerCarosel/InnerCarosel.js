@@ -32,7 +32,7 @@ const InnerCarosel = ({imageCarosel}) => {
                         
                         variants={arrow2}  className=' grow flex justify-center items-end font-bold text-white pb-10 text-2xl'>{Object.keys(imageCarosel[1])[n]}</motion.p>
                         <motion.p 
-                        variants={arrow} className={`grow  text-white font-light transition-all duration-1000 eas`}>{i.description}</motion.p>
+                        variants={arrow} className={`grow  text-white font-light transition-all duration-1000 eas mx-20`}>{i.overview}</motion.p>
                        
               </motion.p>
                 </div>
