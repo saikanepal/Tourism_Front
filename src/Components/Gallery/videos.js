@@ -1,4 +1,4 @@
-const trekkingVideos = [
+const videos = [
     {
         videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         title: "Trekking in the Himalayas",
@@ -25,3 +25,5 @@ const trekkingVideos = [
         description: "Immerse yourself in the lush greenery and diverse wildlife of the Amazon rainforest."
     }
 ];
+
+export default videos
