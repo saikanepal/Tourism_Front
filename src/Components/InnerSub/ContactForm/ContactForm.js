@@ -1,5 +1,6 @@
 import React, { useState ,useRef,useEffect} from 'react';
 import {motion} from 'framer-motion'
+import useFetch from '../../../Hooks/useFetch';
 const ContactForm = ({setOverlayActive,overlayActive}) => {
   const contentRef = useRef(null);
     const [formData, setFormData] = useState({
@@ -8,7 +9,7 @@ const ContactForm = ({setOverlayActive,overlayActive}) => {
         country: '',
         contactNumber: '',
       });
-    
+    const { isLoading, error, sendRequest, onCloseError }=useFetch();
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -17,9 +18,24 @@ const ContactForm = ({setOverlayActive,overlayActive}) => {
         });
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(formData);
+        console.log(formData)
+        try {
+          const responseData = await sendRequest(
+            '/booking/postBookingDetail',
+            'POST',
+            JSON.stringify(formData),
+            {
+              'Content-Type': 'application/json',
+            }
+    
+          );
+          console.log(responseData);
+         
+        } catch (error) {
+          console.log(error.message || 'An error occurred during login');
+        }
       };
       const handleReset = () => {
         setFormData({
