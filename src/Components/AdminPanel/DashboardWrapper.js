@@ -7,8 +7,6 @@ import SharedNavbar from "./SharedNavbar";
 import { useNavigate } from "react-router-dom";
 
 const DashboardWrapper = ({ children }) => {
-
-
   return (
     <div className="flex relative">
       {/* For Side bar */}

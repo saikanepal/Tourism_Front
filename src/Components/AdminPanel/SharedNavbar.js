@@ -34,9 +34,9 @@ const SharedNavbar = () => {
       >
         <HiMenuAlt3
           size={26}
-          className="text-lg sm:text-xl md:text-2xl rounded-lg hover:text-[#ade9dc] transition duration-300 ease-in-out hover:p-2 " // Adjust icon size for different screen sizes
+          className="text-lg sm:text-xl md:text-2xl rounded-lg  transition duration-300 ease-in-out hover:p-2 font-Poppins" // Adjust icon size for different screen sizes
         />
-        <p className="text-lg sm:text-xl md:text-2xl rounded-lg hover:text-[#ade9dc] transition duration-300 ease-in-out hover:p-2 ">
+        <p className="text-lg sm:text-xl md:text-2xl rounded-lg  transition duration-300 ease-in-out hover:p-2  font-Poppins">
           Panel
         </p>
       </div>
