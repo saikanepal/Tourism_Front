@@ -16,6 +16,16 @@
     font-size: xx-large;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .learnButton {
+    font-size: medium;
+    width: 10rem;
+    padding: auto;
+  }
+  .heroText {
+    font-size: xx-large;
+  }
+}
 
 /* .scrollable-container {
   overflow: auto;

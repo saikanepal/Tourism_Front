@@ -69,7 +69,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
               <div>
                 <label
                   for="message"
-                  class="block mb-2 text-sm font-medium text-[#7F7F7F] font-jomolhari dark:text-white"
+                  className="block mb-2 text-sm font-medium text-[#7F7F7F] font-jomolhari dark:text-white"
                 >
                   Write Reviews
                 </label>

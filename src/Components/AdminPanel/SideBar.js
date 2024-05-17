@@ -29,14 +29,15 @@ const SideBar = () => {
     }
   };
   const menus = [
-    { name: "dashboard", link: "/dashboard", icon: MdOutlineDashboard },
-    { name: "Doctors", link: "/doctors", icon: FaUserDoctor },
-    { name: "AddPatient", link: "/addpatient", icon: HiUserAdd },
-    { name: "AddDoctor", link: "/adddoctor", icon: FaUserDoctor },
-    { name: "Appointments", link: "/appointments", icon: FaUserClock },
-    { name: "Profile", link: "/dashboard", icon: FaCircleUser },
-    { name: "Services", link: "/services", icon: MdMedicalServices },
-    { name: "Patients", link: "/patients", icon: FaUsersLine },
+    // { name: "dashboard", link: "/dashboard", icon: MdOutlineDashboard },
+    // { name: "Doctors", link: "/doctors", icon: FaUserDoctor },
+    // { name: "AddPatient", link: "/addpatient", icon: HiUserAdd },
+    // { name: "AddDoctor", link: "/adddoctor", icon: FaUserDoctor },
+    // { name: "Appointments", link: "/appointments", icon: FaUserClock },
+    // { name: "Profile", link: "/dashboard", icon: FaCircleUser },
+    // { name: "Services", link: "/services", icon: MdMedicalServices },
+    // { name: "Patients", link: "/patients", icon: FaUsersLine },
+    { name: "image", link: "/image", icon: FaUsersLine },
     {
       name: "Book Appointment",
       link: "/book-appointment",
@@ -51,7 +52,7 @@ const SideBar = () => {
         className={` 
           min-h-screen
           w-[180px] 
-          bg-[#0e0e0e]
+          bg-[#CA8F30]
           fixed
           top-0 
           left-0 
@@ -64,7 +65,7 @@ const SideBar = () => {
         `}
       >
         <div
-          className="py-3 flex justify-start text-gray-50 cursor-pointer"
+          className="py-3 flex justify-start text-white cursor-pointer font-Poppins"
           onClick={() => setOpen(!open)}
         >
           <HiMenuAlt3
@@ -74,7 +75,7 @@ const SideBar = () => {
           />
           <p className="ml-2 text-lg">Dashboard</p>
         </div>
-        <div className="mt-4 flex flex-col gap-4 relative text-[#70d8bd]">
+        <div className="mt-4 flex flex-col gap-4 relative text-white font-Poppins">
           {menus?.map((menu, i) => (
             <Link
               onClick={(e) => setOpen(false)}
@@ -98,7 +99,7 @@ const SideBar = () => {
               <h2
                 className={`${
                   open && "hidden"
-                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+                } absolute left-48  font-semibold whitespace-pre text-white  font-Poppins rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
               >
                 {menu?.name}
               </h2>
