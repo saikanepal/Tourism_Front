@@ -95,7 +95,7 @@ export default function FinalLandingPage() {
        <CostExcludes sectionsRef={sectionsRef} feedData={feedData[1].costExcludes}/>
        <FixedDates sectionsRef={sectionsRef}/>
        <GearsList sectionsRef={sectionsRef}/>
-       <Images sectionsRef={sectionsRef}/>
+       <Images sectionsRef={sectionsRef} feedData={feedData[1].photos}/>
        <Reviews sectionsRef={sectionsRef} feedData={feedData}/>
        <div className='sticky bottom-10 flex justify-end mr-10 mb-10'>
                 <button className='bg-custom-yellow rounded hover:bg-custom-gold px-4 py-2 text-white' onClick={e=>{e.preventDefault();handleOverlay()}}>Book Now</button>
