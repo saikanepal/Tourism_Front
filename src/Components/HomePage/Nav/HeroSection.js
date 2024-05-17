@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { PiMouseLeftClickDuotone } from "react-icons/pi";
 import "./CarouselArrow.css";
 import "./style.css";
+import imageData from "./imageData";
 import { IoIosArrowForward } from "react-icons/io";
 function CarouselItem(props) {
   return (
@@ -35,7 +36,7 @@ function CarouselItem(props) {
 function HeroSection() {
   return (
     <div>
-      <Carousel
+      {/* <Carousel
         // showThumbs={false}
         swipeable={true}
         // emulateTouch={true}
@@ -50,7 +51,7 @@ function HeroSection() {
         <CarouselItem banner=" bg-banner-1 Section_top1 h-screen" />
         <CarouselItem banner="bg-banner-2 Section_top2 h-screen " />
         <CarouselItem banner="bg-banner-3 Section_top3 h-screen " />
-      </Carousel>
+      </Carousel> */}
 
       {/* <div class="Section_top">
         <div class="content">
@@ -60,6 +61,32 @@ function HeroSection() {
           <a href="#">Welcome</a>
         </div>
       </div> */}
+
+      <div className="h-screen">
+        <Carousel
+          // showThumbs={false}
+          swipeable={true}
+          // emulateTouch={true}
+          showArrows={true}
+          showIndicators={false}
+          showStatus={false}
+          showThumbs={false}
+          interval={4000}
+          // infiniteLoop={true}
+          // autoPlay={true}
+        >
+          {Object.keys(imageData).map((key, index) => (
+            <div key={index}>
+              <img
+                src={imageData[key]}
+                alt={`Image ${index + 1}`}
+                className="h-screen"
+              />
+              <p className="relative text-red-600">Legend {index + 1}</p>
+            </div>
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 }

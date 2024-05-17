@@ -4,8 +4,9 @@ import HomePage from "./Components/HomePage/HomePage";
 
 import InnerSub from "./Components/InnerSub/InnerSub";
 import SubComponent from "./Components//SubComponent/SubComponent.js";
-import Admin from "./Components/HomePage/Admin/Admin.js";
-
+import FinalLandingPage from "./Components/Final Landing Page/FinalLandingPage.js";
+import Dashboard from "./Components/AdminPanel/Dashboard.js";
+import Image from "./Components/AdminPanel/Image.js";
 const AppRouter = () => {
   return (
     <Router>
@@ -18,7 +19,9 @@ const AppRouter = () => {
         {/* Replace the component with the appropriate one */}
         <Route path="/trekking/:region" element={<InnerSub />} />
         <Route path="/expedition/:region" element={<InnerSub />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/admintest" element={<Dashboard />} />
+        <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
+        <Route path="/image" element={<Image />} />
         {/* // Replace the component with the appropriate one */}
         {/*  */}
       </Routes>
