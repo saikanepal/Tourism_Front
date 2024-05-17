@@ -1,7 +1,9 @@
 .carousel.carousel-slider {
   overflow: inherit;
 }
-
+.carousel.slide {
+  text-align: left;
+}
 .carousel .control-next.control-arrow,
 .carousel .control-next.control-arrow:hover {
   background-color: transparent;

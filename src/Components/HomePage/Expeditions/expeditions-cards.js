@@ -1,8 +1,10 @@
 import React from 'react'
 import expeditionData from './data.js'
+import { useNavigate } from 'react-router-dom';
 
 
 const ExpeditionCard = () => {
+
     return (
         <div>
             <h1 className="text-center font-poppins font-bold text-4xl mb-8 ml-90 mt-10 text-yellow-400">Expeditions</h1>

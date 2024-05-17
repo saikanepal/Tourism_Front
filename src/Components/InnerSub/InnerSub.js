@@ -1,19 +1,23 @@
 import Image from "../../Assets/banner.png"
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import trekking from "../../Assets/Data/Trekking"
 import expeditions from "../../Assets/Data/Expedition"
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import InnerSubImage from "../../Assets/InnerSubImage.jpg"
 import { TbTrekking } from "react-icons/tb";
+import Header from "../HomePage/Nav/Header"
 
 const InnerSub = () => {
     const myRef = useRef(null)
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     const scrollToRef = (ref) => {
         if (ref && ref.current) {
             ref.current.scrollIntoView({ behavior: "smooth" })
         }
     }
-
+    const navigate=useNavigate()
     const location = useLocation();
     const splitValue = location.pathname.split("/")
 
@@ -22,8 +26,13 @@ const InnerSub = () => {
     const trekOrExpenditureCamp = trekOrExpenditureLocation[0][decodeURIComponent(splitValue[2])]
     const regionOrHeight = decodeURIComponent(splitValue[2])
 
+    const handleNextPage=(trek,data)=>{
+        navigate(`${location.pathname}/${data.data}`)
+        console.log(data.data)
+    }
     return (
         <>
+            <Header/>
             {/*DYNAMIC HERO SECTION  */}
             <div className="relative h-screen flex justify-center items-center">
                 <img
@@ -53,11 +62,11 @@ const InnerSub = () => {
             {/* IMAGES  */}
 
             <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
-                {Object.keys(trekOrExpenditureCamp).map(trek => (
+                {Object.values(trekOrExpenditureCamp).map((trek,i) => (
                     <>
-                        <div className="flex flex-col relative justify-center items-center">
-                            <img className="opacity-95 " src={Image || trek.photos} alt="Sunset in the mountains" />
-                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.values(trek)}</h1>
+                        <div className="flex flex-col relative justify-center items-center" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
+                            <img className="opacity-95 " src={ trek.photos} alt="Sunset in the mountains" />
+                            <h1 className="text-xl lg:text-3xl text-white absolute">{Object.keys(trekOrExpenditureCamp)[i]}</h1>
                         </div>
                     </>
                 ))}
