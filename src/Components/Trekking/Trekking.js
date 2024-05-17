@@ -4,7 +4,10 @@ import cardData from "./CardData/data";
 import trekking from "../../Assets/Data/Trekking";
 import { motion } from "framer-motion";
 import { FaAngleRight } from "react-icons/fa";
+
 const Trekking = () => {
+
+  
   return (
     <div className="flex justify-center">
       <div className="w-4/5 mx-0 items-center">
@@ -22,8 +25,9 @@ const Trekking = () => {
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2, duration: 1 }}
+              transition={{ duration: 1 }}
             >
+             
               <Card cardData={data} key={index} />
             </motion.div>
           ))}

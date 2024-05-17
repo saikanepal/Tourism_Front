@@ -6,7 +6,9 @@ import InnerSub from "./Components/InnerSub/InnerSub";
 import SubComponent from "./Components//SubComponent/SubComponent.js";
 import FinalLandingPage from "./Components/Final Landing Page/FinalLandingPage.js";
 import Dashboard from "./Components/AdminPanel/Dashboard.js";
+import ErrorPage from "./Components/ErrorPage/ErrorPage.js";
 import Image from "./Components/AdminPanel/Image.js";
+
 const AppRouter = () => {
   return (
     <Router>
@@ -21,6 +23,11 @@ const AppRouter = () => {
         <Route path="/expedition/:region" element={<InnerSub />} />
         <Route path="/admintest" element={<Dashboard />} />
         <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
+        <Route
+          path="/expedition/:region/:place"
+          element={<FinalLandingPage />}
+        />
+        <Route path="/*" element={<ErrorPage />} />
         <Route path="/image" element={<Image />} />
         {/* // Replace the component with the appropriate one */}
         {/*  */}
