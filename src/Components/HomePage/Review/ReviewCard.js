@@ -13,7 +13,7 @@ function StarRating({ count }) {
   return <div className="flex my-2">{stars}</div>;
 }
 
-function ReviewCard({from,page,perPage}) {
+function ReviewCard({from,page,perPage,setNoComment}) {
   const { isLoading, error, sendRequest, onCloseError }=useFetch();
   const [reviewData,setReviewData]=useState([])
 
@@ -47,8 +47,11 @@ function ReviewCard({from,page,perPage}) {
         }
 
       );
-     
-      setReviewData(responseData)
+     if(responseData.length===0){
+      setNoComment(true)
+     }
+      setReviewData([...reviewData,...responseData])
+      
       console.log(responseData,"review")
      
     } catch (error) {

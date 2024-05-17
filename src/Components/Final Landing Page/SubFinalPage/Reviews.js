@@ -7,6 +7,7 @@ const Reviews = ({sectionsRef,feedData}) => {
     perPage:4
   }
   )
+  const [noComment,setNoComment]=useState(false)
   return (
     <div id='section-9' className='flex justify-center mt-10 lg:w-3/4' ref={(section) => (sectionsRef.current[8] = section)}>
        <div className='w-4/5'>
@@ -14,13 +15,10 @@ const Reviews = ({sectionsRef,feedData}) => {
             <h2 className='flex items-center mb-5'><div className='w-5 h-5 bg-custom-gold rounded-3xl mr-2'></div><p className='text-2xl font-bold text-black'>Reviews</p></h2>
             <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full min-h-60 ">
             {" "}
-            <ReviewCard from={feedData[0]} page={currentIndex.page} perPage={currentIndex.perPage}/>
+            <ReviewCard from={feedData[0]} page={currentIndex.page} perPage={currentIndex.perPage} setNoComment={setNoComment}/>
+            {noComment?'':<div className='flex items-center'><div className='bg-black text-white rounded px-4 py-1 cursor-pointer' onClick={()=>setCurrentIndex({...currentIndex,page:parseInt(currentIndex.page)+1})}>Next</div></div>}
           </div>
-          <div className='flex gap-5 mt-3'>
-              {currentIndex.page>=2 && <div className='bg-black text-white rounded px-4 py-1 cursor-pointer' onClick={()=>setCurrentIndex({...currentIndex,page:currentIndex.page-1})}>Prev</div>}
-              <input type='number' onChange={e=>setCurrentIndex({...currentIndex,page:e.target.value})} value={currentIndex.page||''} placeholder='Page No' className='text-center border-2 rounded border-black'/>
-              <div className='bg-black text-white rounded px-4 py-1 cursor-pointer' onClick={()=>setCurrentIndex({...currentIndex,page:parseInt(currentIndex.page)+1})}>Next</div>
-            </div>
+          
             </div>
        </div>
     </div>
