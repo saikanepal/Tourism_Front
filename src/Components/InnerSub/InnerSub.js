@@ -61,11 +61,18 @@ const InnerSub = () => {
 
             {/* IMAGES  */}
 
-            <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
+            <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
                 {Object.values(trekOrExpenditureCamp).map((trek,i) => (
                     <>
                         <div className="flex flex-col relative justify-center items-center" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
-                            <img className="opacity-95 " src={ trek.photos} alt="Sunset in the mountains" />
+                        <div className="overflow-hidden relative" style={{ width: '660px', height: '336px' }}>
+      <img 
+       src={trek.photos[0]}
+       alt="Sunset in the mountains"
+        className="w-full h-full object-cover object-center opacity-95"
+      />
+    </div>
+                            
                             <h1 className="text-xl lg:text-3xl text-white absolute">{Object.keys(trekOrExpenditureCamp)[i]}</h1>
                         </div>
                     </>
