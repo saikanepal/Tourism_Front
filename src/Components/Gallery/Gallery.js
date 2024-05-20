@@ -8,6 +8,8 @@ import Header from "../HomePage/Nav/Header";
 import useFetch from "../../Hooks/useFetch";
 import { IoImagesSharp } from "react-icons/io5";
 import { BiSolidVideos } from "react-icons/bi";
+import ImageComponent from "./ImageComponent";
+import VideoComponent from "./VideoComponent";
 
 
 
@@ -83,44 +85,11 @@ const Gallery = () => {
 
         {/* Images  */}
 
-        {/* Replace gallery data with state varaible and reconstuct mapping  */}
         {!isChecked
           ?
-
-          <div className="max-h-[1100px] sm:max-h-[1150px] overflow-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 justify-center items-start mb-10">
-              {images.map(data => (
-                <div key={data.regionName} className="flex flex-col justify-center items-start">
-                  <img
-                    className="opacity-95 rounded-lg w-[368px] h-[400px]"
-                    src={data.imageURL}
-                    alt={data.regionName}
-                  />
-                  <h1 className="text-xl lg:text-3xl mt-4 font-bold text-[#FFB133]">
-                    {data.regionName}
-                  </h1>
-                  <p className="text-[#939393] mt-5 mb-10">{data.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ImageComponent data={images} />
           :
-          <div className="max-h-[1100px] sm:max-h-[1150px] overflow-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 justify-center items-start mb-10">
-              {videos.map(video => (
-                <div key={video.title} className="flex flex-col justify-center items-start">
-                  <video className="w-[368px] h-[400px] rounded-lg" controls>
-                    <source src={video.videoURL} type="video/mp4" />
-                  </video>
-                  <h1 className="text-xl lg:text-3xl mt-4 font-bold text-[#FFB133]">
-                    {video.title}
-                  </h1>
-                  <p className="text-[#939393] mt-5 mb-10">{video.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
+          <VideoComponent data={videos} />
         }
       </div>
       <Footer />

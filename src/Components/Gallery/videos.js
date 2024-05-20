@@ -1,28 +1,28 @@
 const videos = [
     {
-        videoURL: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-        title: "Trekking in the Himalayas",
-        description: "Join us on an adventure through the breathtaking landscapes of the Himalayas."
+        videoURL: "https://www.youtube.com/watch?v=XYwP-QndGG0",
+        title: "Hiking in the Grand Canyon",
+        description: "Embark on a journey through the majestic Grand Canyon and witness its awe-inspiring beauty."
     },
     {
-        videoURL: "https://www.youtube.com/watch?v=oHg5SJYRHA0",
-        title: "Exploring the Andes",
-        description: "Embark on a journey through the majestic peaks and valleys of the Andes mountains."
+        videoURL: "https://www.youtube.com/watch?v=_ySLgeM3pNE",
+        title: "Cycling in the French Alps",
+        description: "Ride through picturesque landscapes and challenging mountain passes in the French Alps."
     },
     {
-        videoURL: "https://www.youtube.com/watch?v=yPYZpwSpKmA",
-        title: "Hiking in the Rockies",
-        description: "Experience the beauty of the Rocky Mountains as we hike through its rugged terrain."
+        videoURL: "https://www.youtube.com/watch?v=iRKkLk1vYf8",
+        title: "Kayaking in New Zealand",
+        description: "Paddle through pristine waters and explore the stunning coastlines of New Zealand by kayak."
     },
     {
-        videoURL: "https://www.youtube.com/watch?v=HHgrDWKhI4I",
-        title: "Trekking in the Alps",
-        description: "Discover the charm of the Alps as we trek through its picturesque villages and alpine meadows."
+        videoURL: "https://www.youtube.com/watch?v=o8iKiWqMERw",
+        title: "Rock Climbing in Yosemite",
+        description: "Scale towering cliffs and conquer challenging routes in the legendary climbing destination of Yosemite."
     },
     {
-        videoURL: "https://www.youtube.com/watch?v=ub82Xb1C8os",
-        title: "Jungle Trek in the Amazon",
-        description: "Immerse yourself in the lush greenery and diverse wildlife of the Amazon rainforest."
+        videoURL: "https://www.youtube.com/watch?v=us4ApEbR_ZQ",
+        title: "Sailing the Greek Islands",
+        description: "Set sail on a voyage through the azure waters of the Greek Islands and discover hidden coves and ancient ruins."
     }
 ];
 
