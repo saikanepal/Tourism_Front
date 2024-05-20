@@ -11,11 +11,11 @@ const trekking = {
                     "costExcludes": ["Flights to and from Lukla", "Personal trekking gear", "Tips for guides and porters"],
                     "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
                     "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
-                    "photos": [annapurna1],
+                    "photos": [annapurna1, annapurna1],
                     "videos": ["URL to video"],
                     "reviews": ["Customer reviews and testimonials"],
                     "description": "Detailed description of the trek",
-                    "itinerary":["ABC","XYZ"]
+                    "itinerary":["ABC","XYZ","123"]
                 },
                 "Gokyo Valley Trek": {
                     "overview": "The Gokyo Valley Trek is a scenic trek in the Everest region, known for its stunning glacial lakes and breathtaking views of the Himalayan peaks.",
