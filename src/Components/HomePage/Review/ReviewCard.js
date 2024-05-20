@@ -5,6 +5,7 @@ import data from "./data";
 import useFetch from "../../../Hooks/useFetch";
 import { useState } from "react";
 
+import FaceIcon from "./FaceIcon";
 function StarRating({ count }) {
   const stars = Array.from({ length: count }, (_, index) => (
     <FaStar key={index} style={{ color: "gold" }} />
@@ -75,12 +76,12 @@ function ReviewCard({from,page,perPage,setNoComment}) {
         >
           <figure className=" w-screen   px-2 lg:w-72  lg:mr-4  bg-[#F5F5F5] border-gray-200 rounded-lg shadow sm:p-4 md:p-6 h-full bg-gradient-to-t from-[#F7F7F7] to-[#FFFFFF] sm:py-0 md:py-0 ">
             <div className=" flex  space-x-3 rtl:space-x-reverse m-0 p-0">
-              <img
+              {/* <img
                 className="w-16 h-16 rounded-full"
                 src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
                 alt="profile picture"
-              />
-
+              /> */}
+              <FaceIcon rating={person?.personalRating}/>
               <div className="  ">
                 <h1 className="pe-3 font-[600] text-[16px] lg:text-[24px] font-Skie text-[#CA8F30]">
                   {" "}
@@ -92,7 +93,7 @@ function ReviewCard({from,page,perPage,setNoComment}) {
 
                 <p className="flex px-auto items-center">
                   <FaLocationDot className=" text-yellow-300" />{" "}
-                  <span className="mx-2 text-sm"> {person?.rating?.region || from }</span>
+                  <span className="mx-2 text-sm text-black"> {person?.rating?.region || from }</span>
                 </p>
               </div>
             </div>
