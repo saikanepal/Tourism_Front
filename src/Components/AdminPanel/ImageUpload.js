@@ -1,54 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useImage } from "../../Hooks/useImage";
+
 const ImageUploadForm = () => {
   const { uploadImage } = useImage();
   const [file, setFile] = useState("");
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
 
+  // Refs for file inputs
+  const fileInputRefs = useRef([]);
+
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
 
-  // const handleImageChange = (e, imageIndex) => {
-  //   // const fileList = e.target.files;
-  //   // const imageFiles = Array.from(fileList);
-  //   const file = e.target.files[0];
-  //   setFile(file);
-  //   setImages((prevImages) => {
-  //     const updatedImages = [...prevImages];
-  //     updatedImages.push(file);
-  //     setImages(updatedImages);
-  //     console.log(images);
-  //   });
-  // };
-  const handleImageChange = (e) => {
+  const handleImageChange = (e, index) => {
     const file = e.target.files[0];
-    setImages((prevImages) => [...prevImages, file]);
-  };
-
-  const handleRemoveImage = (imageIndex) => {
     setImages((prevImages) => {
       const updatedImages = [...prevImages];
-      updatedImages[imageIndex] = null;
+      updatedImages[index] = file;
       return updatedImages;
     });
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
+  const handleRemoveImage = (index) => {
+    setImages((prevImages) => {
+      const updatedImages = [...prevImages];
+      updatedImages[index] = null;
+      return updatedImages.filter((image) => image !== null); // Remove null values
+    });
 
-  //   const image = uploadImage(file);
-  //   console.log(image);
-  //   // Handle form submission (upload images and description)
-  //   console.log("Description:", description);
-  //   console.log("Images:", images);
-  //   setImages("");
-  //   setDescription("");
+    // Reset the corresponding file input field
+    if (fileInputRefs.current[index]) {
+      fileInputRefs.current[index].value = "";
+    }
+  };
 
-  //   // You can add your logic to upload the description and images here
-  // };
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -72,6 +60,7 @@ const ImageUploadForm = () => {
       );
       console.log("Response:", response.data);
       setDescription("");
+      setImages([]);
     } catch (error) {
       console.error("Error uploading description:", error);
     }
@@ -98,7 +87,7 @@ const ImageUploadForm = () => {
           placeholder="Enter description"
           value={description}
           onChange={handleDescriptionChange}
-          required
+          // required
         />
       </div>
       {[1, 2, 3].map((index) => (
@@ -115,16 +104,16 @@ const ImageUploadForm = () => {
             accept="image/*"
             className="hidden"
             onChange={(e) => handleImageChange(e, index - 1)}
-            required
+            ref={(el) => (fileInputRefs.current[index - 1] = el)} // Assign ref
           />
           {images[index - 1] ? (
-            <div className="flex justify-between `bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  w-full p-2.5 cursor-pointer dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <div className="flex justify-between bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 cursor-pointer dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
               <p className="text-gray-600 text-sm mr-2">
                 {images[index - 1].name}
               </p>
               <button
                 type="button"
-                className="text-red-500 "
+                className="text-red-500"
                 onClick={() => handleRemoveImage(index - 1)}
               >
                 Remove

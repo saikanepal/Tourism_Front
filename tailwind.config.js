@@ -16,7 +16,7 @@ module.exports = {
     },
   },
   plugins: [
-    function({ addUtilities }) {
+    function ({ addUtilities }) {
       addUtilities({
         '.no-scrollbar': {
           '-ms-overflow-style': 'none',  // IE and Edge
