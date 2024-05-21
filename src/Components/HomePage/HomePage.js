@@ -10,7 +10,7 @@ import Review from "./Review/Review";
 export default function HomePage() {
   return (
     <div className="font-Poppins text-gray-800">
-      <HeroSection />
+      {/* <HeroSection /> */}
       <Header />
       <DiscoverSection />
       <Expedition />

@@ -1,11 +1,17 @@
 import React from 'react'
 import Caroussel from '../Carousel/Carousel'
 import { useNavigate } from 'react-router-dom'
+import {animate, motion} from 'framer-motion';
+import { FaAngleRight } from "react-icons/fa6";
 const Card = ({cardData,trekking}) => {
     const navigate=useNavigate()
    const description=Object.values(cardData[1])[0].overview
    const handleClick=(cardData)=>{
     navigate(`/trekking/${cardData[0]}`)
+  }
+  const animateArrow={
+    initial:{x:0},
+    animate:{x:10}
   }
   return (
     <div>
@@ -15,7 +21,7 @@ const Card = ({cardData,trekking}) => {
             <div className=' h-full gap-10 flex flex-col'>
             <div className=''>{description}</div>
             <div className='flex justify-center mr-0 lg:mr-16'>
-                <button className='text-base border border-solid border-custom-yellow rounded-3xl px-4 py-2 text-custom-yellow hover:bg-custom-yellow hover:text-white transition duration-300 ease-in-out' onClick={e=>{e.preventDefault();handleClick(cardData)}}>Learn More</button>
+                <motion.button initial='initial' whileHover='animate' className='flex items-center text-base border border-solid border-custom-yellow rounded-3xl px-4  py-2 text-custom-yellow hover:bg-custom-yellow hover:text-white transition duration-300 ease-in-out' onClick={e=>{e.preventDefault();handleClick(cardData)}}><div>Learn More</div><motion.div variants={animateArrow}><FaAngleRight/></motion.div></motion.button>
             </div>
             </div>
         </div>

@@ -4,6 +4,7 @@ import expeditions from "../../Assets/Data/Expedition"
 import { useLocation, useNavigate } from "react-router-dom"
 import InnerSubImage from "../../Assets/InnerSubImage.jpg"
 import { TbTrekking } from "react-icons/tb";
+import {AnimatePresence, motion} from 'framer-motion'
 import Header from "../HomePage/Nav/Header"
 
 const InnerSub = () => {
@@ -47,9 +48,11 @@ const InnerSub = () => {
                     </div>
                     <p className="text-[#FFB133] font-bold text-3xl sm:text-5xl mt-4">{regionOrHeight}</p>
                     <h1 className="mt-8 opacity-70">Embark on an unforgettable journey through Nepal, where every experience is a treasure.</h1>
-                    <button onClick={() => scrollToRef(myRef)} className="border-[#CA8F30] mt-8 font-semibold flex justify-center items-center border-2 border-solid text-[#CA8F30] hover:bg-[#CA8F30] hover:text-white rounded-md mx-auto py-1 px-10">
+                    <AnimatePresence>
+                    <motion.button whileHover={{scale:[1,1.1]}} transition={{yoyo: Infinity, duration:0.5}} onClick={() => scrollToRef(myRef)} className="border-[#CA8F30] mt-8 font-semibold flex justify-center items-center border-2 border-solid text-[#CA8F30] hover:bg-[#CA8F30] hover:text-white rounded-md mx-auto py-1 px-10">
                         Explore Now
-                    </button>
+                    </motion.button>
+                    </AnimatePresence>
                 </div>
             </div>
 
