@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <div
-      className={`shadow-md z-10 w-full fixed top-0 left-0 bg-gray-400 bg-opacity-30 `}
+      className={`shadow-md z-20 w-full fixed top-0 left-0 bg-gray-400 bg-opacity-30 `}
     >
       <div
         className={`  flex justify-center

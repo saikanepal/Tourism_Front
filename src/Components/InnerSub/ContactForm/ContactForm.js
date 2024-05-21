@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
-
-const ContactForm = () => {
-
+import React, { useState ,useRef,useEffect} from 'react';
+import {motion} from 'framer-motion'
+import useFetch from '../../../Hooks/useFetch';
+const ContactForm = ({setOverlayActive,overlayActive}) => {
+  const contentRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         country: '',
         contactNumber: '',
       });
-    
+    const { isLoading, error, sendRequest, onCloseError }=useFetch();
       const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -17,9 +18,24 @@ const ContactForm = () => {
         });
       };
     
-      const handleSubmit = (e) => {
+      const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(formData);
+        console.log(formData)
+        try {
+          const responseData = await sendRequest(
+            '/booking/postBookingDetail',
+            'POST',
+            JSON.stringify(formData),
+            {
+              'Content-Type': 'application/json',
+            }
+    
+          );
+          console.log(responseData);
+         
+        } catch (error) {
+          console.log(error.message || 'An error occurred during login');
+        }
       };
       const handleReset = () => {
         setFormData({
@@ -33,11 +49,27 @@ const ContactForm = () => {
         });
       };
       
-      
+      const closeOverlay = (e) => {
+        if (contentRef.current && !contentRef.current.contains(e.target)) {
+          setOverlayActive(false);
+        }
+      };
+      useEffect(() => {
+        if (overlayActive) {
+          document.addEventListener('mousedown', closeOverlay);
+        } else {
+          document.removeEventListener('mousedown', closeOverlay);
+        }
+    
+        return () => {
+          document.removeEventListener('mousedown', closeOverlay);
+        };
+      }, [overlayActive]);
 
 
     return (
-        <div style={{ maxWidth: '1000px', width: '100%', maxHeight: '100%', height: '100%' }} className="mx-auto bg-gradient-to-tr from-slate-400 to-slate-900 p-10">
+      <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className='fixed overflow-hidden z-20 w-full top-0 bg-black bg-opacity-50  h-screen'>
+        <motion.div initial={{y:-400}} animate={{y:0}} exit={{y:400}} style={{ maxWidth: '1000px', width: '100%', maxHeight: '100%', height: '100%' }} ref={contentRef} className="rounded-xl relative mx-auto bg-gradient-to-tr from-slate-400 to-slate-900 p-10 lg:mt-10 h-32 overflow-scroll no-scrollbar">
 <div className="flex items-center mb-8">
   <svg width="25" height="50" className="ml-n6 ">
     <ellipse cx="10" cy="25" rx="10" ry="10" fill="#F29C0F" />
@@ -187,8 +219,10 @@ const ContactForm = () => {
 
 
         </form>
-      </div>
+        <div className='absolute top-3 text-white z-20 right-3' onClick={()=>{setOverlayActive(!overlayActive)}}>Back</div>
+      </motion.div>
       
+      </motion.div>
 
   );
     }

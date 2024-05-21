@@ -18,7 +18,8 @@ import trekking from '../../Assets/Data/Trekking.js';
 import expeditions from '../../Assets/Data/Expedition.js';
 import HeroSectionSub from '../SubComponent/HeroSection.js';
 import Footer from '../Footer/Footer.js';
-
+import ContactForm from '../InnerSub/ContactForm/ContactForm.js';
+import {AnimatePresence, motion} from 'framer-motion'
 export default function FinalLandingPage() {
     const [activeSection, setActiveSection] = useState(null);
     const navigate=useNavigate();
@@ -26,7 +27,7 @@ export default function FinalLandingPage() {
     const splitValue = location.pathname.split("/")
     const trekOrExpedition=decodeURIComponent(splitValue[1]);
     const campLocation=decodeURIComponent(splitValue[2]);
-
+    const [overlayActive,setOverlayActive]=useState(false)
     const finalLocation=decodeURIComponent(splitValue[3])
 
 
@@ -43,6 +44,10 @@ export default function FinalLandingPage() {
     const scrollToSection = (i) => {
       sectionsRef.current[i].scrollIntoView({ behavior: 'smooth' });
     };
+
+    const handleOverlay=()=>{
+      setOverlayActive(!overlayActive)
+    }
 
     useEffect(()=>{
       window.scrollTo(0,0)
@@ -84,20 +89,21 @@ export default function FinalLandingPage() {
         <div className='w-full mt-16'>
         
        <Overview sectionsRef={sectionsRef} feedData={feedData || 'Data Not Found'}/>
-       <Itinerary sectionsRef={sectionsRef}/>
-       <RouteMap sectionsRef={sectionsRef}/>
-       <CostIncludes sectionsRef={sectionsRef}/>
-       <CostExcludes sectionsRef={sectionsRef}/>
+       <Itinerary sectionsRef={sectionsRef} feedData={feedData||null}/>
+       <RouteMap sectionsRef={sectionsRef} feedData={feedData[1].map || "Location Not Found"}/>
+       <CostIncludes sectionsRef={sectionsRef} feedData={feedData[1].costIncludes}/>
+       <CostExcludes sectionsRef={sectionsRef} feedData={feedData[1].costExcludes}/>
        <FixedDates sectionsRef={sectionsRef}/>
        <GearsList sectionsRef={sectionsRef}/>
-       <Images sectionsRef={sectionsRef}/>
-       <Reviews sectionsRef={sectionsRef}/>
+       <Images sectionsRef={sectionsRef} feedData={feedData[1].photos}/>
+       <Reviews sectionsRef={sectionsRef} feedData={feedData}/>
        <div className='sticky bottom-10 flex justify-end mr-10 mb-10'>
-                <button className='bg-custom-yellow rounded hover:bg-custom-gold px-4 py-2 text-white'>Book Now</button>
+                <button className='bg-custom-yellow rounded hover:bg-custom-gold px-4 py-2 text-white' onClick={e=>{e.preventDefault();handleOverlay()}}>Book Now</button>
             </div>
         </div>
         
        </div>
+       <AnimatePresence>{overlayActive && <ContactForm setOverlayActive={setOverlayActive} overlayActive={overlayActive}/>}</AnimatePresence>
        <Footer/>
         </div>
     )

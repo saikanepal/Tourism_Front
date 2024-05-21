@@ -8,6 +8,7 @@ import FinalLandingPage from "./Components/Final Landing Page/FinalLandingPage.j
 import Dashboard from "./Components/AdminPanel/Dashboard.js";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.js";
 import Gallery from "./Components/Gallery/Gallery.js";
+import Image from "./Components/AdminPanel/Image.js";
 
 const AppRouter = () => {
   return (
@@ -24,10 +25,7 @@ const AppRouter = () => {
         <Route path="/admintest" element={<Dashboard />} />
         <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
         <Route path="/expedition/:region/:place" element={<FinalLandingPage />} />
-
-        {/* Gallery Route  */}
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/*" element={<ErrorPage/>}/>
+        <Route path="/*" element={<ErrorPage />} />
         {/* // Replace the component with the appropriate one */}
         {/*  */}
       </Routes>

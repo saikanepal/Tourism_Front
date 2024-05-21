@@ -40,3 +40,40 @@
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
+.carousel .slide {
+  transition: transform 1s ease-in-out !important; /* Change the transition duration and easing function */
+}
+
+/* .carousel .slide.selected {
+  animation: custom-slide-animation 1s ease-in-out forwards;
+} */
+
+/* @keyframes custom-slide-animation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+} */
+/* .carousel-container {
+  position: relative;
+} */
+
+/* .carousel-container .carousel .control-arrow {
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: red;
+}
+
+.carousel-container:hover .carousel .control-arrow {
+  opacity: 1;
+} */
+.carousel-container .carousel .control-arrow {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-container:hover .carousel .control-arrow {
+  opacity: 1;
+}

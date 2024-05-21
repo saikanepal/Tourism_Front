@@ -3,15 +3,17 @@ import { Link } from 'react-router-dom'
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
+import mountain from './footer2.svg'
 
 const Footer = () => {
     return (
         <div>
             <footer className="bg-[#AD7820]">
                 <div className="container w-4/5 px-6 py-10 sm:py-16 mx-auto">
-                    <div className="grid grid-cols-2 gap-y-10 gap-x-10 md:grid-cols-5 sm:grid-cols-2">
+                    <div className="grid grid-cols-2 gap-y-10 gap-x-10 sm:grid-cols-5">
                         <div className="sm:col-span-2">
-                            <h1 className="max-w-lg text-2xl font-semibold tracking-tight text-[#383838] md:text-4xl">Logo</h1>
+                            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-[#383838] xl:text-2xl">Logo</h1>
+
                         </div>
 
                         {/* QUICK LINKS  */}
