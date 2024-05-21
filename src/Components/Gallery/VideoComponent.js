@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 const VideoComponent = ({ data: videos }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const iframeRef = useRef(null);
+    const [modalOpenIndex, setModalOpenIndex] = useState(null);
 
     function getYoutubeEmbedAndThumbnail(url) {
         const regExp = /^(?:(?:https?:)?\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -10,9 +11,9 @@ const VideoComponent = ({ data: videos }) => {
         const match = url.match(regExp);
         if (match && match[1]) {
             const videoId = match[1];
-            const embedCode = `https://www.youtube.com/embed/${videoId}`;
+            const youtubeUrl = `https://www.youtube.com/embed/${videoId}`;
             const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-            return { embedCode, thumbnailUrl };
+            return { youtubeUrl, thumbnailUrl };
         } else {
             return { error: 'Invalid YouTube URL' };
         }
@@ -44,27 +45,24 @@ const VideoComponent = ({ data: videos }) => {
 
     return (
         <div className="relative font-inter antialiased">
-            <main className="relative min-h-screen grid grid-cols-3 justify-center bg-slate-50 overflow-hidden">
-                {videos.map((video) => {
-                    const { embedCode, thumbnailUrl } = getYoutubeEmbedAndThumbnail(video.videoURL);
-                    console.log(embedCode, thumbnailUrl)
+            <main className="relative grid grid-cols-1 gap-x-5 lg:grid-cols-2 xl:grid-cols-3 justify-center items-start mb-10 bg-slate-50 overflow-hidden">
+                {videos.map((video, index) => {
+                    const { youtubeUrl, thumbnailUrl } = getYoutubeEmbedAndThumbnail(video.videoURL);
                     return (
-                        <div div className="w-full max-w-6xl mx-auto px-4 md:px-6 py-2" >
+                        <div className="w-full mx-auto px-4 md:px-6 py-2" key={index}>
                             <div className="flex justify-center">
-
                                 {/* Modal video component */}
                                 <div>
                                     {/* Video thumbnail */}
                                     <button
                                         className="relative flex justify-center items-center focus:outline-none focus-visible:ring focus-visible:ring-indigo-300 rounded-3xl group"
-                                        onClick={() => setModalOpen(true)}
+                                        onClick={() => setModalOpenIndex(index)}
                                         aria-controls="modal"
                                         aria-label="Watch the video"
                                     >
                                         <img
-                                            className="rounded-xl w-full h-[200px]"
+                                            className="rounded-xl w-full"
                                             src={thumbnailUrl}
-
                                             alt="Modal video thumbnail"
                                         />
                                         {/* Play icon */}
@@ -84,16 +82,16 @@ const VideoComponent = ({ data: videos }) => {
                                     {/* End: Video thumbnail */}
 
                                     {/* Modal backdrop */}
-                                    {modalOpen && (
+                                    {modalOpenIndex === index && (
                                         <div
-                                            className="fixed inset-0 z-[99999] bg-black bg-opacity-50 transition-opacity"
-                                            onClick={() => setModalOpen(false)}
+                                            className="fixed inset-0 z-[99999] bg-black transition-opacity"
+                                            onClick={() => setModalOpenIndex(null)}
                                             aria-hidden="true"
                                         ></div>
                                     )}
                                     {/* End: Modal backdrop */}
                                     <div className="mt-6">
-                                        <h1 className="text-xl lg:text-2xl mt-4 font-bold text-[#FFB133]">
+                                        <h1 className="text-2xl mt-4 font-bold text-[#FFB133]">
                                             {video.title}
                                         </h1>
                                         <p className="text-[#939393] mt-5 mb-10">
@@ -101,27 +99,25 @@ const VideoComponent = ({ data: videos }) => {
                                         </p>
                                     </div>
                                     {/* Modal dialog */}
-                                    {modalOpen && (
+                                    {modalOpenIndex === index && (
                                         <div
                                             id="modal"
                                             className="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6"
                                             role="dialog"
                                             aria-modal="true"
-                                            onClick={() => setModalOpen(false)}
+                                            onClick={() => setModalOpenIndex(null)}
                                         >
                                             <div
-                                                className="max-w-5xl mx-auto h-full flex items-center"
+                                                className="max-w-5xl mx-auto flex items-center"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <div
-                                                    className="w-full relative max-h-full py-10 h-screen flex justify-center items-center aspect-video bg-black"
+                                                    className="lg:w-full relative py-10 w-full h-[50%] lg:h-screen flex justify-center items-center aspect-video bg-black"
                                                 >
                                                     <iframe
-                                                        ref={iframeRef}
                                                         className="absolute rounded-3xl mx-10 w-full h-screen"
-                                                        src={embedCode}
+                                                        src={youtubeUrl}
                                                         title="YouTube video player"
-
                                                     ></iframe>
                                                 </div>
                                             </div>
@@ -130,11 +126,10 @@ const VideoComponent = ({ data: videos }) => {
                                     {/* End: Modal dialog */}
                                 </div>
                                 {/* End: Modal video component */}
-
                             </div>
                         </div>
-                    )
-                })}
+                    );
+                })};
 
             </main >
         </div >

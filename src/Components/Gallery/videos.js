@@ -20,10 +20,15 @@ const videos = [
         description: "Scale towering cliffs and conquer challenging routes in the legendary climbing destination of Yosemite."
     },
     {
-        videoURL: "https://www.youtube.com/watch?v=us4ApEbR_ZQ",
-        title: "Sailing the Greek Islands",
-        description: "Set sail on a voyage through the azure waters of the Greek Islands and discover hidden coves and ancient ruins."
-    }
+        videoURL: "https://www.youtube.com/watch?v=N2P7w22tN9c",
+        title: "Rock Climbing in Yosemite",
+        description: "Scale towering cliffs and conquer challenging routes in the legendary climbing destination of Yosemite."
+    },
+    {
+        videoURL: "https://www.youtube.com/watch?v=9hItAj4I9do",
+        title: "Eklai huda ta jhan",
+        description: "A song by phosphenes."
+    },
 ];
 
 export default videos

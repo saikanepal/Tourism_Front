@@ -65,7 +65,7 @@ const Gallery = () => {
         <div className="flex items-center ">
           <div className="flex-1 flex gap-5 items-center text-[#FFB133]">
             <FaCircle />
-            <h1 className="font-bold text-4xl my-14">
+            <h1 className="font-bold text-2xl sm:text-4xl my-14">
               Journey through captivating moments.
             </h1>
           </div>
