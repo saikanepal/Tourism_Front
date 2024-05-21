@@ -56,3 +56,24 @@
     transform: translateX(0);
   }
 } */
+/* .carousel-container {
+  position: relative;
+} */
+
+/* .carousel-container .carousel .control-arrow {
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: red;
+}
+
+.carousel-container:hover .carousel .control-arrow {
+  opacity: 1;
+} */
+.carousel-container .carousel .control-arrow {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-container:hover .carousel .control-arrow {
+  opacity: 1;
+}
