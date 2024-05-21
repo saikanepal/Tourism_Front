@@ -9,18 +9,20 @@ const Card = ({cardData,trekking}) => {
   }
   return (
     <div>
-        <div className='flex justify-between text-lg font-light mb-10 min-h-96 mt-10 items-center flex-col sm:flex-col lg:flex-row'>
-        <div className=' space-y-16'>
-            <div className='text-4xl font-light '>{cardData[0]}</div>
-            <div className='mr-0 lg:mr-16'>{description}</div>
+        <div className='flex justify-between text-lg font-light mb-10 min-h-96 mt-10  flex-col sm:flex-col lg:flex-row gap-32'>
+        <div className='w-[50%] '>
+            <div className='text-4xl font-light h-1/3 py-3'>{cardData[0]}</div>
+            <div className=' h-full gap-10 flex flex-col'>
+            <div className=''>{description}</div>
             <div className='flex justify-center mr-0 lg:mr-16'>
                 <button className='text-base border border-solid border-custom-yellow rounded-3xl px-4 py-2 text-custom-yellow hover:bg-custom-yellow hover:text-white transition duration-300 ease-in-out' onClick={e=>{e.preventDefault();handleClick(cardData)}}>Learn More</button>
             </div>
+            </div>
         </div>
-        <div className='w-full mt-10 sm:mt-10 lg:mt-0 flex justify-center lg:justify-end'><Caroussel imageCarousel={cardData}/></div>
+        <Caroussel imageCarousel={cardData}/>
         
     </div>
-    <div className='w-full h-1 bg-black'></div>
+    <div className='w-full h-1 bg-gray-200'></div>
     </div>
   )
 }

@@ -16,6 +16,7 @@ export default function Review() {
     description:'',
     region:''
   })
+  
   const [rating, setRating] = useState(0); // State to store the selected rating
 
   const handleRatingChange = (newRating) => {
@@ -38,7 +39,8 @@ useEffect(()=>{
 
       );
       if(responseData.name)
-        alert("Success")
+        alert("Success");
+      
     }
       else{
         alert("Missing Params")
@@ -57,7 +59,7 @@ useEffect(()=>{
     <>
       <h1
         className="flex justify-around text-4xl font-
-Skie font-semibold text-[#CA8F30] mt-12"
+Skie font-semibold text-[#CA8F30] my-12"
       >
         {" "}
         Leave a Review
@@ -69,7 +71,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
               <div>
                 <label
                   for="message"
-                  className="block mb-2 text-sm font-medium text-[#7F7F7F] font-jomolhari dark:text-white"
+                  className="block mb-2 text-sm font-medium text-[#7F7F7F] font-jomolhari "
                 >
                   Write Reviews
                 </label>

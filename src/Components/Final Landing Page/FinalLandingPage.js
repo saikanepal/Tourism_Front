@@ -60,7 +60,7 @@ export default function FinalLandingPage() {
           // Calculate which section is currently in view
           let currentSection = null;
           sectionsRef.current.forEach((section) => {
-            const sectionTop = section.offsetTop-10;
+            const sectionTop = section.offsetTop-100;
             const sectionBottom = sectionTop + section.clientHeight;
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
               currentSection = section.id;
@@ -103,7 +103,7 @@ export default function FinalLandingPage() {
         </div>
         
        </div>
-       <AnimatePresence>{overlayActive && <ContactForm setOverlayActive={setOverlayActive} overlayActive={overlayActive}/>}</AnimatePresence>
+       <AnimatePresence>{overlayActive && <ContactForm setOverlayActive={setOverlayActive} overlayActive={overlayActive} finalLocation={finalLocation}/>}</AnimatePresence>
        <Footer/>
         </div>
     )

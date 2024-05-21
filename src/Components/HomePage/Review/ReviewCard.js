@@ -29,7 +29,7 @@ function ReviewCard({from,page,perPage,setNoComment}) {
         }
 
       );
-     
+     console.log(responseData,"responseData")
       setReviewData(responseData.review)
      
     } catch (error) {

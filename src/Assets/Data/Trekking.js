@@ -1,21 +1,23 @@
 import annapurna1 from '../Carousel/Annapurna1.jpg'
+import bear from '../Carousel/splitImage.jpg'
+import map from '../Carousel/map.jpg'
 const trekking = {
     "trekking": {
         "Everest Region Trekking": {
           
                 "Everest Base Camp Trek": {
                     "overview": "The Everest Base Camp Trek is a classic trekking route that takes you to the base camp of the world's highest peak, Mount Everest.",
-                    "map": [annapurna1],
+                    "map": [map],
                     "highlights": ["Stunning views of Everest and surrounding peaks", "Exploring Sherpa villages and monasteries"],
                     "costIncludes": ["Accommodation", "Meals during trek", "Permits and entry fees"],
                     "costExcludes": ["Flights to and from Lukla", "Personal trekking gear", "Tips for guides and porters"],
                     "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
                     "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
-                    "photos": [annapurna1, annapurna1],
+                    "photos": [bear],
                     "videos": ["URL to video"],
                     "reviews": ["Customer reviews and testimonials"],
                     "description": "Detailed description of the trek",
-                    "itinerary":["ABC","XYZ","123"]
+                    "itinerary":["ABC","XYZ","123",'XYM']
                 },
                 "Gokyo Valley Trek": {
                     "overview": "The Gokyo Valley Trek is a scenic trek in the Everest region, known for its stunning glacial lakes and breathtaking views of the Himalayan peaks.",
@@ -25,7 +27,7 @@ const trekking = {
                     "costExcludes": ["Flights to and from Lukla", "Personal trekking gear", "Tips for guides and porters"],
                     "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
                     "gearList": ["Hiking boots", "Warm clothing", "Sleeping bag", "Waterproof jacket"],
-                    "photos": [annapurna1],
+                    "photos": [bear],
                     "videos": ["URL to video"],
                     "reviews": ["Customer reviews and testimonials"],
                     "description": "Detailed description of the trek"
@@ -139,7 +141,7 @@ const trekking = {
             "Makalu Base Camp Trek": {},
             "Barun Valley Trek": {}
         },
-        "Short Hikings": {
+        "Short Hikings ": {
             "Chisapani Nagarkot Trek": {},
             "Namobuddha Hiking": {},
             "Fulchouki Trekking": {},
