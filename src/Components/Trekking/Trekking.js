@@ -33,7 +33,7 @@ const Trekking = () => {
             </motion.div>
           ))}
 
-<div className='flex justify-center'><button className='flex gap-2 text-xl items-center bg-custom-gold px-3 py-2 my-10 text-center rounded-3xl text-white text-normal'><div onClick={() => { window.location.href = '/trekking'}}>View More</div><FaAngleRight /></button></div>
+<div className='flex justify-center'><motion.button initial={{scale:1,backgroundColor:"white",color:"#F29C0F"}} whileHover={{scale:1.1,backgroundColor:"#F29C0F",color:"white"}} className='flex gap-2 text-xl items-center bg-custom-gold px-3 py-2 my-10 text-center rounded-3xl text-white text-normal'><div onClick={() => { window.location.href = '/trekking'}}>View More</div><FaAngleRight /></motion.button></div>
     </div>
       </div>
  

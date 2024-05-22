@@ -32,7 +32,7 @@ const animateScreen={
           {selfMap.map((n,i)=>{
             return (
               <motion.div  initial='initial' whileHover='animate' className='relative '>
-              <motion.div  className='bg-black h-96 w-full overflow-hidden rounded relative'><motion.img variants={animateScreen} transition={{stiffness:1}} src='https://s3-alpha-sig.figma.com/img/4ceb/9d1a/4afedd7d550156e598108e8e66fa69f4?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IeHg7gHoeqcnN8JkKfpp404JecvNItxRM1~7~PDvD0smuZSOd4OuNF5fHHBbLvugSho3S0QcrtkZrw1Ez9iGiEbIoTpAOa9uR~DLAtXDk0MZgjQkLcpJ8lKjrY6TK2W~7Anll9ycBhkJ5HVQczEoUz2T8K9~56kcU7MThWvoFU1xDsJPFAZo6XE1KeHtijY83qaSw3IFQbSFNF3DZEwuiqIZja2Hg4pVoJ3cb0MM5MudO4Y60ivZHouBmmL0qXfIkORuPZ9yBfIGm4VpVfQS5YFFXZqbTNbhJEr7Q9bq1-NA8G79JzVP~E~9n0nmsN0yWaQ2~FiQSK-Awi0zxaLhoA__' className='absolute  left-0'/></motion.div>
+              <motion.div  className='bg-black h-40 lg:h-96  w-full overflow-hidden rounded relative'><motion.img variants={animateScreen} transition={{stiffness:1}} src='https://s3-alpha-sig.figma.com/img/4ceb/9d1a/4afedd7d550156e598108e8e66fa69f4?Expires=1717372800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IeHg7gHoeqcnN8JkKfpp404JecvNItxRM1~7~PDvD0smuZSOd4OuNF5fHHBbLvugSho3S0QcrtkZrw1Ez9iGiEbIoTpAOa9uR~DLAtXDk0MZgjQkLcpJ8lKjrY6TK2W~7Anll9ycBhkJ5HVQczEoUz2T8K9~56kcU7MThWvoFU1xDsJPFAZo6XE1KeHtijY83qaSw3IFQbSFNF3DZEwuiqIZja2Hg4pVoJ3cb0MM5MudO4Y60ivZHouBmmL0qXfIkORuPZ9yBfIGm4VpVfQS5YFFXZqbTNbhJEr7Q9bq1-NA8G79JzVP~E~9n0nmsN0yWaQ2~FiQSK-Awi0zxaLhoA__' className='absolute  left-0'/></motion.div>
               <motion.p   className="absolute top-0 left-0 w-full h-full m-0 flex grid justify-items-end flex-col text-right">
                 
                 

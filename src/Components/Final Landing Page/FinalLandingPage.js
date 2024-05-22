@@ -89,7 +89,7 @@ export default function FinalLandingPage() {
         <div className='w-full mt-16'>
         
        <Overview sectionsRef={sectionsRef} feedData={feedData || 'Data Not Found'}/>
-       <Itinerary sectionsRef={sectionsRef} feedData={feedData||null}/>
+       <Itinerary sectionsRef={sectionsRef} feedData={feedData}/>
        <RouteMap sectionsRef={sectionsRef} feedData={feedData[1].map || "Location Not Found"}/>
        <CostIncludes sectionsRef={sectionsRef} feedData={feedData[1].costIncludes}/>
        <CostExcludes sectionsRef={sectionsRef} feedData={feedData[1].costExcludes}/>

@@ -14,10 +14,10 @@ function StarRating({ count }) {
   return <div className="flex my-2">{stars}</div>;
 }
 
-function ReviewCard({from,page,perPage,setNoComment}) {
+function ReviewCard({from,page,perPage,setCurrentIndex,currentIndex}) {
   const { isLoading, error, sendRequest, onCloseError }=useFetch();
   const [reviewData,setReviewData]=useState([])
-
+  const [noComment,setNoComment]=useState(false)
   const fetchingReview=async()=>{
     try {
       const responseData = await sendRequest(
@@ -104,8 +104,12 @@ function ReviewCard({from,page,perPage,setNoComment}) {
               </p>
             </blockquote>
           </figure>
+         
         </div>
-      ))}</>:'No Review Found'}
+        
+      ))}
+       {perPage===0?'': noComment?'':<div className='flex items-center'><div className='bg-black text-white rounded px-4 py-1 cursor-pointer' onClick={()=>setCurrentIndex({...currentIndex,page:parseInt(currentIndex.page)+1})}>Next</div></div>}
+      </>:'No Review Found'}
     </>
   );
 }

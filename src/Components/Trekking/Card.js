@@ -15,8 +15,8 @@ const Card = ({cardData,trekking}) => {
   }
   return (
     <div>
-        <div className='flex justify-between text-lg font-light mb-10 min-h-96 mt-10  flex-col sm:flex-col lg:flex-row gap-32'>
-        <div className='w-[50%] '>
+        <div className='flex justify-between text-lg font-light mb-10 min-h-96 mt-10  flex-col sm:flex-col lg:flex-row gap-10 lg:gap-32'>
+        <div className='w-full text-center lg:text-left lg:w-[50%] '>
             <div className='text-4xl font-light h-1/3 py-3'>{cardData[0]}</div>
             <div className=' h-full gap-10 flex flex-col'>
             <div className=''>{description}</div>
