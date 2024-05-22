@@ -11,7 +11,7 @@ const ExpeditionCard = () => {
     }
     return (
         <div>
-            <h1 className="text-center font-poppins font-bold text-4xl mb-5 ml-90 mt-10 text-yellow-400">Expeditions</h1>
+            <h1 className="text-center font-light text-5xl mb-5 ml-90 mt-10 text-custom-yellow">Expeditions</h1>
 
             <div className='flex flex-wrap justify-center gap-5 '>
                 {Object.entries(expeditionData.expeditions).map((expedition,i) => (

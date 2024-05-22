@@ -10,7 +10,7 @@ const Trekking = () => {
   
   return (
     <div className="flex justify-center mt-20">
-      <div className="w-4/5 mx-0 items-center">
+      <div className="w-[95%] lg:w-4/5 mx-0 items-center">
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}

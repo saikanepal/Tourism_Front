@@ -20,6 +20,8 @@ import HeroSectionSub from '../SubComponent/HeroSection.js';
 import Footer from '../Footer/Footer.js';
 import ContactForm from '../InnerSub/ContactForm/ContactForm.js';
 import {AnimatePresence, motion} from 'framer-motion'
+import InfoSection from './InfoSection.js';
+import testData from './TestData.js'
 export default function FinalLandingPage() {
     const [activeSection, setActiveSection] = useState(null);
     const navigate=useNavigate();
@@ -82,11 +84,12 @@ export default function FinalLandingPage() {
         <div className='relative'>
           <Header/>
           <HeroSectionSub data={finalLocation}/>
+          <div className=' flex justify-center '><InfoSection data={feedData[1]}/></div>
             <NavBar activeSection={activeSection} scrollToSection={scrollToSection}/>
             
        <div className='flex justify-between'>
        
-        <div className='w-full mt-16'>
+        <div className='w-full mt-5'>
         
        <Overview sectionsRef={sectionsRef} feedData={feedData || 'Data Not Found'}/>
        <Itinerary sectionsRef={sectionsRef} feedData={feedData}/>

@@ -14,7 +14,8 @@ const expeditions = {
                 
                 "videos": ["URL to video"],
                 "reviews": ["Customer reviews and testimonials"],
-                "description": "Detailed description of the trek"
+                "description": "Detailed description of the trek",
+                "elevation":"1200m"
             },
             "Everest Expedition (North)": {},
             "Kanchenjunga Expedition": {},

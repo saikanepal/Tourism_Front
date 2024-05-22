@@ -67,7 +67,7 @@ Skie font-semibold text-[#CA8F30] my-12"
       <div className=" md:flex  justify-center ">
         <div className="w-4/5 mx-auto   bg-white-600 py-8  md:flex gap-10">
           <div className=" md:w-1/2   lg:mx-10 lg:w-[48%] my-auto max-w-sm md:p-2 p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
-            <form className="space-y-6 flex flex-col items-center" action="#">
+            <form className="space-y-6 flex flex-col" action="#">
               <div>
                 <label
                   for="message"
@@ -100,7 +100,7 @@ Skie font-semibold text-[#CA8F30] my-12"
 
 
             
-              <div className="flex items-center text-3xl">
+              <div className="flex justify-center text-3xl">
       {[...Array(5)].map((_, index) => (
         <button
           key={index}
@@ -117,7 +117,7 @@ Skie font-semibold text-[#CA8F30] my-12"
 
               <button
                 type="submit"
-                className=" flex  text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                className=" flex self-center text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 onClick={handleSubmitReview}
               >
                 Submit{" "}
