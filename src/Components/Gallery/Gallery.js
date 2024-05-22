@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import bgImage from "../../Assets/banner.png";
 import { FaCircle } from "react-icons/fa";
-import images from "./images";
-import videos from "./videos";
 import Footer from "../Footer/Footer";
 import Header from "../HomePage/Nav/Header";
 import useFetch from "../../Hooks/useFetch";
@@ -62,7 +60,7 @@ const Gallery = () => {
 
         {!isChecked
           ?
-          <ImageComponent data={images} />
+          <ImageComponent />
           :
           <VideoComponent />
         }
