@@ -1,13 +1,40 @@
 import React, { useState, useRef, useEffect } from 'react';
+import useFetch from '../../Hooks/useFetch';
 
-const VideoComponent = ({ data: videos }) => {
+const VideoComponent = () => {
+    const [videos, setVideos] = useState([])
+    const { isLoading, error, sendRequest, onCloseError } = useFetch();
+
+    async function fetchGalleryData() {
+        try {
+            // Uninstall axios later
+            const responseData = await sendRequest(
+                '/gallery/getVideoDetails',  // Gallery ko GET Api rakhne
+                'GET',
+                null,
+                {
+                    'Content-Type': 'application/json',
+                }
+
+            );
+            setVideos(responseData.galleryVideoDetails)
+
+        } catch (error) {
+            console.log('An error occurred in fetching gallery image', error.message);
+        }
+    }
+
+    useEffect(() => {
+        fetchGalleryData()
+    }, [])
+
+
     const [modalOpen, setModalOpen] = useState(false);
     const iframeRef = useRef(null);
     const [modalOpenIndex, setModalOpenIndex] = useState(null);
 
     function getYoutubeEmbedAndThumbnail(url) {
         const regExp = /^(?:(?:https?:)?\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-
         const match = url.match(regExp);
         if (match && match[1]) {
             const videoId = match[1];
@@ -37,19 +64,20 @@ const VideoComponent = ({ data: videos }) => {
                 iframeRef.current.src = iframeRef.current.src.replace("?autoplay=1", "");
             }
         }
-
+        fetchGalleryData()
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
     }, [modalOpen]);
 
     return (
+        // <h1>hello</h1>
         <div className="relative font-inter antialiased">
             <main className="relative grid grid-cols-1 gap-x-5 lg:grid-cols-2 xl:grid-cols-3 justify-center items-start mb-10 bg-slate-50 overflow-hidden">
                 {videos.map((video, index) => {
-                    const { youtubeUrl, thumbnailUrl } = getYoutubeEmbedAndThumbnail(video.videoURL);
+                    const { youtubeUrl, thumbnailUrl } = getYoutubeEmbedAndThumbnail(video.videoUrl);
                     return (
-                        <div className="w-full mx-auto px-4 md:px-6 py-2" key={index}>
+                        <div className="w-full mx-auto sm:px-4 md:px-6 py-2" key={index}>
                             <div className="flex justify-center">
                                 {/* Modal video component */}
                                 <div>
@@ -102,13 +130,14 @@ const VideoComponent = ({ data: videos }) => {
                                     {modalOpenIndex === index && (
                                         <div
                                             id="modal"
-                                            className="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6"
+                                            className="fixed inset-0 z-[99999] flex px-4 md:px-6"
                                             role="dialog"
                                             aria-modal="true"
                                             onClick={() => setModalOpenIndex(null)}
                                         >
+
                                             <div
-                                                className="max-w-5xl mx-auto flex items-center"
+                                                className="max-w-5xl mx-auto flex items-center overflow-hidden"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <div
@@ -128,6 +157,7 @@ const VideoComponent = ({ data: videos }) => {
                                 {/* End: Modal video component */}
                             </div>
                         </div>
+
                     );
                 })};
 

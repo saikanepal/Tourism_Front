@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import bgImage from "../../Assets/banner.png";
 import { FaCircle } from "react-icons/fa";
-import images from "./images";
-import videos from "./videos";
 import Footer from "../Footer/Footer";
 import Header from "../HomePage/Nav/Header";
 import useFetch from "../../Hooks/useFetch";
@@ -11,37 +9,12 @@ import { BiSolidVideos } from "react-icons/bi";
 import ImageComponent from "./ImageComponent";
 import VideoComponent from "./VideoComponent";
 
-
-
 const Gallery = () => {
   const [isChecked, setIsChecked] = useState(false);
-  console.log(isChecked);
-  const [galleryData, setGalleryData] = useState({})
   const { isLoading, error, sendRequest, onCloseError } = useFetch();
-  async function fetchGalleryData() {
-    try {
-      const responseData = await sendRequest(
-        process.env.REACT_APP_BACKEND_URL + '/',  // Gallery ko GET Api rakhne
-        'GET',
-        null,
-        {
-          'Content-Type': 'application/json',
-        }
-
-      );
-      console.log(responseData.message);
-      setGalleryData()
-
-    } catch (error) {
-      console.log('An error occurred in fetching gallery image', error.message);
-    }
-
-  }
-  // useEffect(() => {
-  //   fetchGalleryData()
-  // }, [])
 
   return (
+    // <h1>Hello</h1>
     <div>
       <Header />
       {/* HERO SECTION  */}
@@ -65,13 +38,21 @@ const Gallery = () => {
         <div className="flex items-center ">
           <div className="flex-1 flex gap-5 items-center text-[#FFB133]">
             <FaCircle />
-            <h1 className="font-bold text-2xl sm:text-4xl my-14">
+            <h1 className="font-bold text-sm sm:text-2xl lg:text-4xl my-14">
               Journey through captivating moments.
             </h1>
           </div>
 
           {/* Toggle Button  */}
-          <IoImagesSharp size={30} />
+          <IoImagesSharp
+            style={{ fontSize: '30px' }}
+            className="hidden lg:inline" // This will hide the smaller size on small screens
+          />
+          <IoImagesSharp
+            style={{ fontSize: '15px' }}
+            className="lg:hidden" // This will hide the larger size on large screens
+          />
+
           <label className="relative inline-flex cursor-pointer items-center mx-3">
             <input id="switch" type="checkbox" checked={isChecked} onChange={() => setIsChecked(!isChecked)}
               className="peer sr-only" />
@@ -79,7 +60,14 @@ const Gallery = () => {
             <div className="peer h-6 w-11 rounded-full border bg-[#FFB133] after:absolute after:left-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-[#FFB133] peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:ring-green-300"></div>
             <h1></h1>
           </label>
-          <BiSolidVideos size={30} />
+          <BiSolidVideos
+            style={{ fontSize: '30px' }}
+            className="hidden lg:inline" // This will hide the smaller size on small screens
+          />
+          <BiSolidVideos
+            style={{ fontSize: '15px' }}
+            className="lg:hidden" // This will hide the larger size on large screens
+          />
         </div>
 
 
@@ -87,9 +75,9 @@ const Gallery = () => {
 
         {!isChecked
           ?
-          <ImageComponent data={images} />
+          <ImageComponent />
           :
-          <VideoComponent data={videos} />
+          <VideoComponent />
         }
       </div>
       <Footer />
