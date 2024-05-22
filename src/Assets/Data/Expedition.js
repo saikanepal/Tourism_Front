@@ -48,7 +48,8 @@ const expeditions = {
             "Pachermo Peak Climbing": {},
             "Cholaste Peak Climbing": {},
             "Tukuche Peak Climbing": {}
-        }
+        },
+       
     }
 
 

@@ -10,11 +10,11 @@ const Images = ({ sectionsRef, feedData }) => {
                 <p className='text-2xl font-bold text-black'>Images</p>
               </h2>
               <div className='ml-5 flex flex-wrap'>
-            {feedData.map((imageComponent, index) => (
+            {feedData ? feedData.map((imageComponent, index) => (
               <div key={index} className="mb-5 flex justify-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                 <img src={imageComponent} alt='...' className='h-64 w-auto max-w-full' />
               </div>
-            ))}
+            )):"Feed Data Not Found"}
           </div>
             </div>
        </div>
