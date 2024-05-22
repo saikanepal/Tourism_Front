@@ -9,7 +9,7 @@ import TrekkingDropdown from "./TrekkingDropdown";
 import useFetch from "../../../Hooks/useFetch";
 
 export default function Review() {
-  const { isLoading, error, uest, onCloseError } = useFetch();
+  const { isLoading, error, sendRequest, onCloseError } = useFetch();
   const [reviewData, setReviewData] = useState({
     name: '',
     personalRating: 5,
@@ -28,7 +28,7 @@ export default function Review() {
     e.preventDefault();
     try {
       if (reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region) {
-        const responseData = await uest(
+        const responseData = await sendRequest(
           '/review/posting',
           'POST',
           JSON.stringify(reviewData),
