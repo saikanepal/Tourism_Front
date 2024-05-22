@@ -77,7 +77,7 @@ const VideoComponent = () => {
                 {videos.map((video, index) => {
                     const { youtubeUrl, thumbnailUrl } = getYoutubeEmbedAndThumbnail(video.videoUrl);
                     return (
-                        <div className="w-full mx-auto px-4 md:px-6 py-2" key={index}>
+                        <div className="w-full mx-auto sm:px-4 md:px-6 py-2" key={index}>
                             <div className="flex justify-center">
                                 {/* Modal video component */}
                                 <div>
@@ -130,13 +130,14 @@ const VideoComponent = () => {
                                     {modalOpenIndex === index && (
                                         <div
                                             id="modal"
-                                            className="fixed inset-0 z-[99999] flex px-4 md:px-6 py-6"
+                                            className="fixed inset-0 z-[99999] flex px-4 md:px-6"
                                             role="dialog"
                                             aria-modal="true"
                                             onClick={() => setModalOpenIndex(null)}
                                         >
+
                                             <div
-                                                className="max-w-5xl mx-auto flex items-center"
+                                                className="max-w-5xl mx-auto flex items-center overflow-hidden"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <div

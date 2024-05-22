@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross2 } from "react-icons/rx";
+
 import "./Header.css";
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);

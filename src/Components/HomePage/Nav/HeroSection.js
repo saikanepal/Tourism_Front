@@ -7,7 +7,12 @@ import "./CarouselArrow.css";
 import "./style.css";
 
 function CarouselItem({ imageUrl }) {
+  const handleClick=(e)=>{
+    e.preventDefault();
+    console.log("hello")
+  }
   return (
+    
     <div
       className="h-screen xl:h-screen bg-cover bg-center text-left flex justify-start  "
       style={{ backgroundImage: `url(${imageUrl})` }}

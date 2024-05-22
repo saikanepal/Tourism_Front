@@ -16,6 +16,7 @@ export default function Review() {
     description: '',
     region: ''
   })
+  
   const [rating, setRating] = useState(0); // State to store the selected rating
 
   const handleRatingChange = (newRating) => {
@@ -36,11 +37,20 @@ export default function Review() {
             'Content-Type': 'application/json',
           }
 
+<<<<<<< HEAD
         );
         if (responseData.name)
           alert("Success")
       }
       else {
+=======
+      );
+      if(responseData.name)
+        alert("Success");
+      
+    }
+      else{
+>>>>>>> 5e33a25ebae59b4bfabfaa2c7d6a37f951c10bbf
         alert("Missing Params")
       }
 
@@ -57,7 +67,7 @@ export default function Review() {
     <>
       <h1
         className="flex justify-around text-4xl font-
-Skie font-semibold text-[#CA8F30] mt-12"
+Skie font-semibold text-[#CA8F30] my-12"
       >
         {" "}
         Leave a Review
@@ -65,11 +75,11 @@ Skie font-semibold text-[#CA8F30] mt-12"
       <div className=" md:flex  justify-center ">
         <div className="w-4/5 mx-auto   bg-white-600 py-8  md:flex gap-10">
           <div className=" md:w-1/2   lg:mx-10 lg:w-[48%] my-auto max-w-sm md:p-2 p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
-            <form className="space-y-6" action="#">
+            <form className="space-y-6 flex flex-col items-center" action="#">
               <div>
                 <label
                   for="message"
-                  className="block mb-2 text-sm font-medium text-[#7F7F7F] font-jomolhari dark:text-white"
+                  className="block mb-2 text-lg font-medium text-[#7F7F7F] font-jomolhari text-center"
                 >
                   Write Reviews
                 </label>
@@ -124,7 +134,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
           </div>
           <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full min-h-60">
             {" "}
-            <ReviewCard />
+            <ReviewCard perPage={0}/>
           </div>
         </div>
       </div>

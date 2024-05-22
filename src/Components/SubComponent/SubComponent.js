@@ -5,6 +5,7 @@ import InfoByRegion from "./InfoByRegion/InfoByRegion";
 import TrekkingAll from "./TrekkingAll/TrekkingAll";
 import ContactForm from "../InnerSub/ContactForm/ContactForm.js";
 import { useLocation } from "react-router-dom";
+import Footer from "../Footer/Footer.js";
 
 export default function SubComponent() {
   const location=useLocation()
@@ -17,7 +18,7 @@ export default function SubComponent() {
      <HeroSectionSub data={ViewData}/>
             <InfoByRegion />
             <TrekkingAll />
-            
+            <Footer/>
       
     </div>
   );

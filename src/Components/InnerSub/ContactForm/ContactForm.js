@@ -1,13 +1,14 @@
 import React, { useState ,useRef,useEffect} from 'react';
 import {motion} from 'framer-motion'
 import useFetch from '../../../Hooks/useFetch';
-const ContactForm = ({setOverlayActive,overlayActive}) => {
+const ContactForm = ({setOverlayActive,overlayActive,finalLocation}) => {
   const contentRef = useRef(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         country: '',
         contactNumber: '',
+        Location:finalLocation
       });
     const { isLoading, error, sendRequest, onCloseError }=useFetch();
       const handleChange = (e) => {
