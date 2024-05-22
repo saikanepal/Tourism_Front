@@ -7,7 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.19",
-    "axios": "^1.6.8",
+    "axios": "^1.7.2",
     "framer-motion": "^11.1.9",
     "postcss-cli": "^11.0.0",
     "react": "^18.3.1",

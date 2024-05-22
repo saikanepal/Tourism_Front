@@ -11,37 +11,12 @@ import { BiSolidVideos } from "react-icons/bi";
 import ImageComponent from "./ImageComponent";
 import VideoComponent from "./VideoComponent";
 
-
-
 const Gallery = () => {
   const [isChecked, setIsChecked] = useState(false);
-  console.log(isChecked);
-  const [galleryData, setGalleryData] = useState({})
   const { isLoading, error, sendRequest, onCloseError } = useFetch();
-  async function fetchGalleryData() {
-    try {
-      const responseData = await sendRequest(
-        process.env.REACT_APP_BACKEND_URL + '/',  // Gallery ko GET Api rakhne
-        'GET',
-        null,
-        {
-          'Content-Type': 'application/json',
-        }
-
-      );
-      console.log(responseData.message);
-      setGalleryData()
-
-    } catch (error) {
-      console.log('An error occurred in fetching gallery image', error.message);
-    }
-
-  }
-  // useEffect(() => {
-  //   fetchGalleryData()
-  // }, [])
 
   return (
+    // <h1>Hello</h1>
     <div>
       <Header />
       {/* HERO SECTION  */}
@@ -89,7 +64,7 @@ const Gallery = () => {
           ?
           <ImageComponent data={images} />
           :
-          <VideoComponent data={videos} />
+          <VideoComponent />
         }
       </div>
       <Footer />

@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
@@ -9,49 +9,49 @@ import TrekkingDropdown from "./TrekkingDropdown";
 import useFetch from "../../../Hooks/useFetch";
 
 export default function Review() {
-  const { isLoading, error, sendRequest, onCloseError }=useFetch();
-  const [reviewData,setReviewData]=useState({
-    name:'',
-    personalRating:5,
-    description:'',
-    region:''
+  const { isLoading, error, uest, onCloseError } = useFetch();
+  const [reviewData, setReviewData] = useState({
+    name: '',
+    personalRating: 5,
+    description: '',
+    region: ''
   })
   const [rating, setRating] = useState(0); // State to store the selected rating
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
-useEffect(()=>{
-  setReviewData({...reviewData,personalRating:rating})
-},[rating])
-  const handleSubmitReview=async(e)=>{
+  useEffect(() => {
+    setReviewData({ ...reviewData, personalRating: rating })
+  }, [rating])
+  const handleSubmitReview = async (e) => {
     e.preventDefault();
     try {
-      if(reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region){
-      const responseData = await sendRequest(
-        '/review/posting',
-        'POST',
-        JSON.stringify(reviewData),
-        {
-          'Content-Type': 'application/json',
-        }
+      if (reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region) {
+        const responseData = await uest(
+          '/review/posting',
+          'POST',
+          JSON.stringify(reviewData),
+          {
+            'Content-Type': 'application/json',
+          }
 
-      );
-      if(responseData.name)
-        alert("Success")
-    }
-      else{
+        );
+        if (responseData.name)
+          alert("Success")
+      }
+      else {
         alert("Missing Params")
       }
-     
+
     } catch (error) {
       console.log(error.message || 'An error occurred during login');
     }
   }
 
-  const handleTextBoxChange=(e)=>{
+  const handleTextBoxChange = (e) => {
     const newValue = e.target.value.length <= 300 ? e.target.value : reviewData.description;
-    setReviewData({...reviewData, description: newValue });
+    setReviewData({ ...reviewData, description: newValue });
   }
   return (
     <>
@@ -80,7 +80,7 @@ Skie font-semibold text-[#CA8F30] mt-12"
                   id="name"
                   className="bg-[#EDEDED] border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 border-none outline-none "
                   placeholder="Name"
-                  onChange={e=>{setReviewData(data=>{return {...data,name:e.target.value}});console.log(reviewData)}}
+                  onChange={e => { setReviewData(data => { return { ...data, name: e.target.value } }); console.log(reviewData) }}
                   required
                 />
               </div>
@@ -92,25 +92,24 @@ Skie font-semibold text-[#CA8F30] mt-12"
                 placeholder="|"
                 value={reviewData.description}
                 onChange={handleTextBoxChange}
-                
+
               ></textarea>
-  
 
 
-            
+
+
               <div className="flex items-center text-3xl">
-      {[...Array(5)].map((_, index) => (
-        <button
-          key={index}
-          className={`${
-            index < rating ? 'text-yellow-500' : 'text-gray-400'
-          } focus:outline-none`}
-          onClick={(e) =>{e.preventDefault();handleRatingChange(index + 1)}}
-        >
-          ★
-        </button>
-      ))}
-    </div>
+                {[...Array(5)].map((_, index) => (
+                  <button
+                    key={index}
+                    className={`${index < rating ? 'text-yellow-500' : 'text-gray-400'
+                      } focus:outline-none`}
+                    onClick={(e) => { e.preventDefault(); handleRatingChange(index + 1) }}
+                  >
+                    ★
+                  </button>
+                ))}
+              </div>
 
 
               <button
