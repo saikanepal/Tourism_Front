@@ -16,7 +16,10 @@ import { MdMedicalServices } from "react-icons/md";
 import { FaUsersLine } from "react-icons/fa6";
 import { VscGitPullRequestNewChanges } from "react-icons/vsc";
 import { useSiderBar } from "../../Context/SiderBarContext";
+import { useContext } from "react";
+import userContext from "../../Context/userContext";
 const SideBar = () => {
+ 
   const navigate = useNavigate();
   const { open, setOpen } = useSiderBar();
 

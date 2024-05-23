@@ -1,8 +1,12 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import { useImage } from "../../Hooks/useImage";
-
+import { useContext } from "react";
+import userContext from "../../Context/userContext";
+import useFetch from "../../Hooks/useFetch";
 const ImageUploadForm = () => {
+  const a = useContext(userContext);
+  const { isLoading, error, sendRequest, onCloseError } = useFetch();
   const { uploadImage } = useImage();
   const [description, setDescription] = useState("");
   const [images, setImages] = useState([]);
@@ -63,7 +67,16 @@ const ImageUploadForm = () => {
           uploadedImages,
         }
       );
-      console.log("Response:", response.data);
+
+      // const response = await sendRequest(
+      //   "/Image/postImage",
+      //   "POST",
+      //   JSON.stringify(uploadedImages),
+      //   {
+      //     "Content-Type": "application/json",
+      //   }
+      // );
+      console.log("Response:", response);
 
       setDescription("");
       setImages([]);
