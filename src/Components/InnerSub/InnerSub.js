@@ -79,7 +79,7 @@ const InnerSub = () => {
                             transition={{type:'just'}}
                             src={trek.photos}
                             alt="Sunset in the mountains"
-                                className="w-full object-cover object-center opacity-95"
+                                className="w-full h-96 object-cover object-center opacity-95"
                             />
                         </div>
                             

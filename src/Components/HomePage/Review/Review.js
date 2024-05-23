@@ -7,6 +7,7 @@ import trekkingData from "../../../Assets/Data/Trekking";
 
 import TrekkingDropdown from "./TrekkingDropdown";
 import useFetch from "../../../Hooks/useFetch";
+import { FaCheck } from "react-icons/fa6";
 
 export default function Review() {
   const { isLoading, error, sendRequest, onCloseError } = useFetch();
@@ -16,7 +17,7 @@ export default function Review() {
     description: '',
     region: ''
   })
-  
+  const [submitSuccess,setSubmitSuccess]=useState(false)
   const [rating, setRating] = useState(0); // State to store the selected rating
 
   const handleRatingChange = (newRating) => {
@@ -37,20 +38,11 @@ export default function Review() {
             'Content-Type': 'application/json',
           }
 
-<<<<<<< HEAD
         );
         if (responseData.name)
-          alert("Success")
+          setSubmitSuccess(true)
       }
       else {
-=======
-      );
-      if(responseData.name)
-        alert("Success");
-      
-    }
-      else{
->>>>>>> 5e33a25ebae59b4bfabfaa2c7d6a37f951c10bbf
         alert("Missing Params")
       }
 
@@ -66,16 +58,17 @@ export default function Review() {
   return (
     <>
       <h1
-        className="flex justify-around text-4xl font-
+        className="relative flex justify-around text-4xl font-
 Skie font-semibold text-[#CA8F30] my-12"
       >
         {" "}
         Leave a Review
+        {submitSuccess && <span className="absolute top-10 text-lg text-green-500 font-light">Submitted Successfully!</span>}
       </h1>
-      <div className=" md:flex  justify-center ">
-        <div className="w-4/5 mx-auto   bg-white-600 py-8  md:flex gap-10">
-          <div className=" md:w-1/2   lg:mx-10 lg:w-[48%] my-auto max-w-sm md:p-2 p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
-            <form className="space-y-6 flex flex-col items-center" action="#">
+      <div className="">
+        <div className="w-4/5 mx-auto flex flex-wrap justify-center bg-white-600 py-8 flex gap-10">
+          <div className=" w-full lg:mx-10 lg:w-[48%] my-auto max-w-sm md:p-2 p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
+            <form className="space-y-6 flex flex-col" action="#">
               <div>
                 <label
                   for="message"
@@ -107,29 +100,30 @@ Skie font-semibold text-[#CA8F30] my-12"
 
 
 
+            
+              <div className="flex justify-center text-3xl">
+      {[...Array(5)].map((_, index) => (
+        <button
+          key={index}
+          className={`${
+            index < rating ? 'text-yellow-500' : 'text-gray-400'
+          } focus:outline-none`}
+          onClick={(e) =>{e.preventDefault();handleRatingChange(index + 1)}}
+        >
+          ★
+        </button>
+      ))}
+    </div>
 
-              <div className="flex items-center text-3xl">
-                {[...Array(5)].map((_, index) => (
-                  <button
-                    key={index}
-                    className={`${index < rating ? 'text-yellow-500' : 'text-gray-400'
-                      } focus:outline-none`}
-                    onClick={(e) => { e.preventDefault(); handleRatingChange(index + 1) }}
-                  >
-                    ★
-                  </button>
-                ))}
-              </div>
 
-
-              <button
+              {!submitSuccess?<button
                 type="submit"
-                className=" flex  text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+                className=" flex self-center text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 onClick={handleSubmitReview}
+                disabled={submitSuccess}
               >
-                Submit{" "}
-                <IoIosArrowForward className="  ml-2 text-lg  font-bold" />
-              </button>
+                Submit<IoIosArrowForward className="  ml-2 text-lg  font-bold" />
+              </button>:<div className="w-10 h-10 bg-green-600 flex self-center items-center justify-center rounded-full text-white"><FaCheck/></div>}
             </form>
           </div>
           <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full min-h-60">
