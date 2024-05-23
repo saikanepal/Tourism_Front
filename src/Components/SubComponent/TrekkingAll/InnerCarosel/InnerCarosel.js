@@ -18,11 +18,11 @@ const InnerCarosel = ({imageCarosel}) => {
   return (
     <div className='w-full' onMouseEnter={()=>setHoverAnimate(true)} onMouseLeave={()=>setHoverAnimate(false)}>
 
-        <Carousel autoPlay={true}>
+        <Carousel autoPlay={true} showStatus={false}>
                 {images.map((i,n)=>{
                     
                     return <div className='w-full'>
-                    <div className='h-96 w-full overflow-hidden rounded relative'><img src={image1 && i.photos} className='absolute -top-32 left-0 -z-20' /><div className={`absolute inset-0 bg-black bg-opacity-20 -z-10 ${!hoverAnimate && 'opacity-0'} duration-500 transition-opacity`}></div></div>
+                    <div className='h-96 w-full overflow-hidden rounded relative'><img src={image1 && i.photos} className='absolute left-0 -z-20' /><div className={`absolute inset-0 bg-black bg-opacity-20 -z-10 ${!hoverAnimate && 'opacity-0'} duration-500 transition-opacity`}></div></div>
                     <motion.p 
                     initial="initial"
                     animate="initial"

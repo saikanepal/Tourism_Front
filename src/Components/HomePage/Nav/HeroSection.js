@@ -8,12 +8,20 @@ import "./CarouselArrow.css";
 // import "./style.css";
 
 function CarouselItem({ imageUrl }) {
+<<<<<<< HEAD
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/expedition");
   };
+=======
+  const handleClick=(e)=>{
+    e.preventDefault();
+    console.log("hello")
+  }
+>>>>>>> a9075814d0033d9a7bb7dd715f968ec6f0c3b67d
   return (
+    
     <div
       className="h-screen xl:h-screen bg-cover bg-center text-left flex justify-start  "
       style={{ backgroundImage: `url(${imageUrl})` }}

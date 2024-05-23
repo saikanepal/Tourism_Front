@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from 'react'
 import trekking from "../../Assets/Data/Trekking"
 import expeditions from "../../Assets/Data/Expedition"
 import { useLocation, useNavigate } from "react-router-dom"
-import InnerSubImage from "../../Assets/InnerSubImage.jpg"
+import InnerSubImage from "../../Assets/Carousel/mountain.jpg"
 import { TbTrekking } from "react-icons/tb";
+import {AnimatePresence, motion} from 'framer-motion'
 import Header from "../HomePage/Nav/Header"
+import Footer from '../Footer/Footer'
 
 const InnerSub = () => {
     const myRef = useRef(null)
@@ -29,6 +31,11 @@ const InnerSub = () => {
         navigate(`${location.pathname}/${data.data}`)
         console.log(data.data)
     }
+
+    const animateBox={
+        initial:{opacity:1,scale:1},
+        animate:{opacity:0.7,scale:1.1}
+    }
     return (
         <>
             <Header/>
@@ -46,10 +53,12 @@ const InnerSub = () => {
                         <TbTrekking size={20} />
                     </div>
                     <p className="text-[#FFB133] font-bold text-3xl sm:text-5xl mt-4">{regionOrHeight}</p>
-                    <h1 className="mt-8 opacity-70">Embark on an unforgettable journey through Nepal, where every experience is a treasure.</h1>
-                    <button onClick={() => scrollToRef(myRef)} className="border-[#CA8F30] mt-8 font-semibold flex justify-center items-center border-2 border-solid text-[#CA8F30] hover:bg-[#CA8F30] hover:text-white rounded-md mx-auto py-1 px-10">
+                    <h1 className="mt-8 mx-7 opacity-70">Embark on an unforgettable journey through Nepal, where every experience is a treasure.</h1>
+                    <AnimatePresence>
+                    <motion.button whileHover={{scale:1.1}} initial={{scale:1}}  onClick={() => scrollToRef(myRef)} className="border-[#CA8F30] mt-8 font-semibold flex justify-center items-center border-2 border-solid text-[#CA8F30] hover:bg-[#CA8F30] hover:text-white rounded-md mx-auto py-1 px-10">
                         Explore Now
-                    </button>
+                    </motion.button>
+                    </AnimatePresence>
                 </div>
             </div>
 
@@ -63,20 +72,23 @@ const InnerSub = () => {
             <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
                 {Object.values(trekOrExpenditureCamp).map((trek,i) => (
                     <>
-                        <div className="flex flex-col relative justify-center items-center" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
-                        <div className="overflow-hidden relative" style={{ width: '660px', height: '336px' }}>
-      <img 
-       src={trek.photos[0]}
-       alt="Sunset in the mountains"
-        className="w-full h-full object-cover object-center opacity-95"
-      />
-    </div>
+                        <motion.div initial='initial' whileHover='animate' className="flex flex-col relative justify-center items-center bg-black" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
+                        <div className="overflow-hidden relative h-96 " >
+                            <motion.img 
+                            variants={animateBox}
+                            transition={{type:'just'}}
+                            src={trek.photos}
+                            alt="Sunset in the mountains"
+                                className="w-full object-cover object-center opacity-95"
+                            />
+                        </div>
                             
                             <h1 className="text-xl lg:text-3xl text-white absolute">{Object.keys(trekOrExpenditureCamp)[i]}</h1>
-                        </div>
+                        </motion.div>
                     </>
                 ))}
             </div >
+            <Footer/>
         </>
     )
 }

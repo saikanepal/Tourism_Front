@@ -1,6 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import useFetch from '../../Hooks/useFetch';
 
-const ImageComponent = ({ data: images }) => {
+
+const ImageComponent = () => {
+    const [images, setImages] = useState([])
+    const { isLoading, sendRequest } = useFetch();
+
+
+
+    async function fetchGalleryData() {
+        try {
+
+            // Uninstall axios later
+            const responseData = await sendRequest(
+                '/gallery/getImageDetails',  // Gallery ko GET Api rakhne
+                'GET',
+                null,
+                {
+                    'Content-Type': 'application/json',
+                }
+
+            );
+            setImages(responseData.galleryImageDetails)
+
+        } catch (error) {
+            console.log('An error occurred in fetching gallery image', error.message);
+        }
+    }
+
+    useEffect(() => {
+        fetchGalleryData()
+    }, [])
     return (
         <div>
             <div className="max-h-[1100px] sm:max-h-[1150px] overflow-auto">
@@ -8,8 +38,8 @@ const ImageComponent = ({ data: images }) => {
                     {images.map(data => (
                         <div key={data.regionName} className="flex flex-col justify-center items-start">
                             <img
-                                className="opacity-95 rounded-lg w-[368px] h-[400px]"
-                                src={data.imageURL}
+                                className="opacity-80 rounded-lg w-[368px] h-[400px]"
+                                src={data.imageUrl}
                                 alt={data.regionName}
                             />
                             <h1 className="text-xl lg:text-3xl mt-4 font-bold text-[#FFB133]">
