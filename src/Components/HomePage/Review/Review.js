@@ -7,6 +7,7 @@ import trekkingData from "../../../Assets/Data/Trekking";
 
 import TrekkingDropdown from "./TrekkingDropdown";
 import useFetch from "../../../Hooks/useFetch";
+import { FaCheck } from "react-icons/fa6";
 
 export default function Review() {
   const { isLoading, error, sendRequest, onCloseError } = useFetch();
@@ -39,7 +40,7 @@ export default function Review() {
 
         );
         if (responseData.name)
-          alert("Success")
+          setSubmitSuccess(true)
       }
       else {
         alert("Missing Params")
@@ -115,14 +116,14 @@ Skie font-semibold text-[#CA8F30] my-12"
     </div>
 
 
-              <button
+              {!submitSuccess?<button
                 type="submit"
                 className=" flex self-center text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 onClick={handleSubmitReview}
                 disabled={submitSuccess}
               >
-                {submitSuccess?"Submitted Successfully":"Submit"}<IoIosArrowForward className="  ml-2 text-lg  font-bold" />
-              </button>
+                Submit<IoIosArrowForward className="  ml-2 text-lg  font-bold" />
+              </button>:<div className="w-10 h-10 bg-green-600 flex self-center items-center justify-center rounded-full text-white"><FaCheck/></div>}
             </form>
           </div>
           <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full min-h-60">
