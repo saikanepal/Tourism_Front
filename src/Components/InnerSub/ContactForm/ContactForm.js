@@ -8,14 +8,23 @@ const ContactForm = ({setOverlayActive,overlayActive,finalLocation}) => {
         email: '',
         country: '',
         contactNumber: '',
-        Location:finalLocation
+        Location:finalLocation,
+        requestRequirements:''
       });
     const { isLoading, error, sendRequest, onCloseError }=useFetch();
+
+    // const handleTextBoxChange=(e)=>{
+    //   const newValue = e.target.value.length <= 300 ? e.target.value : reviewData.description;
+    //   setReviewData({...reviewData, description: newValue });
+    // }
       const handleChange = (e) => {
         const { name, value } = e.target;
+        let newValue=value
+        if(name==='requestRequirements')
+          newValue=value.length<=300?value:formData.requestRequirements;
         setFormData({
           ...formData,
-          [name]: value,
+          [name]: newValue,
         });
       };
     
@@ -179,7 +188,7 @@ const ContactForm = ({setOverlayActive,overlayActive,finalLocation}) => {
   </svg>
  
  
-  <h2 className="text-2xl font-semibold mb-0 text-white">Requirements</h2>
+  <h2 className=" relative text-2xl font-semibold mb-0 text-white">Requirements<span className='absolute top-7 left-0 text-sm font-light opacity-50'>*Under 300 letters</span></h2>
 </div>
 
 <div className="">
@@ -208,8 +217,8 @@ const ContactForm = ({setOverlayActive,overlayActive,finalLocation}) => {
 
 
 
-          <div class="flex justify-center space-x-4">
-          <button type="submit" class=" text-white py-2 px-4 mr-60" style={{ backgroundColor: '#F29C0F' }}>Submit</button>
+          <div class="flex justify-around">
+          <button type="submit" class=" text-white py-2 px-4" style={{ backgroundColor: '#F29C0F' }}>Submit</button>
 
           <button type="button" onClick={handleReset} class="bg-transparent py-2 px-4" style={{ color: '#F29C0F', border: '1px solid #F29C0F' }}>Reset</button>
 

@@ -16,7 +16,7 @@ export default function Review() {
     description:'',
     region:''
   })
-  
+  const [submitSuccess,setSubmitSuccess]=useState(false)
   const [rating, setRating] = useState(0); // State to store the selected rating
 
   const handleRatingChange = (newRating) => {
@@ -39,7 +39,9 @@ useEffect(()=>{
 
       );
       if(responseData.name)
-        alert("Success");
+        setSubmitSuccess(true)
+      else
+      alert("error in submitting")
       
     }
       else{
@@ -58,15 +60,16 @@ useEffect(()=>{
   return (
     <>
       <h1
-        className="flex justify-around text-4xl font-
+        className="relative flex justify-around text-4xl font-
 Skie font-semibold text-[#CA8F30] my-12"
       >
         {" "}
         Leave a Review
+        {submitSuccess && <span className="absolute top-10 text-lg text-green-500 font-light">Submitted Successfully!</span>}
       </h1>
-      <div className=" md:flex  justify-center ">
-        <div className="w-4/5 mx-auto   bg-white-600 py-8  md:flex gap-10">
-          <div className=" md:w-1/2   lg:mx-10 lg:w-[48%] my-auto max-w-sm md:p-2 p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
+      <div className="">
+        <div className="w-4/5 mx-auto flex flex-wrap justify-center bg-white-600 py-8 flex gap-10">
+          <div className=" w-full lg:mx-10 lg:w-[48%] my-auto max-w-sm md:p-2 p-4 bg-[#F5F5F5]  rounded-lg shadow sm:p-6 md:p-8  h-full">
             <form className="space-y-6 flex flex-col" action="#">
               <div>
                 <label
@@ -119,9 +122,9 @@ Skie font-semibold text-[#CA8F30] my-12"
                 type="submit"
                 className=" flex self-center text-white font-jomolhari bg-[#F29C0F]  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                 onClick={handleSubmitReview}
+                disabled={submitSuccess}
               >
-                Submit{" "}
-                <IoIosArrowForward className="  ml-2 text-lg  font-bold" />
+                {submitSuccess?"Submitted Successfully":"Submit"}<IoIosArrowForward className="  ml-2 text-lg  font-bold" />
               </button>
             </form>
           </div>

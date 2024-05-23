@@ -84,7 +84,7 @@ export default function FinalLandingPage() {
         <div className='relative'>
           <Header/>
           <HeroSectionSub data={finalLocation}/>
-          <div className=' flex justify-center '><InfoSection data={feedData[1]}/></div>
+          <div className=' flex justify-center mt-10'><InfoSection data={feedData[1]}/></div>
             <NavBar activeSection={activeSection} scrollToSection={scrollToSection}/>
             
        <div className='flex justify-between'>
