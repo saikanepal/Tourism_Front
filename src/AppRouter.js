@@ -23,6 +23,7 @@ const AppRouter = () => {
         <Route path="/trekking/:region" element={<InnerSub />} />
         <Route path="/expedition/:region" element={<InnerSub />} />
         <Route path="/admintest" element={<Dashboard />} />
+        <Route path="/image" element={<Image />} />
         <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
         <Route path="/expedition/:region/:place" element={<FinalLandingPage />} />
         <Route path="/gallery" element={<Gallery />} />

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import axios from 'axios';
 import { useImage } from '../../Hooks/useImage';
 import { FaImage, FaVideo } from 'react-icons/fa';
+import useFetch from '../../Hooks/useFetch';
 
 const GalleryUploadForm = () => {
   const { uploadImage } = useImage();
@@ -12,6 +12,8 @@ const GalleryUploadForm = () => {
   const [title, setTitle] = useState('');
   const [urlDescription, setUrlDescription] = useState('');
   const [isImageForm, setIsImageForm] = useState(true); // State to toggle between forms
+  const { isLoading, sendRequest } = useFetch();
+
 
   const fileInputRef = useRef(null);
 
@@ -54,11 +56,11 @@ const GalleryUploadForm = () => {
     let uploadedImage = null;
     if (file) {
       uploadedImage = await uploadImage(file);
-      console.log('Uploaded Image:', uploadedImage);
+      console.log('Uploaded Image:', uploadedImage.Picture.img);
     }
 
     const dataToSubmit = {
-      imageUrl: uploadedImage,
+      imageUrl: uploadedImage.Picture.img,
       regionName: region,
       description: description,
     };
@@ -66,8 +68,16 @@ const GalleryUploadForm = () => {
     console.log('Image Data to Submit:', dataToSubmit);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/gallery/postImageDetails', dataToSubmit);
-      console.log('Response:', response.data);
+      const responseData = await sendRequest(
+        '/gallery/postImageDetails',
+        'POST',
+        JSON.stringify(dataToSubmit),
+        {
+          'Content-Type': 'application/json',
+        }
+
+      );
+      console.log('Response:', responseData.data);
       setFile(null);
       setRegion('');
       setDescription('');
@@ -88,8 +98,15 @@ const GalleryUploadForm = () => {
     console.log('URL Data to Submit:', dataToSubmit);
 
     try {
-      const response = await axios.post('http://localhost:8000/api/gallery/postVideoDetails', dataToSubmit); /* The path may not correct */
-      console.log('Response:', response.data);
+      const responseData = await sendRequest(
+        '/gallery/postVideoDetails',
+        'POST',
+        JSON.stringify(dataToSubmit),
+        {
+          'Content-Type': 'application/json',
+        }
+      )
+      console.log('Response:', responseData.data);
       setVideoUrl('');
       setTitle('');
       setUrlDescription('');
