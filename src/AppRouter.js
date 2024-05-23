@@ -25,6 +25,7 @@ const AppRouter = () => {
         <Route path="/admintest" element={<Dashboard />} />
         <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
         <Route path="/expedition/:region/:place" element={<FinalLandingPage />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/*" element={<ErrorPage />} />
         {/* // Replace the component with the appropriate one */}
         {/*  */}

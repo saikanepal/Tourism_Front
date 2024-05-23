@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { FaStar } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
@@ -9,12 +9,12 @@ import TrekkingDropdown from "./TrekkingDropdown";
 import useFetch from "../../../Hooks/useFetch";
 
 export default function Review() {
-  const { isLoading, error, sendRequest, onCloseError }=useFetch();
-  const [reviewData,setReviewData]=useState({
-    name:'',
-    personalRating:5,
-    description:'',
-    region:''
+  const { isLoading, error, sendRequest, onCloseError } = useFetch();
+  const [reviewData, setReviewData] = useState({
+    name: '',
+    personalRating: 5,
+    description: '',
+    region: ''
   })
   const [submitSuccess,setSubmitSuccess]=useState(false)
   const [rating, setRating] = useState(0); // State to store the selected rating
@@ -22,40 +22,37 @@ export default function Review() {
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
-useEffect(()=>{
-  setReviewData({...reviewData,personalRating:rating})
-},[rating])
-  const handleSubmitReview=async(e)=>{
+  useEffect(() => {
+    setReviewData({ ...reviewData, personalRating: rating })
+  }, [rating])
+  const handleSubmitReview = async (e) => {
     e.preventDefault();
     try {
-      if(reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region){
-      const responseData = await sendRequest(
-        '/review/posting',
-        'POST',
-        JSON.stringify(reviewData),
-        {
-          'Content-Type': 'application/json',
-        }
+      if (reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region) {
+        const responseData = await sendRequest(
+          '/review/posting',
+          'POST',
+          JSON.stringify(reviewData),
+          {
+            'Content-Type': 'application/json',
+          }
 
-      );
-      if(responseData.name)
-        setSubmitSuccess(true)
-      else
-      alert("error in submitting")
-      
-    }
-      else{
+        );
+        if (responseData.name)
+          alert("Success")
+      }
+      else {
         alert("Missing Params")
       }
-     
+
     } catch (error) {
       console.log(error.message || 'An error occurred during login');
     }
   }
 
-  const handleTextBoxChange=(e)=>{
+  const handleTextBoxChange = (e) => {
     const newValue = e.target.value.length <= 300 ? e.target.value : reviewData.description;
-    setReviewData({...reviewData, description: newValue });
+    setReviewData({ ...reviewData, description: newValue });
   }
   return (
     <>
@@ -85,7 +82,7 @@ Skie font-semibold text-[#CA8F30] my-12"
                   id="name"
                   className="bg-[#EDEDED] border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 border-none outline-none "
                   placeholder="Name"
-                  onChange={e=>{setReviewData(data=>{return {...data,name:e.target.value}});console.log(reviewData)}}
+                  onChange={e => { setReviewData(data => { return { ...data, name: e.target.value } }); console.log(reviewData) }}
                   required
                 />
               </div>
@@ -97,9 +94,9 @@ Skie font-semibold text-[#CA8F30] my-12"
                 placeholder="|"
                 value={reviewData.description}
                 onChange={handleTextBoxChange}
-                
+
               ></textarea>
-  
+
 
 
             
