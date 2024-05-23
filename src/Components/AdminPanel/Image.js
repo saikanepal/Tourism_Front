@@ -1,6 +1,7 @@
 import React from "react";
 import DashboardWrapper from "./DashboardWrapper";
 import ImageUploadForm from "./ImageUpload";
+import GalleryUploadForm from "./GalleryUpload";
 function Image() {
   return (
     <DashboardWrapper>
@@ -13,6 +14,10 @@ function Image() {
           <div pt-4>
             {" "}
             <ImageUploadForm />
+          </div>
+          <div pt-4>
+            {" "}
+            <GalleryUploadForm />
           </div>
         </div>
       </div>
