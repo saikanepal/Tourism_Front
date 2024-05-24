@@ -55,11 +55,7 @@ const ImageUploadForm = () => {
       for (const image of images) {
         const uploadedImage = await uploadImage(image);
         uploadedImages.push(uploadedImage);
-        console.log("Uploaded Image:", uploadedImage);
       }
-
-      console.log("All Uploaded Images:", uploadedImages);
-      console.log("Description:", description);
 
       const response = await axios.post(
         "http://localhost:8000/api/Image/postImage",
@@ -76,7 +72,7 @@ const ImageUploadForm = () => {
       //     "Content-Type": "application/json",
       //   }
       // );
-      console.log("Response:", response);
+      // console.log("Response:", response);
 
       setDescription("");
       setImages([]);
@@ -93,7 +89,7 @@ const ImageUploadForm = () => {
       className="max-w-[60%] mx-auto my-4 font-Poppins"
       onSubmit={handleSubmit}
     >
-      <div className="mb-5">
+      {/* <div className="mb-5">
         <label
           htmlFor="description"
           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -109,7 +105,7 @@ const ImageUploadForm = () => {
           onChange={handleDescriptionChange}
           // required
         />
-      </div>
+      </div> */}
       {[1, 2, 3].map((index) => (
         <div className="mb-5" key={index}>
           <label
@@ -159,7 +155,7 @@ const ImageUploadForm = () => {
             <svg
               aria-hidden="true"
               role="status"
-              class="inline w-4 h-4 me-3 text-white animate-spin"
+              className="inline w-4 h-4 me-3 text-white animate-spin"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

@@ -11,58 +11,51 @@ import useFetch from "../../../Hooks/useFetch";
 export default function Review() {
   const { isLoading, error, sendRequest, onCloseError } = useFetch();
   const [reviewData, setReviewData] = useState({
-    name: '',
+    name: "",
     personalRating: 5,
-    description: '',
-    region: ''
-  })
-  
+    description: "",
+    region: "",
+  });
+
   const [rating, setRating] = useState(0); // State to store the selected rating
 
   const handleRatingChange = (newRating) => {
     setRating(newRating);
   };
   useEffect(() => {
-    setReviewData({ ...reviewData, personalRating: rating })
-  }, [rating])
+    setReviewData({ ...reviewData, personalRating: rating });
+  }, [rating]);
   const handleSubmitReview = async (e) => {
     e.preventDefault();
     try {
-      if (reviewData.name && reviewData.personalRating && reviewData.description && reviewData.region) {
+      if (
+        reviewData.name &&
+        reviewData.personalRating &&
+        reviewData.description &&
+        reviewData.region
+      ) {
         const responseData = await sendRequest(
-          '/review/posting',
-          'POST',
+          "/review/posting",
+          "POST",
           JSON.stringify(reviewData),
           {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           }
-
-<<<<<<< HEAD
         );
-        if (responseData.name)
-          alert("Success")
+        if (responseData.name) alert("Success");
+      } else {
+        alert("Missing Params");
       }
-      else {
-=======
-      );
-      if(responseData.name)
-        alert("Success");
-      
-    }
-      else{
->>>>>>> 5e33a25ebae59b4bfabfaa2c7d6a37f951c10bbf
-        alert("Missing Params")
-      }
-
     } catch (error) {
-      console.log(error.message || 'An error occurred during login');
+      console.log(error.message || "An error occurred during login");
     }
-  }
+  };
 
   const handleTextBoxChange = (e) => {
-    const newValue = e.target.value.length <= 300 ? e.target.value : reviewData.description;
+    const newValue =
+      e.target.value.length <= 300 ? e.target.value : reviewData.description;
     setReviewData({ ...reviewData, description: newValue });
-  }
+  };
   return (
     <>
       <h1
@@ -83,14 +76,23 @@ Skie font-semibold text-[#CA8F30] my-12"
                 >
                   Write Reviews
                 </label>
-                <TrekkingDropdown data={trekkingData} reviewData={reviewData} setReviewData={setReviewData} />
+                <TrekkingDropdown
+                  data={trekkingData}
+                  reviewData={reviewData}
+                  setReviewData={setReviewData}
+                />
                 <input
                   type=""
                   name="name"
                   id="name"
                   className="bg-[#EDEDED] border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 border-none outline-none "
                   placeholder="Name"
-                  onChange={e => { setReviewData(data => { return { ...data, name: e.target.value } }); console.log(reviewData) }}
+                  onChange={(e) => {
+                    setReviewData((data) => {
+                      return { ...data, name: e.target.value };
+                    });
+                    console.log(reviewData);
+                  }}
                   required
                 />
               </div>
@@ -102,25 +104,24 @@ Skie font-semibold text-[#CA8F30] my-12"
                 placeholder="|"
                 value={reviewData.description}
                 onChange={handleTextBoxChange}
-
               ></textarea>
-
-
-
 
               <div className="flex items-center text-3xl">
                 {[...Array(5)].map((_, index) => (
                   <button
                     key={index}
-                    className={`${index < rating ? 'text-yellow-500' : 'text-gray-400'
-                      } focus:outline-none`}
-                    onClick={(e) => { e.preventDefault(); handleRatingChange(index + 1) }}
+                    className={`${
+                      index < rating ? "text-yellow-500" : "text-gray-400"
+                    } focus:outline-none`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleRatingChange(index + 1);
+                    }}
                   >
                     ★
                   </button>
                 ))}
               </div>
-
 
               <button
                 type="submit"
@@ -134,7 +135,7 @@ Skie font-semibold text-[#CA8F30] my-12"
           </div>
           <div className="  flex justify-between overflow-y-auto  no-scroll scrollable-container  mx-auto md:w-[60%] lg:w-full min-h-60">
             {" "}
-            <ReviewCard perPage={0}/>
+            <ReviewCard perPage={0} />
           </div>
         </div>
       </div>

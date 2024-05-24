@@ -1,15 +1,15 @@
-import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import TrekkingDropdown from "../HomePage/Review/TrekkingDropdown";
 import userContext from "../../Context/userContext";
 import useFetch from "../../Hooks/useFetch";
 
-export default function Signup() {
+export default function PriceUpdate() {
   const { isLoading, error, sendRequest, onCloseError } = useFetch();
 
-  const navigate = useNavigate();
-  const { updateUser } = useContext(userContext);
-  const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    price: "",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,20 +17,29 @@ export default function Signup() {
 
     try {
       const response = await sendRequest(
-        "/admin/login",
+        "/price/updatePrice",
         "POST",
         JSON.stringify(formData),
         {
           "Content-Type": "application/json",
         }
       );
-      console.log("Response:", response.data);
-      navigate("/dashboard");
-      alert("Signup successful!");
+
+      // console.log("response", response);
+      // Simulate a successful response
+
+      // setTimeout(() => {
+      setLoading(false);
+      alert("Price updated successfully!");
+
+      // Reset form fields
+      setFormData({
+        price: "",
+        region: "",
+      });
+      // }, 2000);
     } catch (error) {
-      console.error("Error:", error);
-      alert("Signup failed. Please try again.");
-    } finally {
+      alert("Failed to update price. Please try again.");
       setLoading(false);
     }
   };
@@ -39,52 +48,52 @@ export default function Signup() {
     const { id, value } = e.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
-      [id]: value.trim(),
+      [id]: value,
     }));
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-custom-gold">
+    <div className="flex items-center justify-center h-screen">
       <form
         onSubmit={handleSubmit}
-        className="lg:w-1/3 mx-auto my-4 font-Poppins bg-white p-8 rounded-lg shadow-md"
+        className="w-full mx-auto my-4 sm:w-1/2 font-Poppins bg-custom-gold p-8 rounded-lg shadow-md"
       >
+        <h1 className="flex items-center justify-center my-10 text-3xl text-white font-bold">
+          Update Price
+        </h1>
         <div className="mb-5">
           <label
-            htmlFor="email"
+            htmlFor="location"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
-            Your email
+            Choose Your Location
           </label>
-          <input
-            type="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline:none border:none"
-            placeholder="someone@gmail.com"
-            required
+          <TrekkingDropdown
+            setReviewData={setFormData}
+            value={formData.region}
+            className="bg-red-500"
           />
         </div>
         <div className="mb-5">
           <label
-            htmlFor="password"
+            htmlFor="price"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
-            Your password
+            Price
           </label>
           <input
-            type="password"
-            id="password"
-            value={formData.password}
+            type="number"
+            id="price"
+            value={formData.price}
             onChange={handleChange}
-            className="bg-gray-50  text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none border-none"
+            placeholder="Enter price"
             required
           />
         </div>
         <button
           type="submit"
-          className={`text-white bg-custom-gold  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ${
+          className={`text-black bg-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ${
             loading ? "cursor-not-allowed" : ""
           }`}
           disabled={loading}
@@ -94,7 +103,7 @@ export default function Signup() {
               <svg
                 aria-hidden="true"
                 role="status"
-                className="inline w-4 h-4 me-3 text-white animate-spin"
+                className="inline w-4 h-4 mr-3 text-gray-500 animate-spin"
                 viewBox="0 0 100 101"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +117,7 @@ export default function Signup() {
                   fill="currentColor"
                 />
               </svg>
-              Signing Up...
+              Updating...
             </p>
           ) : (
             "Submit"

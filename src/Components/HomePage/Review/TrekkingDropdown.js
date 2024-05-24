@@ -1,17 +1,23 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import trekkingData from "../../../Assets/Data/Trekking"; // Import trekking data
 import expeditionData from "../../../Assets/Data/Expedition"; //
 import "../Nav/Header.css";
-const TrekkingDropdown = ({setReviewData}) => {
+const TrekkingDropdown = ({ setReviewData, value }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
-  useEffect(()=>{console.log(selectedItem)},[selectedItem])
+  // useEffect(() => {
+  //   console.log(selectedItem);
+  // }, [selectedItem]);
+  useEffect(() => {
+    if (value === "") {
+      setSearchTerm("");
+    }
+  }, [value]);
+
   const handleSearchChange = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-    
-    
 
     if (value.trim() === "") {
       setSearchResults([]);
@@ -31,16 +37,18 @@ const TrekkingDropdown = ({setReviewData}) => {
     }, []);
 
     setSearchResults(filteredResults);
-    setReviewData(data=>{return {...data,region:e.target.value}})
+    setReviewData((data) => {
+      return { ...data, region: e.target.value };
+    });
   };
 
   const handleItemClick = (item) => {
     setSelectedItem(item);
     setSearchTerm(item); // Display the selected item in the search bar
-    setReviewData(data=>{return {...data,region:item}})
+    setReviewData((data) => {
+      return { ...data, region: item };
+    });
     setSearchResults([]); // Clear search results
-    
-    
   };
 
   return (

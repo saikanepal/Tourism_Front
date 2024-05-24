@@ -9,6 +9,7 @@ import Dashboard from "./Components/AdminPanel/Dashboard.js";
 import ErrorPage from "./Components/ErrorPage/ErrorPage.js";
 import Gallery from "./Components/Gallery/Gallery.js";
 import Image from "./Components/AdminPanel/Image.js";
+import Price from "./Components/AdminPanel/Price.js";
 import Singup from "./Components/AdminPanel/Singup.js";
 import UserState from "./Context/UserState.js";
 import { useContext } from "react";
@@ -29,6 +30,7 @@ const AppRouter = () => {
         <Route path="/expedition/:region" element={<InnerSub />} />
         <Route path="/admintest" element={<Singup />} />
         {user && <Route path="/image" element={<Image />} />}
+        {user && <Route path="/price" element={<Price />} />}
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/trekking/:region/:place" element={<FinalLandingPage />} />
         <Route
