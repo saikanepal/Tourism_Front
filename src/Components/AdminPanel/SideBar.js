@@ -38,11 +38,11 @@ const SideBar = () => {
     // { name: "Services", link: "/services", icon: MdMedicalServices },
     // { name: "Patients", link: "/patients", icon: FaUsersLine },
     { name: "image", link: "/image", icon: FaUsersLine },
-    {
-      name: "Book Appointment",
-      link: "/book-appointment",
-      icon: VscGitPullRequestNewChanges,
-    },
+    // {
+    //   name: "Book Appointment",
+    //   link: "/book-appointment",
+    //   icon: VscGitPullRequestNewChanges,
+    // },
     // { name: "Setting", link: "/dashboard", icon: RiSettings4Line },
   ];
 
