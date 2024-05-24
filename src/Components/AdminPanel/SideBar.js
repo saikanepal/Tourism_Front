@@ -1,6 +1,7 @@
 import React from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
-
+import { FaMoneyBillWave } from "react-icons/fa";
+import { PiImagesLight } from "react-icons/pi";
 import { FiMessageSquare } from "react-icons/fi";
 import { FiClipboard, FiLogOut } from "react-icons/fi";
 import { MdOutlineDashboard } from "react-icons/md";
@@ -16,6 +17,8 @@ import { MdMedicalServices } from "react-icons/md";
 import { FaUsersLine } from "react-icons/fa6";
 import { VscGitPullRequestNewChanges } from "react-icons/vsc";
 import { useSiderBar } from "../../Context/SiderBarContext";
+import { useContext } from "react";
+import userContext from "../../Context/userContext";
 const SideBar = () => {
   const navigate = useNavigate();
   const { open, setOpen } = useSiderBar();
@@ -37,7 +40,8 @@ const SideBar = () => {
     // { name: "Profile", link: "/dashboard", icon: FaCircleUser },
     // { name: "Services", link: "/services", icon: MdMedicalServices },
     // { name: "Patients", link: "/patients", icon: FaUsersLine },
-    { name: "image", link: "/image", icon: FaUsersLine },
+    { name: "image", link: "/image", icon: PiImagesLight },
+    { name: "price", link: "/price", icon: FaMoneyBillWave },
     {
       name: "Book Appointment",
       link: "/book-appointment",

@@ -11,7 +11,7 @@ function Image() {
           <h1 className="flex justify-center text-2xl font-bold text-custom-gold">
             Upload Images
           </h1>
-          <div pt-4>
+          <div className="pt-4">
             {" "}
             <ImageUploadForm />
           </div>

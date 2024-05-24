@@ -31,7 +31,7 @@ export const useImage = () => {
         };
       }
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
       return " ";
     }
   };
