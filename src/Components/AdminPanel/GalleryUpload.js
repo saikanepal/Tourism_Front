@@ -56,7 +56,7 @@ const GalleryUploadForm = () => {
     let uploadedImage = null;
     if (file) {
       uploadedImage = await uploadImage(file);
-      console.log('Uploaded Image:', uploadedImage.Picture.img);
+  
     }
 
     const dataToSubmit = {
@@ -65,7 +65,7 @@ const GalleryUploadForm = () => {
       description: description,
     };
 
-    console.log('Image Data to Submit:', dataToSubmit);
+   
 
     try {
       const responseData = await sendRequest(
@@ -77,7 +77,7 @@ const GalleryUploadForm = () => {
         }
 
       );
-      console.log('Response:', responseData.data);
+     
       setFile(null);
       setRegion('');
       setDescription('');
@@ -95,7 +95,7 @@ const GalleryUploadForm = () => {
       description: urlDescription,
     };
 
-    console.log('URL Data to Submit:', dataToSubmit);
+  
 
     try {
       const responseData = await sendRequest(
@@ -106,12 +106,11 @@ const GalleryUploadForm = () => {
           'Content-Type': 'application/json',
         }
       )
-      console.log('Response:', responseData.data);
+     
       setVideoUrl('');
       setTitle('');
       setUrlDescription('');
     } catch (error) {
-      console.error('Error uploading URL:', error);
     }
   };
 
