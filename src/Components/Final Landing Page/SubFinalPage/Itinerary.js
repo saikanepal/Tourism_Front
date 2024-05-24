@@ -3,7 +3,7 @@ import {motion} from 'framer-motion'
 
 const Itinerary = ({sectionsRef,feedData}) => {
     const iti=feedData[1].itinerary
-    console.log("iti",iti)
+   
   return (
     <div id='section-2' className='flex justify-center mt-10 lg:w-3/4' ref={(section) => (sectionsRef.current[1] = section)}>
        <div className='w-4/5 '>

@@ -33,8 +33,8 @@ const Footer = () => {
                         <div className='text-sm sm:text-lg'>
                             <p className="font-bold text-[#383838] ">Services</p>
                             <div className="flex flex-col items-start mt-2 space-y-2 font-bold text-[#4F3100]">
-                                <Link to="/" className=" transition-colors duration-300 hover:text-white">Trekking</Link>
-                                <Link to="/" className=" transition-colors duration-300 hover:text-white">Adventure Sports</Link>
+                                <Link to="/trekking" className=" transition-colors duration-300 hover:text-white">Trekking</Link>
+                                <Link to="/expedition" className=" transition-colors duration-300 hover:text-white">Expedition</Link>
                                 <Link to="/" className=" transition-colors duration-300 hover:text-white">Tours</Link>
                                 <Link to="/" className=" transition-colors duration-300 hover:text-white">Local Guides</Link>
                                 <Link to="/" className=" transition-colors duration-300 hover:text-white">Cuisine Travel</Link>

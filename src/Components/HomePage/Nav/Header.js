@@ -8,7 +8,6 @@ import "./Header.css";
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const location = useLocation()
-  console.log(location, "loca")
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -78,10 +77,10 @@ const Header = () => {
           // }`}
           >
             {Links.map((link, index) => (
-              <li key={index} className={`${location.pathname == link.link ? 'text-blue-400' : ''} md:ml-6 md:my-0 my-7 font-normal`}>
+              <li key={index} className={`${!scrolling?location.pathname == link.link ? 'text-custom-yellow' : '':location.pathname == link.link ? 'text-white' : 'text-orange-950'} md:ml-6 md:my-0 my-7 font-normal`}>
                 <Link
                   to={link.link}
-                  className=" md:text-sm lg:text-xl hover:text-blue-400 duration-500"
+                  className={` md:text-sm lg:text-xl ${scrolling?"hover:text-white":"hover:text-custom-yellow"}`}
 
                 >
                   {link.name}

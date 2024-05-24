@@ -17,7 +17,8 @@ const trekking = {
                     "videos": ["URL to video"],
                     "reviews": ["Customer reviews and testimonials"],
                     "description": "Detailed description of the trek",
-                    "itinerary":["ABC","XYZ","123",'XYM']
+                    "itinerary":["ABC","XYZ","123",'XYM'],
+                    "elevation":"1200m"
                 },
                 "Gokyo Valley Trek": {
                     "overview": "The Gokyo Valley Trek is a scenic trek in the Everest region, known for its stunning glacial lakes and breathtaking views of the Himalayan peaks.",
