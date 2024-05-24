@@ -6,6 +6,8 @@ import DiscoverSection from "./Discover/DiscoverSection";
 import Footer from "../Footer/Footer.js";
 import Trekking from "../Trekking/Trekking";
 import Review from "./Review/Review";
+import Gallery from "./Gallery/Gallery.js";
+
 
 export default function HomePage() {
   useEffect(()=>{
@@ -19,8 +21,11 @@ export default function HomePage() {
       <DiscoverSection />
       <Expedition />
       <Trekking />
+      <Gallery/>
       <Review />
+      
       <Footer />
+      
     </div>
   );
 }

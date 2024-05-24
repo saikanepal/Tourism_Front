@@ -203,24 +203,24 @@ const ContactForm = ({setOverlayActive,overlayActive,finalLocation}) => {
 
 
 
-<div class="flex items-center mb-4">
-  <div class="mr-8">
-    <label class="flex items-center">
-      <input type="checkbox" required class="mr-4"/>
-      <span class="text-white">I agree to all the conditions</span>
+<div className="flex items-center mb-4">
+  <div className="mr-8">
+    <label className="flex items-center">
+      <input type="checkbox" required className="mr-4"/>
+      <span className="text-white">I agree to all the conditions</span>
     </label>
   </div>
-  <div class="ml-auto mr-8 opacity-50">
-    <p class="text-white">Fields with * are mandatory</p>
+  <div className="ml-auto mr-8 opacity-50">
+    <p className="text-white">Fields with * are mandatory</p>
   </div>
 </div>
 
 
 
-          <div class="flex justify-around">
-          <button type="submit" class=" text-white py-2 px-4" style={{ backgroundColor: '#F29C0F' }}>Submit</button>
+          <div className="flex justify-around">
+          <button type="submit" className=" text-white py-2 px-4" style={{ backgroundColor: '#F29C0F' }}>Submit</button>
 
-          <button type="button" onClick={handleReset} class="bg-transparent py-2 px-4" style={{ color: '#F29C0F', border: '1px solid #F29C0F' }}>Reset</button>
+          <button type="button" onClick={handleReset} className="bg-transparent py-2 px-4" style={{ color: '#F29C0F', border: '1px solid #F29C0F' }}>Reset</button>
 
 
 

@@ -16,7 +16,7 @@ const Overview = ({sectionsRef,feedData}) => {
        <div className='w-4/5 flex'>
             <div className=''>
             <h2 className='flex items-center mb-5'><div className='w-5 h-5 bg-custom-gold rounded-3xl mr-2'></div><p className='text-2xl font-bold text-black'>Trek Overview</p></h2>
-            <p className=''>{feedData[1].overview?viewMore?feedData[1].overview:feedData[1].overview.slice(0,400)+'...':'Overview Not Found'}{viewMore?<button onClick={()=>{setViewMore(false)}} className='font-bold ml-3'>View Less</button>:<button onClick={()=>{setViewMore(true)}} className='font-bold ml-3'>View More</button>}</p>
+            <div className=''>{feedData[1].overview?viewMore?feedData[1].overview:feedData[1].overview.slice(0,400)+'...':'Overview Not Found'}{viewMore?<button onClick={()=>{setViewMore(false)}} className='font-bold ml-3'>View Less</button>:<button onClick={()=>{setViewMore(true)}} className='font-bold ml-3'>View More</button>}</div>
             </div>
             
        </div>

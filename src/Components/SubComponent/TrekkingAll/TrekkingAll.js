@@ -21,7 +21,7 @@ const TrekkingAll = () => {
         
             {
                 Object.entries(location.pathname==='/trekking'?trekking.trekking:expeditions.expeditions).map((data,i)=>{
-                    return <div className={` w-full flex justify-center lg:justify-between mb-10`} >
+                    return <div className={` w-full flex justify-center lg:justify-between mb-10`} key={i} >
                                 <div className='w-full lg:w-2/5 flex gap-3 justify-center lg:justify-start pb-20 lg:pb-0 h-full '>
                                     
                                     <div className='flex items-center lg:items-start flex-col text-center lg:text-left mr-0 lg:mr-14 '>
