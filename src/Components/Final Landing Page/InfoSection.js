@@ -10,7 +10,6 @@ import {useState} from 'react';
 
 
 export default function InfoSection(props) {
-    
   
     return (
          <div className="w-4/5 flex flex-col flex-wrap justify-between lg:flex-row mt-4 mb-10 gap-10">

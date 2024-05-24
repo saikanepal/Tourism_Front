@@ -8,7 +8,6 @@ import "./Header.css";
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const location = useLocation()
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {

@@ -6,12 +6,12 @@ import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 const Caroussel = ({imageCarousel}) => {
-//  console.log(imageCarousel)
+
  
  const selfMap=[1,2,3]
 const navigate=useNavigate()
  const handleBookNow=(val)=>{
-  console.log("hello")
+
   navigate(`/trekking/${imageCarousel[0]}/${Object.keys(imageCarousel[1])[val]}`)
  }
 const animateDesign={

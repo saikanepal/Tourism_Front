@@ -9,7 +9,6 @@ import "./style.css";
 function CarouselItem({ imageUrl }) {
   const handleClick=(e)=>{
     e.preventDefault();
-    console.log("hello")
   }
   return (
     
