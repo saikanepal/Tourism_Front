@@ -71,8 +71,8 @@ const InnerSub = () => {
 
             <div ref={myRef} className="w-4/5 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-5 rounded overflow-hidden shadow-lg mb-10">
                 {Object.values(trekOrExpenditureCamp).map((trek,i) => (
-                    <>
-                        <motion.div initial='initial' whileHover='animate' className="flex flex-col relative justify-center items-center bg-black" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
+                    
+                        <motion.div initial='initial' key={i} whileHover='animate' className="flex flex-col relative justify-center items-center bg-black" onClick={(e)=>{e.preventDefault();handleNextPage(trek,{data:Object.keys(trekOrExpenditureCamp)[i]})}}>
                         <div className="overflow-hidden relative h-96 " >
                             <motion.img 
                             variants={animateBox}
@@ -85,7 +85,7 @@ const InnerSub = () => {
                             
                             <h1 className="text-xl lg:text-3xl text-white absolute">{Object.keys(trekOrExpenditureCamp)[i]}</h1>
                         </motion.div>
-                    </>
+                    
                 ))}
             </div >
             <Footer/>

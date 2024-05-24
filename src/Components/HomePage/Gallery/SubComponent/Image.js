@@ -1,17 +1,36 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import useFetch from "../../../../Hooks/useFetch";
 
 
-const images = [
-    "https://images.pexels.com/photos/169647/pexels-photo-169647.jpeg?auto=compress&cs=tinysrgb&w=600",
-    "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/773471/pexels-photo-773471.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/632522/pexels-photo-632522.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  ];
 const Image = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [images, setImages] = useState([])
+    const { isLoading, sendRequest } = useFetch();
+    async function fetchGalleryData() {
+      try {
+
+          // Uninstall axios later
+          const responseData = await sendRequest(
+              '/gallery/getSomeImage',  // Gallery ko GET Api rakhne
+              'GET',
+              null,
+              {
+                  'Content-Type': 'application/json',
+              }
+
+          );
+          
+          setImages(responseData.galleryImageDetails)
+
+      } catch (error) {
+          console.log('An error occurred in fetching gallery image', error.message);
+      }
+  }
+
+  useEffect(() => {
+    fetchGalleryData()
+}, [])
 
     const handleLeftClick = (e) => {
         e.preventDefault()
@@ -24,7 +43,9 @@ const Image = () => {
       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
     };
   return (
-    <div className="carousel-container relative w-80 h-96 perspective">
+    <>{images.length===0?"Loading":
+    <div className="carousel-container relative w-full min-w-80 h-72 perspective">
+      <div>
       {images.map((image, index) => (
         <motion.div
           key={index}
@@ -36,16 +57,18 @@ const Image = () => {
           }}
           transition={{ duration: 0.5 }}
         >
-          <img src={image} alt={`Image ${index + 1}`} className="carousel-image w-80 max-w-48 rounded shadow-lg" />
+          <img src={image.imageUrl} alt={`Image ${index + 1}`} className="carousel-image h-72 w-full rounded shadow-lg object-cover" />
         </motion.div>
       ))}
-      <button className="absolute -left-24 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white py-2 px-4 rounded z-10" onClick={handleLeftClick}>
-        Hello
+      </div>
+      <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white py-2 px-4 rounded-full opacity-50 hover:opacity-100 z-10" onClick={handleLeftClick}>
+        &lt;  
       </button>
-      <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white py-2 px-4 rounded z-10" onClick={handleRightClick}>
-        Hi
+      <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white py-2 px-4 rounded-full opacity-50 hover:opacity-100 z-10" onClick={handleRightClick}>
+        &gt;
       </button>
-    </div>
+    </div>}
+    </>
   )
 }
 

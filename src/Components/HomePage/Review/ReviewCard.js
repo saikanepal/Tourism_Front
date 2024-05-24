@@ -29,7 +29,7 @@ function ReviewCard({from,page,perPage,setCurrentIndex,currentIndex}) {
         }
 
       );
-     console.log(responseData,"responseData")
+    
       setReviewData(responseData.review)
      
     } catch (error) {
@@ -53,7 +53,7 @@ function ReviewCard({from,page,perPage,setCurrentIndex,currentIndex}) {
      }
       setReviewData([...reviewData,...responseData])
       
-      console.log(responseData,"review")
+      
      
     } catch (error) {
       console.log(error.message || 'An error occurred during login');

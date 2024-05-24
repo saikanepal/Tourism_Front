@@ -17,13 +17,15 @@ export default function HomePage() {
   return (
     <div className="font-Poppins text-gray-800">
       {/* <HeroSection /> */}
-      {/* <Header />
+      <Header />
       <DiscoverSection />
       <Expedition />
       <Trekking />
-      <Review />
-      <Footer /> */}
       <Gallery/>
+      <Review />
+      
+      <Footer />
+      
     </div>
   );
 }

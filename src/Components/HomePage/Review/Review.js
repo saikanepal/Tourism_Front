@@ -71,7 +71,7 @@ Skie font-semibold text-[#CA8F30] my-12"
             <form className="space-y-6 flex flex-col" action="#">
               <div>
                 <label
-                  for="message"
+                  htmlFor="message"
                   className="block mb-2 text-lg font-medium text-[#7F7F7F] font-jomolhari text-center"
                 >
                   Write Reviews
@@ -91,7 +91,7 @@ Skie font-semibold text-[#CA8F30] my-12"
               <textarea
                 id="message"
                 rows="2"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-[#EDEDED] rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 border-none outline-none"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-[#EDEDED] rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 border-none outline-none"
                 placeholder="|"
                 value={reviewData.description}
                 onChange={handleTextBoxChange}

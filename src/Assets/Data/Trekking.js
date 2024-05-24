@@ -421,12 +421,170 @@ const trekking = {
             
         },
         "Short Hikings ": {
-            "Chisapani Nagarkot Trek": {},
-            "Namobuddha Hiking": {},
-            "Fulchouki Trekking": {},
-            "Dhampus Hiking": {},
-            "Khorpa Ridge Trek": {},
-            "Tamang Heritage Trail": {}
+            "Chisapani Nagarkot Trek": {
+                "overview": "The Chisapani Nagarkot Trek offers breathtaking views of the Himalayas, lush forests, and traditional Nepali villages.",
+                "map": ["map"],
+                "highlights": [
+                  "Scenic views of Langtang Himalayan range",
+                  "Experience local culture and lifestyle",
+                  "Sunrise and sunset views from Nagarkot"
+                ],
+                "costIncludes": ["Accommodation", "Meals during trek", "Guide and porter services"],
+                "costExcludes": ["Transportation to trek starting point", "Personal expenses", "Tips for guide and porter"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["Hiking boots", "Daypack", "Water bottle", "Sunscreen"],
+                "photos": [annapurna1],
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "The Chisapani Nagarkot Trek takes you through terraced fields, dense forests, and picturesque villages, providing an authentic Himalayan experience.",
+                "itinerary": [
+                  "Kathmandu to Sundarijal by bus",
+                  "Sundarijal to Chisapani",
+                  "Chisapani to Nagarkot via Chauki Bhanjyang",
+                  "Nagarkot to Dhulikhel",
+                  "Dhulikhel to Namo Buddha",
+                  "Namo Buddha to Panauti",
+                  "Panauti to Kathmandu"
+                ],
+                "elevation": "2175m (Chisapani), 2195m (Nagarkot)"
+              },
+              "Namobuddha Hiking": {
+                "overview": "Namobuddha Hiking is a spiritual and scenic trek in the Kathmandu Valley, known for its ancient monasteries and stunning mountain views.",
+                "map": ["map"],
+                "highlights": [
+                  "Visit to Namobuddha Monastery",
+                  "Panoramic views of Himalayan ranges",
+                  "Exploration of rural Nepali villages"
+                ],
+                "costIncludes": ["Accommodation", "Meals during trek", "Guide services"],
+                "costExcludes": ["Transportation to trek starting point", "Personal expenses", "Tips for guide"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["Comfortable walking shoes", "Sun hat", "Camera", "Lightweight clothing"],
+                "photos": [annapurna1],
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "Namobuddha Hiking offers a blend of natural beauty, cultural richness, and spiritual serenity, making it an ideal trek for those seeking a peaceful getaway.",
+                "itinerary": [
+                  "Kathmandu to Dhulikhel by bus",
+                  "Dhulikhel to Namobuddha",
+                  "Namobuddha to Panauti",
+                  "Panauti to Kathmandu"
+                ],
+                "elevation": "1750m (Namobuddha)"
+              },
+              "Fulchouki Trekking": {
+                "overview": "Fulchouki Trekking is a short and scenic trek in the Shivapuri Nagarjun National Park, offering panoramic views of the Kathmandu Valley and surrounding mountains.",
+                "map": ["map"],
+                "highlights": [
+                  "Panoramic views of the Kathmandu Valley",
+                  "Exploration of Shivapuri Nagarjun National Park",
+                  "Visit to Buddhist monasteries"
+                ],
+                "costIncludes": ["Accommodation", "Meals during trek", "Guide services"],
+                "costExcludes": ["Transportation to trek starting point", "Personal expenses", "Tips for guide"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["Sturdy walking shoes", "Sunscreen", "Water bottle", "Daypack"],
+                "photos": [annapurna1],
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "Fulchouki Trekking offers a refreshing escape into nature, with lush forests, serene valleys, and majestic mountain vistas.",
+                "itinerary": [
+                  "Kathmandu to Sundarijal by bus",
+                  "Sundarijal to Chisapani",
+                  "Chisapani to Nagarkot via Chauki Bhanjyang",
+                  "Nagarkot to Dhulikhel",
+                  "Dhulikhel to Namo Buddha",
+                  "Namo Buddha to Panauti",
+                  "Panauti to Kathmandu"
+                ],
+                "elevation": "2760m (Fulchouki Peak)"
+              },
+              "Dhampus Hiking": {
+                "overview": "Dhampus Hiking offers stunning views of the Annapurna and Machhapuchhre (Fishtail) mountain ranges, along with insights into traditional Gurung culture.",
+                "map": ["map"],
+                "highlights": [
+                  "Panoramic views of Annapurna and Machhapuchhre",
+                  "Cultural immersion in Gurung villages",
+                  "Experience local hospitality"
+                ],
+                "costIncludes": ["Accommodation", "Meals during trek", "Guide services"],
+                "costExcludes": ["Transportation to trek starting point", "Personal expenses", "Tips for guide"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["Hiking boots", "Warm clothing", "Camera", "Sunscreen"],
+                "photos": [annapurna1],
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "Dhampus Hiking offers a perfect blend of natural beauty and cultural immersion, making it an ideal trek for trekkers of all levels.",
+                "itinerary": [
+                  "Kathmandu to Pokhara by bus",
+                  "Pokhara to Phedi by car",
+                  "Phedi to Dhampus",
+                  "Dhampus to Phedi",
+                  "Phedi to Pokhara by car",
+                  "Pokhara to Kathmandu by bus"
+                ],
+                "elevation": "1700m (Dhampus)"
+              },
+              "Khorpa Ridge Trek": {
+                "overview": "The Khorpa Ridge Trek is a challenging trek in the Khumbu region, offering breathtaking views of Everest, Lhotse, and other Himalayan peaks.",
+                "map": ["map"],
+                "highlights": [
+                  "Close-up views of Everest and Lhotse",
+                  "Crossing high mountain passes",
+                  "Exploration of remote Sherpa villages"
+                ],
+                "costIncludes": ["Accommodation", "Meals during trek", "Guide and porter services"],
+                "costExcludes": ["Flights to and from Lukla", "Trekking permits", "Personal expenses"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["High-altitude trekking gear", "Down jacket", "Trekking poles", "Headlamp"],
+                "photos": [annapurna1],
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "The Khorpa Ridge Trek offers an unparalleled adventure in the heart of the Everest region, with challenging terrain and stunning mountain vistas.",
+                "itinerary": [
+                  "Kathmandu to Lukla by flight",
+                  "Lukla to Namche Bazaar",
+                  "Acclimatization day in Namche Bazaar",
+                  "Namche Bazaar to Tengboche",
+                  "Tengboche to Dingboche",
+                  "Acclimatization day in Dingboche",
+                  "Dingboche to Lobuche",
+                  "Lobuche to Gorak Shep, visit Everest Base Camp",
+                  "Gorak Shep to Kala Patthar, return to Lobuche",
+                  "Lobuche to Pangboche",
+                  "Pangboche to Namche Bazaar",
+                  "Namche Bazaar to Lukla",
+                  "Lukla to Kathmandu by flight"
+                ],
+                "elevation": "5545m (Kala Patthar)"
+              },
+              "Tamang Heritage Trail": {
+                "overview": "The Tamang Heritage Trail is a cultural trek in the Langtang region, offering insights into the traditional Tamang way of life, scenic landscapes, and warm hospitality.",
+                "map": ["map"],
+                "highlights": [
+                  "Cultural immersion in Tamang villages",
+                  "Panoramic views of Langtang and Ganesh Himalayan ranges",
+                  "Visit to ancient monasteries and chortens"
+                ],
+                "costIncludes": ["Accommodation", "Meals during trek", "Guide and porter services"],
+                "costExcludes": ["Transportation to trek starting point", "Trekking permits", "Personal expenses"],
+                "fixedDates": ["Spring (March to May)", "Autumn (September to November)"],
+                "gearList": ["Hiking boots", "Trekking pants", "Camera", "Water bottle"],
+                "photos": [annapurna1],
+                "videos": ["URL to video"],
+                "reviews": ["Customer reviews and testimonials"],
+                "description": "The Tamang Heritage Trail traverses through lush forests, terraced fields, and Tamang settlements, providing a glimpse into the rich cultural heritage of the region.",
+                "itinerary": [
+                  "Kathmandu to Syabrubesi by bus",
+                  "Syabrubesi to Gatlang",
+                  "Gatlang to Tatopani",
+                  "Tatopani to Thuman",
+                  "Thuman to Briddim",
+                  "Briddim to Syabrubesi",
+                  "Syabrubesi to Kathmandu by bus"
+                ],
+                "elevation": "2250m (Syabrubesi)"
+              }
         }
     }
 };

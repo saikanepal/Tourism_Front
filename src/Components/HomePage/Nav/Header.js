@@ -8,7 +8,7 @@ import "./Header.css";
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const location = useLocation()
-  console.log(location, "loca")
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -29,8 +29,8 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "Expedition", link: "/expedition" },
     { name: "Trekking", link: "/trekking" },
-    { name: "About us", link: "/" },
-    { name: "Contact Us", link: "/" },
+    { name: "About us", link: "/about" },
+    { name: "Contact Us", link: "/contact" },
   ];
   let [open, setOpen] = useState(false);
 
