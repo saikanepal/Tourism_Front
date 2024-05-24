@@ -8,21 +8,20 @@ export const useImage = () => {
         };
       }
       console.log(image.type);
-      if (image.type == "image/jpeg" || image.type == "image/png") {
+      if (image.type === "image/jpeg" || image.type === "image/png") {
         const data = new FormData();
-
         data.append("file", image);
+        data.append("upload_preset", "vmixpmkf"); // Ensure this preset is correctly set up in Cloudinary
+        data.append("cloud_name", "dqkgukmvx");
 
-        data.append("upload_preset", "xqkpplbb");
-
-        data.append("cloud_name", "dyitgqnlm");
         const res = await fetch(
-          "https://api.cloudinary.com/v1_1/dyitgqnlm/image/upload",
+          "https://api.cloudinary.com/v1_1/dqkgukmvx/image/upload",
           {
             method: "POST",
             body: data,
           }
         );
+
         const result = await res.json();
         return {
           Picture: {
@@ -36,5 +35,6 @@ export const useImage = () => {
       return " ";
     }
   };
+
   return { uploadImage };
 };

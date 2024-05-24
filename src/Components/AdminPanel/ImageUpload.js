@@ -45,11 +45,10 @@ const ImageUploadForm = () => {
     for (const image of images) {
       const uploadedImage = await uploadImage(image);
       uploadedImages.push(uploadedImage);
-      console.log("Uploaded Image:", uploadedImage);
+     
     }
 
-    console.log("All Uploaded Images:", uploadedImages);
-    console.log("Description:", description);
+
 
     try {
       const response = await axios.post(
@@ -58,7 +57,7 @@ const ImageUploadForm = () => {
           uploadedImages,
         }
       );
-      console.log("Response:", response.data);
+    
       setDescription("");
       setImages([]);
     } catch (error) {
