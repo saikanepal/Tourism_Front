@@ -14,7 +14,7 @@ const Video = () => {
     hover:{opacity:0.7}
   }
   const buttonAnimation={
-    initial:{border:"2px solid transparent",color:"black",backgroundColor:'transparent'},
+    initial:{color:"black"},
     hover:{border:"2px solid white",color:"white",backgroundColor:'#ca8f30'}
   }
   return (
